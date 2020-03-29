@@ -37,6 +37,10 @@ form .field--type-language-field .tabledrag-toggle-weight-wrapper {
 form .field--type-language-field .draggable .field-multiple-drag {
   display: none;
 }
+form .captcha {
+  display: inline-block;
+  margin-top: 20px;
+}
 
 .node--type-services.node--view-mode-full {
   margin-top: 40px;
