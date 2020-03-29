@@ -4,15 +4,15 @@ Proyecto realizado en Drupal 8 y ElasticSearch para la web https://coronavirus3d
 
 Este proyecto usa el [Drupal Composer Project](https://github.com/drupal-composer/drupal-project).
 
-##Requisitos
+## Requisitos
 
 - php 7
 - mysql/mariadb
 - nginx/apache
 - ElasticSearch 7
 
-##Problemas a los que intentamos dar solución
-###Encontrar grupos de la comunidad Maker
+## Problemas a los que intentamos dar solución
+### Encontrar grupos de la comunidad Maker
 Permitir mostrar en un mapa los distintos grupos de makers que se están organizando.
 
 Esto permite:
@@ -21,7 +21,7 @@ Esto permite:
 - tener un mapa para encontrar facilmente a que grupo próximo a ti te puedes unir
 - permitir a los usuarios mostrar que se han unido a uno o varios grupos
  
-###Mostrar los makers que tenemos disponibles
+### Mostrar los makers que tenemos disponibles
 Permitir mostrar en un mapa todos los centros de fabricación.
 
 Esto permite:
@@ -31,7 +31,7 @@ Esto permite:
 - saber que maquinas tenemos disponibles, con que tecnologías, que areas de impresión y que materiales pueden imprimir
 - Las empresas que quieren donar material tienen facilidades para encontrar los makers, ya que sabemos en que zonas hay makers usando filamentos o resinas de un tipo especifico
  
-###Saber cantidad de piezas fabricadas
+### Saber cantidad de piezas fabricadas
 Que los usuarios puedan especificar cuantas piezas han hecho, que puedan subir alguna foto y que todo esto se muestre en un mapa.
 
 Esto permite:
