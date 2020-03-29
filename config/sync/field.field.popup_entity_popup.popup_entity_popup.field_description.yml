@@ -1,0 +1,21 @@
+uuid: 97706a51-6d34-49c8-a374-3ed47c2750c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.popup_entity_popup.field_description
+  module:
+    - popup_entity
+    - text
+id: popup_entity_popup.popup_entity_popup.field_description
+field_name: field_description
+entity_type: popup_entity_popup
+bundle: popup_entity_popup
+label: description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

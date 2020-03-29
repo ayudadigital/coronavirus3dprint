@@ -1,18 +1,18 @@
-uuid: b7a4e8a2-8f1b-481c-9989-63c006bbb0e6
-langcode: es
+uuid: 8f65a19a-d129-41b9-ad3d-1fbeeaf91dab
+langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.technology
+    - paragraphs.paragraphs_type.machine
   module:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: true
+    enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.technology
-target_entity_type_id: taxonomy_term
-target_bundle: technology
+id: paragraph.machine
+target_entity_type_id: paragraph
+target_bundle: machine
 default_langcode: site_default
 language_alterable: false

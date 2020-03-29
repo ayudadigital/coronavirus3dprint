@@ -1,0 +1,18 @@
+uuid: 94b32fb8-ee39-4f4b-81c6-9de75dfeae7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.content_type.maker_group-group_membership
+id: group_content.maker_group-group_membership.metatag
+field_name: metatag
+entity_type: group_content
+bundle: maker_group-group_membership
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

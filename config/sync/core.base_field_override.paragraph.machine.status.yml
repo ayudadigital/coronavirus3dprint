@@ -1,20 +1,20 @@
-uuid: c1ccab9b-2114-423e-aeb3-150629f1d27c
+uuid: 1833e3a1-b039-4fe7-af62-f091fea130ea
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.prints
-id: node.prints.promote
-field_name: promote
-entity_type: node
-bundle: prints
-label: 'Promoted to front page'
+    - paragraphs.paragraphs_type.machine
+id: paragraph.machine.status
+field_name: status
+entity_type: paragraph
+bundle: machine
+label: Published
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: 0
+    value: 1
 default_value_callback: ''
 settings:
   on_label: 'On'

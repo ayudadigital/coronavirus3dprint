@@ -1,0 +1,20 @@
+uuid: f982b411-cbcd-4d43-9c83-e6644b35f2e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.content_type.maker_group-group_membership
+  module:
+    - path
+id: group_content.maker_group-group_membership.path
+field_name: path
+entity_type: group_content
+bundle: maker_group-group_membership
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

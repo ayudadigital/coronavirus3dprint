@@ -1,18 +1,18 @@
-uuid: fc415c4f-18ea-44fc-a42c-c876c1d573c4
+uuid: 374540f8-3ac1-489f-b3db-dd2b126e7d1f
 langcode: en
 status: true
 dependencies:
   config:
     - group.type.maker_group
-id: group.maker_group.label
-field_name: label
+id: group.maker_group.metatag
+field_name: metatag
 entity_type: group
 bundle: maker_group
-label: Title
-description: ''
-required: true
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: map

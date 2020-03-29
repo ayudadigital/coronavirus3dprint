@@ -1,9 +1,9 @@
-uuid: 5cc45a00-09b7-4a44-bd38-ee5482d92982
+uuid: abd2f887-fbcf-4874-9749-5623f62010a0
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.prints
+    - group.content_type.maker_group-group_membership
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.prints
-target_entity_type_id: node
-target_bundle: prints
+id: group_content.maker_group-group_membership
+target_entity_type_id: group_content
+target_bundle: maker_group-group_membership
 default_langcode: site_default
 language_alterable: false

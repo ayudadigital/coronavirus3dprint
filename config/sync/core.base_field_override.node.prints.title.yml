@@ -1,21 +1,18 @@
-uuid: b3181afb-4552-4d8f-bc1a-fc63eba5225c
+uuid: 68df96fe-ff63-4339-89e4-4e459fee21a4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_geolocation
     - node.type.prints
-  module:
-    - geolocation
-id: node.prints.field_geolocation
-field_name: field_geolocation
+id: node.prints.title
+field_name: title
 entity_type: node
 bundle: prints
-label: Location
+label: Title
 description: ''
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: geolocation
+field_type: string

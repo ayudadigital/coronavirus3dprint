@@ -1,0 +1,23 @@
+uuid: f6389e14-1a5c-475f-939d-6b29ab43960e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.popup_entity_popup.popup_entity_popup.field_description
+  module:
+    - popup_entity
+    - text
+id: popup_entity_popup.popup_entity_popup.default
+targetEntityType: popup_entity_popup
+bundle: popup_entity_popup
+mode: default
+content:
+  field_description:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,18 +1,17 @@
-uuid: ec255090-fd5c-4ef8-8853-37342c1544ad
+uuid: b03bdf51-467d-4b83-a0b4-e03682183577
 langcode: en
 status: true
 dependencies:
-  config:
-    - block_content.type.text
   module:
     - content_translation
+    - popup_entity
 third_party_settings:
   content_translation:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: block_content.text
-target_entity_type_id: block_content
-target_bundle: text
+id: popup_entity_popup.popup_entity_popup
+target_entity_type_id: popup_entity_popup
+target_bundle: popup_entity_popup
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

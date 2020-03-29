@@ -1,0 +1,20 @@
+uuid: a2f99048-80a1-4047-934f-791a36344033
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.prints
+  module:
+    - path
+id: node.prints.path
+field_name: path
+entity_type: node
+bundle: prints
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
