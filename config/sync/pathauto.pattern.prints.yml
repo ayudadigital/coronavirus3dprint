@@ -1,23 +1,22 @@
-uuid: 6d9c2b54-193d-4758-a5d4-defcb2db3e69
+uuid: 73fe7d0f-7d08-4fbb-a187-30839036687a
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: prints_and_workshop
-label: 'Prints and Workshop'
+id: prints
+label: Prints
 type: 'canonical_entities:node'
-pattern: '[node:content-type:machine-name]/[node:nid]'
+pattern: '3dprints/[node:nid]'
 selection_criteria:
-  6df6d2dc-22e7-402c-89c8-ed88c586c61e:
+  4075d1c6-5ae0-4f59-a2dd-5396446e8033:
     id: node_type
     bundles:
       prints: prints
-      services: services
     negate: false
     context_mapping:
       node: node
-    uuid: 6df6d2dc-22e7-402c-89c8-ed88c586c61e
+    uuid: 4075d1c6-5ae0-4f59-a2dd-5396446e8033
 selection_logic: and
 weight: -5
 relationships: {  }

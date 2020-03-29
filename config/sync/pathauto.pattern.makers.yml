@@ -1,0 +1,22 @@
+uuid: 866b8fd0-8705-41c8-b615-082932681af7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: makers
+label: Makers
+type: 'canonical_entities:node'
+pattern: 'makers/[node:nid]'
+selection_criteria:
+  61659285-4318-48dd-9873-b1cb84d33b79:
+    id: node_type
+    bundles:
+      services: services
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 61659285-4318-48dd-9873-b1cb84d33b79
+selection_logic: and
+weight: -5
+relationships: {  }
