@@ -1,0 +1,19 @@
+ul.tabs.primary{
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.form-actions {
+  position: relative;
+  left: initial;
+  bottom: initial;
+  z-index: initial;
+  input.button {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+  }
+}

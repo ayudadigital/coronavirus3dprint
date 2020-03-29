@@ -1,0 +1,23 @@
+uuid: 704a9d7e-2b2f-4887-8e8d-7e73affd6b8d
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: 3
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'create content translations'
+  - 'create page content'
+  - 'create url aliases'
+  - 'delete content translations'
+  - 'edit any page content'
+  - 'translate any entity'
+  - 'translate block_content'
+  - 'translate menu_link_content'
+  - 'translate page node'
+  - 'update content translations'
+  - 'use text format full_html'
+  - 'use text format restricted_html'

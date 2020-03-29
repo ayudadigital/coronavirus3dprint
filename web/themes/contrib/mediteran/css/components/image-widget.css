@@ -1,0 +1,65 @@
+/**
+ * @file
+ * Image upload widget.
+ *
+ */
+
+.image-widget {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-preview {
+  padding: 8px 20px 20px 0;
+}
+[dir="rtl"] .image-preview {
+  padding: 8px 0 20px 20px;
+}
+
+.image-widget-data {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.image-widget-data .form-item {
+  margin: 0;
+}
+
+.image-widget-data .text-field {
+  width: auto;
+}
+
+.image-widget-data .file,
+.image-widget-data .file-size {
+  display: inline-flex;
+  margin-right: 5px;
+}
+
+.image-widget-data .file a,
+.image-widget-data .file-size {
+  padding: 0;
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.image-widget-data .button {
+  margin: 0 10px 0 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  line-height: 18px;
+  width: auto;
+}
+
+.image-widget-data :last-child {
+  align-self: flex-start;
+}
+
+@media screen and (min-width: 640px) {
+  .image-widget {
+    flex-direction: row;
+  }
+}

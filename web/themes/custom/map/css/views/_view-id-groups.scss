@@ -1,0 +1,15 @@
+.view-id-groups{
+  .view-content{
+    .views-row{
+      text-align: center;
+      width: 100%;
+      border: 1px solid $grey;
+      padding: 20px 10%;
+      background-color: $white;
+      position: relative;
+      .views-field-label{
+        padding-bottom: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+uuid: cc653352-14d3-4fbe-8797-9b2bb0d16e50
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+    - search_api
+    - search_api_geolocation
+  config:
+    - field.storage.user.field_sex
+    - field.storage.user.field_spoken_languages
+    - field.storage.node.field_have_car
+    - field.storage.node.field_geolocation
+    - search_api.server.elasticsearch_server
+id: services
+name: Services
+description: ''
+read_only: false
+field_settings:
+  field_have_car:
+    label: 'I have a car'
+    datasource_id: 'entity:node'
+    property_path: field_have_car
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_have_car
+  field_sex:
+    label: 'Authored by » User » Sex'
+    datasource_id: 'entity:node'
+    property_path: 'uid:entity:field_sex'
+    type: string
+    dependencies:
+      module:
+        - node
+        - user
+      config:
+        - field.storage.user.field_sex
+  field_spoken_languages:
+    label: 'Authored by » User » Spoken languages'
+    datasource_id: 'entity:node'
+    property_path: 'uid:entity:field_spoken_languages'
+    type: string
+    dependencies:
+      module:
+        - node
+        - user
+      config:
+        - field.storage.user.field_spoken_languages
+  geolocation:
+    label: Location
+    datasource_id: 'entity:node'
+    property_path: field_geolocation
+    type: geo_point
+    dependencies:
+      config:
+        - field.storage.node.field_geolocation
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - services
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  search_api_geolocation: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: elasticsearch_server

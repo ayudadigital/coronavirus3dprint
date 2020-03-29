@@ -1,0 +1,4 @@
+access username policy control:
+  title: 'access username policy control'
+  description: 'Access the user name policy configuration'
+  restrict access: true

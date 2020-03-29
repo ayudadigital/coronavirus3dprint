@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Contains hook implementations.
+ */
+
+/**
+ * Implements hook_facets_search_api_query_type_mapping_alter().
+ */
+function sag_facets_map_facets_search_api_query_type_mapping_alter($backend_plugin_id, array &$query_types) {
+  $query_types['geolocation'] = 'search_api_geolocation';
+}

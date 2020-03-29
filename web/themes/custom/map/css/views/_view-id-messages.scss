@@ -1,0 +1,39 @@
+.view-id-messages{
+  .view-content{
+    .views-row{
+      margin-bottom: 20px;
+      .private-message-thread-inbox{
+        border: 1px solid $grey;
+        padding: 15px;
+        &:hover{
+          background-color: $grey;
+        }
+        .message-link{
+          display: block;
+          color: $black;
+          text-decoration: none;
+        }
+        .private-message-recipients{
+          max-width: 60px;
+          display: inline-block;
+          margin-right: 15px;
+          vertical-align: middle;
+        }
+        .private-message-inbox{
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          .field--name-owner{
+            display: none;
+          }
+          .field--type-created{
+            font-size: 0.9em;
+          }
+          .field--type-text-long{
+
+          }
+        }
+      }
+    }
+  }
+}

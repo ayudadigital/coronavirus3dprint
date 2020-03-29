@@ -1,0 +1,156 @@
+uuid: ec387c8c-0130-4e2d-bcb2-dca2fd8425a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_age
+    - field.field.user.user.field_name
+    - field.field.user.user.field_sex
+    - field.field.user.user.field_spoken_languages
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - datetime
+    - field_group
+    - image
+    - languagefield
+    - user
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_basic_data
+        - group_regional_data
+        - group_personal_data
+        - group_optional_data
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        direction: vertical
+        id: ''
+        classes: ''
+      label: Tabs
+    group_basic_data:
+      children:
+        - account
+      parent_name: group_tabs
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: open
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Basic data'
+    group_regional_data:
+      children:
+        - timezone
+      parent_name: group_tabs
+      weight: 24
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Regional data'
+    group_personal_data:
+      children:
+        - user_picture
+        - field_name
+      parent_name: group_tabs
+      weight: 25
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Personal data'
+    group_optional_data:
+      children:
+        - field_sex
+        - field_age
+        - field_spoken_languages
+      parent_name: group_tabs
+      weight: 26
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Optional Data'
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_age:
+    weight: 33
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_name:
+    weight: 30
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sex:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_spoken_languages:
+    weight: 34
+    settings:
+      format:
+        name: name
+    third_party_settings: {  }
+    type: languagefield_select
+    region: content
+  private_messages:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  timezone:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    weight: 28
+    region: content
+hidden:
+  contact: true
+  google_analytics: true
+  langcode: true
+  language: true

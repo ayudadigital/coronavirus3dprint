@@ -1,0 +1,45 @@
+{
+    "name": "ruflin/elastica",
+    "description": "Elasticsearch Client",
+    "keywords": ["search","client"],
+    "homepage": "http://elastica.io/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolas Ruflin",
+            "homepage": "http://ruflin.com/"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "psr/log": "^1.0",
+        "elasticsearch/elasticsearch": "^7.1.1 !=7.4.0"
+    },
+    "require-dev": {
+        "aws/aws-sdk-php": "^3.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "suggest": {
+        "aws/aws-sdk-php": "Allow using IAM authentication with Amazon ElasticSearch Service",
+        "egeloen/http-adapter": "Allow using httpadapter transport",
+        "guzzlehttp/guzzle": "Allow using guzzle 6 as the http transport",
+        "monolog/monolog": "Logging request"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elastica\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elastica\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "7.0.x-dev"
+        }
+    }
+}

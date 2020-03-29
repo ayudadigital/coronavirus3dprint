@@ -1,0 +1,70 @@
+.modules-tabs {
+	border: none;
+	border-radius: 0;
+}
+.modules-tabs__pane {
+	margin: 0 0 0 300px;
+	border-left: 1px solid #0678be;
+	background: white;
+}
+.modules-tabs__menu-item a:hover,
+.modules-tabs__menu-item a:focus {
+	background-color: #f7fcff;
+}
+ul.modules-tabs__menu {
+	border-bottom: 4px solid #0678be;
+	width: 300px;
+}
+li.modules-tabs__menu-item a {
+	padding: 1.4rem 1rem;
+	line-height: 2;
+}
+li.modules-tabs__menu-item a strong {
+	text-transform: uppercase;
+}
+li.modules-tabs__menu-item {
+	background: #fff;
+	border-top: 1px solid rgba(6, 120, 190, 0.17);
+}
+.modules-tabs__menu-item.disabled {
+	background: #efefef;
+	border-top-color: #e0e0e0;
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+.modules-tabs__menu-item.is-selected a,
+.modules-tabs__menu-item.is-selected a:hover,
+.modules-tabs__menu-item.is-selected a:focus,
+.modules-tabs__menu-item.is-selected a:active {
+	background-color: #0678be;
+	color: #fff;
+}
+.modules-tabs__menu-item.is-selected a .summary {
+	color: #08447a;
+	font-style: italic;
+}
+.modules-tabs {
+	background: #f7fcff;
+}
+.system-modules tr:hover {
+	background: #f7fcff;
+}
+.modules-tabs__menu-item ul.enabling {
+	margin-top: 1.4em;
+	color: #7cbc48;
+	display: flex;
+	flex-wrap: wrap;
+}
+.modules-tabs__menu-item ul.enabling li {
+	background-color: #eaffda;
+	padding: 0.3em 0.5em;
+	border-radius: 2px;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em;
+	font-style: initial;
+	font-weight: 500;
+}
+.modules-tabs__menu-item ul.enabling li:after,
+.modules-tabs__menu-item ul.enabling:before {
+	content: none;
+}

@@ -1,0 +1,59 @@
+.facets-map{
+  position: relative;
+  width: 100%;
+  min-height: 150px;
+  height: 60vh;
+}
+
+.view-id-map{
+  .view-content.owl-carousel{
+    .owl-item{
+      article.node{
+        height: 35vh;
+      }
+    }
+  }
+}
+
+
+.facets-widget-checkbox{
+  h3{
+    font-size: 1em;
+  }
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      position: relative;
+      input{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 5px 8px 0;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      label{
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: normal;
+        margin: 0;
+        padding: 0 15px 0 25px;
+        .facet-item__count{
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+.bat-facets-availability-form{
+  .container-inline{
+    display: inline-block;
+    div{
+      display: inline-block;
+    }
+  }
+}

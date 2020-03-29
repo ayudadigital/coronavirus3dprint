@@ -1,0 +1,9 @@
+label: 'Mis piezas impresas'
+display:
+  default:
+    display_options:
+      title: 'Mis piezas impresas'
+  page_1:
+    display_options:
+      menu:
+        title: 'Mis piezas impresas'

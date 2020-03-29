@@ -1,0 +1,31 @@
+uuid: ef10eb8f-885d-41eb-8b34-5308d90482e9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:text:01a4392d-be57-4856-9a2e-081842907513'
+  module:
+    - block_content
+    - system
+  theme:
+    - map
+id: addprints
+theme: map
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:01a4392d-be57-4856-9a2e-081842907513'
+settings:
+  id: 'block_content:01a4392d-be57-4856-9a2e-081842907513'
+  label: 'Add prints'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /prints
+    negate: false
+    context_mapping: {  }

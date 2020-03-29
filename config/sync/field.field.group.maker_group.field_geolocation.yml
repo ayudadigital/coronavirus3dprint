@@ -1,0 +1,21 @@
+uuid: 4262b50e-d303-4e34-a840-ed8f44c62d75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_geolocation
+    - group.type.maker_group
+  module:
+    - geolocation
+id: group.maker_group.field_geolocation
+field_name: field_geolocation
+entity_type: group
+bundle: maker_group
+label: Location
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

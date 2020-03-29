@@ -1,0 +1,45 @@
+/**
+ * @file
+ * Styles for administration pages.
+ */
+
+/**
+ * Add search page select/submit.
+ */
+.search-admin-settings .container-inline {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+.search-admin-settings label[for="edit-search-type"] {
+  display: block;
+}
+
+.search-admin-settings .container-inline .button {
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+.search-admin-settings .form-item-search-type {
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.search-admin-settings .form-item-search-type label {
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 640px) {
+  .search-admin-settings .container-inline {
+    flex-direction: row;
+  }
+  .search-admin-settings .container-inline .button {
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+
+  .search-admin-settings .form-item-search-type {
+    width: auto;
+  }
+}

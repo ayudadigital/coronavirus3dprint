@@ -1,0 +1,77 @@
+/**
+ * @file
+ * Styles for the system status counter component.
+ */
+
+.system-status-counter {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  background: #f5f5f5;
+}
+.system-status-counter__status-icon {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  vertical-align: middle;
+}
+
+.system-status-counter__status-icon:before {
+  content: "";
+  background-size: 25px;
+  background-position: 50% center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.system-status-counter__status-icon--error:before {
+  background-image: url(../../../images/icons/error.svg);
+}
+.system-status-counter__status-icon--warning:before {
+  background-image: url(../../../images/icons/warning.svg);
+}
+.system-status-counter__status-icon--checked:before {
+  background-image: url(../../../images/icons/check.svg);
+}
+
+.system-status-counter__status-title {
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: bold;
+}
+.system-status-counter__title-count {
+  display: block;
+}
+.system-status-counter__details {
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: none;
+  display: block;
+  line-height: 1;
+  margin-top: 5px;
+}
+
+.system-status-counter__details a {
+  color: #333;
+}
+
+@media screen and (min-width: 61em) {
+  .system-status-counter__status-icon,
+  .system-status-counter {
+    height: 65px;
+  }
+  .system-status-counter__status-icon {
+    width: 65px;
+  }
+
+  .system-status-counter__status-icon:before {
+    background-size: 35px;
+  }
+}

@@ -1,0 +1,22 @@
+uuid: 394bb66a-9ec8-40a9-8ae8-2f0a614f412c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - map
+_core:
+  default_config_hash: L1EgH8h9eCrr_hS4e_xWPNibUxZ2y6u3l5l1AkVBRKc
+id: map_content
+theme: map
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,81 @@
+uuid: 03838504-3f98-4e30-bb0b-f9d02cba66c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assembly_stage
+    - field.storage.node.field_delivered
+    - field.storage.node.field_geolocation
+    - field.storage.node.field_quantity
+    - search_api.server.elasticsearch_server
+  module:
+    - node
+    - search_api
+    - search_api_geolocation
+id: prints
+name: Prints
+description: ''
+read_only: false
+field_settings:
+  field_assembly_stage:
+    label: 'Assembly stage'
+    datasource_id: 'entity:node'
+    property_path: field_assembly_stage
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_assembly_stage
+  field_delivered:
+    label: 'Delivered?'
+    datasource_id: 'entity:node'
+    property_path: field_delivered
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_delivered
+  field_quantity:
+    label: Quantity
+    datasource_id: 'entity:node'
+    property_path: field_quantity
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.node.field_quantity
+  geolocation:
+    label: Location
+    datasource_id: 'entity:node'
+    property_path: field_geolocation
+    type: geo_point
+    dependencies:
+      config:
+        - field.storage.node.field_geolocation
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - prints
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  search_api_geolocation: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: elasticsearch_server

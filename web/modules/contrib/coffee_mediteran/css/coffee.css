@@ -1,0 +1,52 @@
+#coffee-bg {
+  background-color: rgba(8, 68, 122, 0.4);
+}
+#coffee-form {
+  background: transparent;
+  border-radius: 4px;
+  max-width: 580px;
+}
+#coffee-form-inner {
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+}
+#coffee-q {
+  background: #08447a;
+  padding: 2.2rem 1rem;
+  color: #fff;
+  border-radius: 4px;
+  margin: 0;
+  font-weight: 100;
+}
+#coffee-results ul {
+  padding: 0;
+  top: -2px !important;
+  max-width: 560px;
+}
+#coffee-results li {
+  overflow: hidden;
+}
+#coffee-results a {
+  padding: 1rem;
+  text-transform: uppercase;
+}
+#coffee-results .description {
+  font-style: italic;
+  text-transform: lowercase;
+}
+#coffee-results a.ui-state-hover,
+#coffee-results a.ui-state-active,
+#coffee-results a:focus,
+#coffee-results a:hover,
+#coffee-results .ui-state-focus {
+  background: #0678be;
+  color: #fff;
+}
+#coffee-results a.ui-state-hover .description,
+#coffee-results a.ui-state-active .description,
+#coffee-results a:focus .description,
+#coffee-results a:hover .description,
+#coffee-results .ui-state-focus .description {
+  color: #08447a;
+}

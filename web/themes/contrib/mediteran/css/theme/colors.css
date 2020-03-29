@@ -1,0 +1,31 @@
+/**
+ * Reusable colors.
+ */
+.color-success,
+.color-checked {
+  color: #325e1c;
+  background-color: #f3faef;
+}
+.color-warning {
+  color: #734c00;
+  background-color: #fdf8ed;
+}
+.color-error {
+  color: #a51b00;
+  background-color: #fcf4f2;
+}
+table .color-warning,
+table .color-success,
+table .color-checked,
+table .color-error {
+  background-color: transparent;
+}
+table .color-warning {
+  color: #a87000;
+  font-size: 12px;
+}
+table .color-warning strong a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #a87000;
+}

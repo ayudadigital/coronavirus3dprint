@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_search_api_backend_info_alter().
+ *
+ * Defines custom backend enhancements for supported search api backends.
+ */
+function search_api_geolocation_search_api_backend_info_alter(array &$backend_info) {
+  // Elastic Search backend.
+  // See https://www.drupal.org/node/2906735
+  if (isset($backend_info['elasticsearch'])) {
+    $backend_info['elasticsearch']['class'] = '\Drupal\search_api_geolocation\Plugin\search_api\backend\Geolocation';
+  }
+}

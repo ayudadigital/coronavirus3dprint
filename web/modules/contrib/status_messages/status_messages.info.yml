@@ -1,0 +1,11 @@
+name: Status Messages
+type: module
+description: Provides a simple popup status messages.
+package: 'User Interface'
+core: '8.x'
+configure: status_messages.status_messages
+
+# Information added by Drupal.org packaging script on 2020-02-03
+version: '8.x-2.0'
+project: 'status_messages'
+datestamp: 1580730306

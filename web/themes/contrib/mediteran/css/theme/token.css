@@ -1,0 +1,12 @@
+.token-tree td, .token-tree th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.treetable tbody tr td {
+    padding-left: 16x;
+}
+
+table.treetable tr span.indenter {
+    margin-left: -4px;
+}

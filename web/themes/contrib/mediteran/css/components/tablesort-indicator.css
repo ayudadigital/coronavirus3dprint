@@ -1,0 +1,33 @@
+/**
+ * @file
+ * Tablesort indicator styles.
+ */
+
+.tablesort {
+  float: right; /* LTR */
+  height: 0;
+  right: 0;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+  border-style: solid;
+}
+[dir="rtl"] .tablesort {
+  float: left;
+}
+.tablesort--asc {
+  border-color: #888 transparent transparent transparent;
+  border-width: 5px 4px 0 4px;
+}
+a:hover .tablesort--asc {
+  border-color: #0678be transparent transparent transparent;
+}
+.tablesort--desc {
+  border-color: transparent transparent #888 transparent;
+  border-width: 0 4px 5px 4px;
+}
+a:hover .tablesort--desc {
+  border-color: transparent transparent #0678be transparent;
+}

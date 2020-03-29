@@ -1,0 +1,23 @@
+uuid: 59e278b0-67e2-497c-980c-65f3a5d10d43
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.location_prints
+  module:
+    - facets
+  theme:
+    - map
+id: locationprints
+theme: map
+region: content
+weight: -6
+provider: null
+plugin: 'facet_block:location_prints'
+settings:
+  id: 'facet_block:location_prints'
+  label: 'Location Prints'
+  provider: facets
+  label_display: '0'
+  block_id: locationprints
+visibility: {  }

@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function admin_toolbar_mediteran_preprocess_html(&$variables) {
+  // Add mediteran admin class to the body.
+  if (_admin_toolbar_mediteran_is_access()) {
+    $variables['attributes']['class'][] = 'admin-toolbar-mediteran';
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function admin_toolbar_mediteran_page_attachments_alter(array &$page) {
+  // Attaches css assets globally.
+  if (_admin_toolbar_mediteran_is_access()) {
+    $page['#attached']['library'][] = 'admin_toolbar_mediteran/admin_toolbar_mediteran';
+  }
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function admin_toolbar_mediteran_toolbar_alter(&$items) {
+  // Add class to the user tab so it can be moved to the right.
+  if (_admin_toolbar_mediteran_is_access()) {
+    $items['user']['#wrapper_attributes']['class'] = ['user-toolbar-tab'];
+  }
+}
+
+function admin_toolbar_mediteran_library_info_alter(&$libraries, $extension) {
+  if (_admin_toolbar_mediteran_is_access()) {
+      // Verify existence of admin_toolbar
+      if ($extension == "admin_toolbar") {
+        // Unset the CSS of admin_toolbar
+        unset($libraries['toolbar.tree']['css']['theme']['css/admin.toolbar.css']);
+      }
+  
+      // Verify existence of toolbar
+      if ($extension == "toolbar") {
+        // Unset the CSS of core toolbar main style
+        unset($libraries['toolbar']['css']['theme']['css/toolbar.theme.css']);
+      }
+  }
+}
+
+/**
+ * Helper function for checking user permission.
+ *
+ * We reallly only want to add styling and changes to toolbar when the user has access
+ * Returns TRUE or FALSE.
+ */
+function _admin_toolbar_mediteran_is_access() {
+  $user = \Drupal::currentUser();
+  return $user->hasPermission('access toolbar');
+}

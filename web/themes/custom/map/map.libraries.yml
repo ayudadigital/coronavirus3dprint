@@ -1,0 +1,48 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+
+login-page:
+  version: VERSION
+  css:
+    theme:
+      css/login-page.css: {}
+  dependencies:
+    - mediteran/maintenance-page
+
+search-owl-results:
+  js:
+    js/search-owl-results.js: {}
+  dependencies:
+    - map/owl
+    - core/jquery
+    - core/jquery.once
+
+toggle-search-filters:
+  js:
+    js/toggle-search-filters.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
+mousewheel:
+  js:
+    /libraries/mousewheel/jquery.mousewheel.min.js: {}
+
+owl:
+  remote: https://github.com/OwlCarousel2/OwlCarousel2
+  version: 1.x
+  license:
+    name: MIT
+    url: https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/OwlCarousel/dist/owl.carousel.min.js: {}
+  css:
+    base:
+      /libraries/OwlCarousel/dist/assets/owl.carousel.min.css: {}
+      /libraries/OwlCarousel/dist/assets/owl.theme.default.min.css: {}
+  dependencies:
+    - map/mousewheel
+    - core/jquery

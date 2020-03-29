@@ -1,0 +1,36 @@
+uuid: c298cfd7-a6f1-40c3-9650-a6ababc59fa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.services.field_description
+    - field.field.node.services.field_geolocation
+    - field.field.node.services.field_have_car
+    - field.field.node.services.field_machines
+    - node.type.services
+  module:
+    - user
+id: node.services.teaser
+targetEntityType: node
+bundle: services
+mode: teaser
+content:
+  extra_field_user_profile_teaser:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  author_profile_teaser_entity_view_1: true
+  extra_field_reservation_button: true
+  extra_field_user_profile_compact: true
+  field_description: true
+  field_geolocation: true
+  field_have_car: true
+  field_machines: true
+  flag_favorites: true
+  langcode: true
+  links: true
+  private_message_link: true
+  search_api_excerpt: true

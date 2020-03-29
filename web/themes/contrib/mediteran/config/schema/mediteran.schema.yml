@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Mediteran theme.
+
+mediteran.settings:
+  type: theme_settings
+  label: 'Mediteran settings'

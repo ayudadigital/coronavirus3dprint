@@ -1,0 +1,19 @@
+uuid: 7c9cbee2-1782-4edc-8da4-f491c877cc28
+langcode: en
+status: false
+dependencies: {  }
+id: gitignore
+label: gitignore
+description: 'files that are not to be in the git. Contain passwords or other sensitive data'
+folder: ../config/gitignore
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - elasticsearch_connector.cluster.elasticsearch
+  - google_analytics.settings
+  - recaptcha.settings
+  - sendgrid_integration.settings
+graylist_dependents: true
+graylist_skip_equal: false
+weight: 0

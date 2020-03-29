@@ -1,0 +1,10 @@
+username_policy.username_pattern_config_form:
+  path: 'admin/config/people/username_policy'
+  defaults:
+    _form: '\Drupal\username_policy\Form\UserNamePatternConfigForm'
+    _title: 'UserNamePatternConfigForm'
+  requirements:
+    _permission: 'access username policy control'
+  options:
+    _admin_route: TRUE
+

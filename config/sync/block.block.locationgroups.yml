@@ -1,0 +1,23 @@
+uuid: f7d9a9fd-2182-4e5f-835f-1e1fb46eb175
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.location
+  module:
+    - facets
+  theme:
+    - map
+id: locationgroups
+theme: map
+region: content
+weight: -7
+provider: null
+plugin: 'facet_block:location'
+settings:
+  id: 'facet_block:location'
+  label: 'Location Groups'
+  provider: facets
+  label_display: '0'
+  block_id: locationgroups
+visibility: {  }

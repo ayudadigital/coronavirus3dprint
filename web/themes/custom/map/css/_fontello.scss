@@ -1,0 +1,120 @@
+$fontello_dir: '../fonts/fontello/font';
+@font-face {
+  font-family: 'fontello';
+  src: url($fontello_dir + '/fontello.eot?85479583');
+  src: url($fontello_dir + '/fontello.eot?85479583#iefix') format('embedded-opentype'),
+  url($fontello_dir + '/fontello.woff2?85479583') format('woff2'),
+  url($fontello_dir + '/fontello.woff?85479583') format('woff'),
+  url($fontello_dir + '/fontello.ttf?85479583') format('truetype'),
+  url($fontello_dir + '/fontello.svg?85479583#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url($fontello_dir + '/fontello.svg?85479583#fontello') format('svg');
+  }
+}
+
+$icons: (
+        search: '\e800',
+        cancel: '\e801',
+        link: '\e802',
+        eye-off: '\e804',
+        eye: '\e805',
+        attention: '\e80e',
+        calendar: '\e810',
+        clock: '\e811',
+        spin: '\e834',
+        filter: '\f0b0',
+        menu: '\f0c9',
+        left: '\f104',
+        right: '\f105',
+        up: '\f106',
+        down: '\f107',
+        street-view: '\f21d',
+        map: '\e803',
+        map-current-position: '\e806',
+        heart: '\e807',
+        heart-empty: '\e808',
+);
+
+@mixin icon($icon_name:false, $color:false, $replace:false){
+  &:before{
+    // A particular icon has been specified
+    content: "#{map-get($icons, $icon_name)}";
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    padding-right: 1.3em;
+    @if $color {
+      color: $color;
+    }
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    font-size: 1.3rem;
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+  }
+  @if $replace {
+    font-size: 0;
+  }
+  // Include any extra rules supplied for the pseudo-element
+  @content;
+}
+
+@mixin icon-left($icon_name:false, $color:false, $replace:false){
+  @include icon($icon_name, $color, $replace);
+  position: relative;
+  padding-left: 2.5em;
+  &:before{
+    position: absolute;
+    left: 0.7em;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+  }
+}
+
+@mixin icon-right($icon_name:false, $color:false, $replace:false){
+  @include icon($icon_name, $color, $replace);
+  position: relative;
+  padding-right: 2.5em;
+  &:before{
+    position: absolute;
+    right: 0.7em;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+  }
+}

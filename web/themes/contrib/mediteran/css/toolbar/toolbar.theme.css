@@ -1,0 +1,161 @@
+/**
+ * @file toolbar.theme.css
+ */
+.toolbar {
+  /* Set base font size to 13px based on root ems. */
+  font-size: 16px;
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -o-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-touch-callout: none;
+  -o-touch-callout: none;
+  -webkit-touch-callout: none;
+}
+.toolbar .toolbar-item {
+  cursor: pointer;
+  padding: 22px 0;
+  line-height: 1em;
+  text-decoration: none;
+}
+
+/**
+ * Toolbar bar.
+ */
+
+.toolbar .toolbar-bar {
+  background-color: #0678be;
+  color: #fff;
+}
+.toolbar .toolbar-bar .toolbar-item {
+  color: #fff;
+}
+.toolbar .toolbar-bar .toolbar-tab > .toolbar-item {
+  font-weight: normal;
+}
+.toolbar .toolbar-bar .toolbar-tab > .toolbar-item:hover {
+  text-decoration: none;
+  background-color: #0e4f8a;
+}
+.toolbar .toolbar-bar .toolbar-tab > .toolbar-item.is-active {
+  background-color: #08447a;
+}
+
+/**
+ * Toolbar tray.
+ */
+
+.toolbar .toolbar-tray {
+  background-color: #08447a;
+  font-size: 14px;
+}
+.toolbar-horizontal .toolbar-tray > .toolbar-lining {
+  padding-right: 42px; /* LTR */
+}
+[dir="rtl"] .toolbar-horizontal .toolbar-tray > .toolbar-lining {
+  padding-right: 0;
+  padding-left: 42px;
+}
+.toolbar .toolbar-tray-vertical {
+  background-color: #08447a;
+}
+[dir="rtl"] .toolbar .toolbar-tray-vertical {
+  border-right: 0 none;
+}
+
+.toolbar .toolbar-tray-horizontal .toolbar-tray {
+  background-color: #08447a;
+}
+
+.toolbar-tray a {
+  color: white;
+  cursor: pointer;
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .toolbar-tray a {
+    padding: 16px 15px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .toolbar-tray a {
+    padding: 20px 24px;
+  }
+}
+
+.toolbar-tray-vertical.toolbar-tray a {
+  padding: 20px 24px;
+}
+
+.toolbar-tray a:hover,
+.toolbar-tray a:active,
+.toolbar-tray a:focus,
+.toolbar-tray a.is-active {
+  color: white;
+  text-decoration: none;
+  background: #0e4f8a;
+}
+.toolbar .toolbar-menu {
+  background-color: #08447a;
+}
+
+[dir="rtl"] .toolbar-horizontal .toolbar-tray .menu-item + .menu-item {
+  border-left: 0 none;
+}
+
+.toolbar .toolbar-tray-vertical .menu-item,
+.toolbar .toolbar-tray-vertical .menu-item + .menu-item {
+  border-bottom: 1px solid #0e4f8a;
+}
+
+.toolbar .toolbar-tray-vertical .menu-item .menu-item,
+.toolbar .toolbar-tray-vertical .toolbar-menu li {
+  border-bottom: 1px solid #0e4f8a;
+}
+.toolbar .toolbar-tray-vertical .menu-item .menu-item:last-child {
+  border-bottom: 0;
+}
+
+.toolbar .toolbar-tray-vertical .menu-item.open ul,
+.toolbar .toolbar-tray-vertical .toolbar-menu ul ul {
+  border-top: 1px solid #0e4f8a;
+}
+.toolbar .toolbar-tray-vertical .menu-item:last-child > ul {
+  border-bottom: 0;
+}
+.toolbar .toolbar-tray-vertical .toolbar-menu .toolbar-menu .toolbar-menu .toolbar-menu {
+  margin-left: 0.25em; /* LTR */
+}
+[dir="rtl"] .toolbar .toolbar-tray-vertical .toolbar-menu .toolbar-menu .toolbar-menu .toolbar-menu {
+  margin-left: 0;
+  margin-right: 0.25em;
+}
+.toolbar .toolbar-menu .toolbar-menu a {
+  color: white;
+}
+
+/**
+ * Orientation toggle.
+ */
+.toolbar .toolbar-toggle-orientation {
+  background-color: transparent;
+  padding: 0;
+  height: 100%;
+}
+.toolbar-horizontal .toolbar-tray .toolbar-toggle-orientation:hover,
+.toolbar-vertical .toolbar-tray .toolbar-toggle-orientation:hover {
+  background: #0e4f8a;
+}
+
+.toolbar .toolbar-toggle-orientation > .toolbar-lining {
+  float: right; /* LTR */
+}
+[dir="rtl"] .toolbar .toolbar-toggle-orientation > .toolbar-lining {
+  float: left;
+}
+.toolbar .toolbar-toggle-orientation button {
+  cursor: pointer;
+  display: inline-block;
+}

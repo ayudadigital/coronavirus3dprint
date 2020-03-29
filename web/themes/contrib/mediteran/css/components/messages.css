@@ -1,0 +1,62 @@
+/**
+ * Messages.
+ */
+.messages {
+  margin: 0 0 20px 0;
+  border: none;
+  box-shadow: none;
+  background-size: 16px;
+  background-position: 16px 19px;
+  background-repeat: no-repeat;
+  padding: 15px 20px 15px 46px;
+  line-height: 1.8;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.messages a {
+  font-weight: 900;
+}
+
+.messages--error {
+  border-color: #e32700;
+  color: #e32700;
+  background-color: #ffefef;
+  background-image: url(../../images/icons/error.svg);
+}
+
+.messages--error a {
+  color: #e32700;
+}
+
+.messages--warning {
+  border-color: #e29700;
+  color: #e29700;
+  background-color: #f9f8e6;
+  background-image: url(../../images/icons/warning.svg);
+}
+
+.messages--warning a {
+  color: #e29700;
+}
+
+.messages--status {
+  border-color: #2fb419;
+  color: #2fb419;
+  background-color: #e8f9e6;
+  background-image: url(../../images/icons/check.svg);
+}
+
+.messages--status a {
+  color: #2fb419;
+}
+
+.messages h2 {
+  display: none;
+}
+
+.messages ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

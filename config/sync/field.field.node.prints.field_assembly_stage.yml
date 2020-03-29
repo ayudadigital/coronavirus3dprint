@@ -1,0 +1,21 @@
+uuid: f85185dd-5dc8-4cc1-9da5-a0ce45f78810
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assembly_stage
+    - node.type.prints
+  module:
+    - options
+id: node.prints.field_assembly_stage
+field_name: field_assembly_stage
+entity_type: node
+bundle: prints
+label: 'Assembly stage'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

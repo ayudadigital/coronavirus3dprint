@@ -1,0 +1,27 @@
+uuid: 393573aa-15cf-4500-9218-f87ff0a15f05
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - map
+_core:
+  default_config_hash: a3ppMTiqIy20usEz36Kw-wRSQhsj8ckvjdwD-IX6rHk
+id: map_page_title
+theme: map
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

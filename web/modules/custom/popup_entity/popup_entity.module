@@ -1,0 +1,167 @@
+<?php
+use Drupal\Core\Cache\Cache;
+use Drupal\entity_content_visibility\EntityContentVisibilityChecker;
+use Drupal\entity_content_visibility\EntityContentVisibilityCache;
+
+/**
+ * Implements hook_theme().
+ */
+function popup_entity_theme() {
+  return [
+    'popup_entity_popup' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for popup_entity_popup entity templates.
+ */
+function template_preprocess_popup_entity_popup(&$variables) {
+
+  /* @var $popup_entity_popup \Drupal\popup_entity\Entity\Popup */
+  $popup_entity_popup = $variables['elements']['#popup_entity_popup'];
+
+  $variables['content'] = [];
+  foreach (Drupal\Core\Render\Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  $variables['label'] = $popup_entity_popup->label();
+  $variables['popup_entity_popup'] = $popup_entity_popup;
+  $variables['popup_id'] = $popup_entity_popup->id();
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+
+  //add css styles
+  $variables['attributes'] = new Drupal\Core\Template\Attribute($variables['attributes']);
+  $width = $popup_entity_popup->get('width')->value;
+  if(!empty($width)){
+    $style[] = 'width: '.$width.'%';
+  }
+  $height = $popup_entity_popup->get('height')->value;
+  if(!empty($height)){
+    $style[] = 'height: '.$height.'%';
+  }
+  if(!empty($style)){
+    $variables['attributes']->setAttribute('style', implode('; ', $style));
+  }
+
+  $position_x = $popup_entity_popup->get('position_x')->value;
+  if(empty($position_x)){
+    $position_x = 'middle';
+  }
+  $variables['attributes']->addClass('popup_'.$position_x);
+
+  $position_y = $popup_entity_popup->get('position_y')->value;
+  if(empty($position_y)){
+    $position_y = 'middle';
+  }
+  $variables['attributes']->addClass('popup_'.$position_y);
+
+  //add parameters for js script
+  $variables['attributes']['popup_id'] = $popup_entity_popup->id();
+  $variables['attributes']['popup_open_delay'] = $popup_entity_popup->get('open_delay')->value;
+  $variables['attributes']['popup_times_to_show'] = $popup_entity_popup->get('times_to_show')->value;
+  $variables['attributes']['popup_cookies_expiration'] = $popup_entity_popup->get('cookies_expiration')->value;
+
+  $breakpoints = $popup_entity_popup->get('breakpoints')->getValue();
+  $breakpoints = array_column($breakpoints, 'value');
+  if(!empty($breakpoints)){
+    $config = \Drupal::config('system.theme');
+    $default_theme = $config->get('default');
+
+    $mediaquery_list = array();
+    $breakpoint = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup($default_theme);
+    foreach ($breakpoints as $breakpoint_name){
+      /* @var $breakpoint_item \Drupal\breakpoint\Breakpoint */
+      if(!empty($breakpoint[$breakpoint_name])){
+        $breakpoint_item = $breakpoint[$breakpoint_name];
+        $mediaquery_list[] = $breakpoint_item->getMediaQuery();
+      }
+    }
+    $variables['attributes']['breakpoints'] = implode('|', $mediaquery_list);
+  }
+
+  //get new new cache
+  $visibility_cache = EntityContentVisibilityCache::createFromID(
+    Drupal::getContainer(),
+    $popup_entity_popup->getEntityTypeId(),
+    $popup_entity_popup->id()
+  );
+
+  //set new caches
+  if (empty($variables['#cache']['contexts'])) {
+    $variables['#cache']['contexts'] = [];
+  }
+  $variables['#cache']['contexts'] = Cache::mergeContexts(
+    $variables['#cache']['contexts'],
+    $visibility_cache->getCacheContexts()
+  );
+
+  if (empty($variables['#cache']['tags'])) {
+    $variables['#cache']['tags'] = [];
+  }
+  $variables['#cache']['tags'] = Cache::mergeTags(
+    $variables['#cache']['tags'],
+    $visibility_cache->getCacheTags()
+  );
+
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ *
+ * Adds popup_entity_popup template suggestions per view mode.
+ */
+function popup_entity_theme_suggestions_popup_entity_popup(array $variables) {
+  $suggestions = [];
+
+  /* @var $popup_entity_popup \Drupal\popup_entity\Entity\Popup */
+  $popup_entity_popup = $variables['elements']['#popup_entity_popup'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'popup_entity_popup__' . $sanitized_view_mode;
+  $suggestions[] = 'popup_entity_popup__' . $popup_entity_popup->id() . '__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_page_bottom().
+ */
+function popup_entity_page_bottom(array &$page_bottom) {
+  //get all ids of active popups
+  $query = \Drupal::entityQuery('popup_entity_popup');
+  $query->condition('status', 1);
+  $entity_ids = $query->execute();
+
+  //load all popups
+  $popup_storage = \Drupal::entityTypeManager()->getStorage('popup_entity_popup');
+  $popups = $popup_storage->loadMultiple($entity_ids);
+
+  $original_popups = $popups;
+  //check visibility
+  foreach ($original_popups as $popup_id => $popup){
+    $is_visible = EntityContentVisibilityChecker::createFromID(
+      Drupal::getContainer(),
+      $popup->getEntityTypeId(),
+      $popup->id()
+    )->isVisible();
+    if(!$is_visible){
+      unset($popups[$popup_id]);
+    }
+  }
+
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  //load render array
+  $view_builder = \Drupal::entityTypeManager()->getViewBuilder('popup_entity_popup');
+  $popups_render = $view_builder->viewMultiple($popups, 'full', $langcode);
+
+  //set bottom html
+  if(!empty($popups)){
+    $page_bottom['popup_entity'] = $popups_render;
+  }
+
+}

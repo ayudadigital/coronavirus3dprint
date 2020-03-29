@@ -1,0 +1,15 @@
+{
+  "name": "drupal/admin_toolbar_mediteran",
+  "description": "Replicates the UI improvements of admin_toolbar module in Mediteran Drupal 8 administration theme.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/admin_toolbar_mediteran",
+  "authors": [{
+    "name": "Sohail Lajevardi",
+    "homepage": "https://www.drupal.org/u/doxigo"
+  }],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/admin_toolbar_mediteran",
+    "source": "http://cgit.drupalcode.org/admin_toolbar_mediteran"
+  },
+  "license": "GPL-2.0+"
+}

@@ -1,0 +1,15 @@
+uuid: a2fa8410-a2d9-4793-8e73-f6cc53f68a2f
+name: 'Coronavirus 3D print'
+mail: web@coronavirus3dprint.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/17
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+mail_notification: ''

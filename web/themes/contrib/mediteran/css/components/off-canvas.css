@@ -1,0 +1,114 @@
+/**
+ * @file
+ * CSS for off-canvas dialog.
+ */
+
+.ui-dialog-off-canvas {
+  border-left: 1px solid #e6e4df;
+}
+
+.ui-dialog-off-canvas .ui-widget-content.ui-dialog-content {
+  padding: 0;
+}
+
+.ui-dialog-off-canvas .ui-tabs .ui-tabs-panel {
+  padding: 20px;
+}
+
+.ui-dialog-off-canvas .ui-tabs .ui-tabs-nav {
+  border-bottom: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+.ui-dialog-off-canvas .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  margin: 0;
+  padding-bottom: 0;
+  background: white;
+  border: none;
+}
+
+.ui-dialog-off-canvas .ui-tabs .ui-tabs-nav li.ui-tabs-active a:hover {
+  background: white;
+}
+
+.ui-dialog-off-canvas .ui-tabs .ui-tabs-nav li {
+  padding: 0;
+  border: none;
+  margin: 0;
+}
+
+.ui-dialog-off-canvas .ui-tabs .ui-tabs-nav li a {
+  padding: 10px 20px;
+  line-height: 1.8;
+  display: flex;
+}
+.ui-dialog-off-canvas .ui-tabs .ui-tabs-nav li a:hover {
+  background: #f9f9f9;
+}
+
+.ui-dialog-off-canvas fieldset:not(.fieldgroup) {
+  background: none;
+  margin: 0;
+}
+
+.ui-dialog-off-canvas details fieldset:not(.fieldgroup) {
+  padding: 55px 0 0 0;
+}
+
+.ui-dialog-off-canvas .ui-dialog-content .form-actions {
+  padding: 20px;
+  position: relative;
+  right: 0;
+}
+
+.ui-dialog-off-canvas details {
+  margin: 0 0 5px 0;
+}
+
+.ui-dialog-off-canvas table,
+.ui-dialog-off-canvas .form-wrapper {
+  margin-bottom: 20px;
+}
+
+.ui-dialog-off-canvas .form-wrapper {
+  flex-wrap: wrap;
+}
+
+.ui-dialog-off-canvas .form-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.ui-dialog-content .container-inline .form-item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 640px) {
+  .ui-dialog-off-canvas .form-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .ui-dialog-off-canvas .form-item,
+  .ui-dialog-content .container-inline .form-item,
+  .ui-dialog-off-canvas .button.button--small {
+    margin-left: 20px;
+  }
+
+  .ui-dialog-off-canvas .details-wrapper .form-item,
+  .ui-dialog-off-canvas fieldset .form-item {
+    margin-left: 0;
+  }
+}
+
+.ui-dialog-content .container-inline .form-item:first-child {
+  margin-left: 0;
+}
+
+.ui-dialog-off-canvas .button {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.ui-dialog-off-canvas .button:last-child {
+  margin-right: 0;
+}

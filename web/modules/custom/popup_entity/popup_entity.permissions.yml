@@ -1,0 +1,10 @@
+'delete popup entity':
+  title: Delete popup content.
+'add popup entity':
+  title: Add popup content
+'view popup entity':
+  title: View popup content
+'edit popup entity':
+  title: Edit popup content
+'administer popup entity':
+  title: Administer popup entity type settings

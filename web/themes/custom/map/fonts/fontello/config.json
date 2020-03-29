@@ -1,0 +1,146 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "3c7eb0c1678e6fa93cc4264bad3150d6",
+      "css": "street-view",
+      "code": 61981,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "c76b7947c957c9b78b11741173c8349b",
+      "css": "attention",
+      "code": 59406,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "f3f90c8c89795da30f7444634476ea4f",
+      "css": "left",
+      "code": 61700,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7bf14281af5633a597f85b061ef1cfb9",
+      "css": "right",
+      "code": 61701,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "5de9370846a26947e03f63142a3f1c07",
+      "css": "up",
+      "code": 61702,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "e4dde1992f787163e2e2b534b8c8067d",
+      "css": "down",
+      "code": 61703,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "598a5f2bcf3521d1615de8e1881ccd17",
+      "css": "clock",
+      "code": 59409,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "4109c474ff99cad28fd5a2c38af2ec6f",
+      "css": "filter",
+      "code": 61616,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "559647a6f430b3aeadbecd67194451dd",
+      "css": "menu",
+      "code": 61641,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9dd9e835aebe1060ba7190ad2b2ed951",
+      "css": "search",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "c5fd349cbd3d23e4ade333789c29c729",
+      "css": "eye",
+      "code": 59397,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7fd683b2c518ceb9e5fa6757f2276faa",
+      "css": "eye-off",
+      "code": 59396,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "531bc468eecbb8867d822f1c11f1e039",
+      "css": "calendar",
+      "code": 59408,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9bd60140934a1eb9236fd7a8ab1ff6ba",
+      "css": "spin",
+      "code": 59444,
+      "src": "fontelico"
+    },
+    {
+      "uid": "06301c50d89b5d3e651bd07ebd6d7de7",
+      "css": "cancel",
+      "code": 59393,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "3c4a596e8ee3584c4c9e7002371db19f",
+      "css": "link",
+      "code": 59394,
+      "src": "websymbols"
+    },
+    {
+      "uid": "a9e695635041892e8f660f6a408577e9",
+      "css": "map",
+      "code": 59395,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M747.2 102.4L747.2 102.4C610.7-34.1 389.3-34.1 252.8 102.4H252.8C129.8 225.4 116 457 220.4 596.2L500 1000 779.6 596.2C884 457 870.2 225.4 747.2 102.4ZM503.4 461.5C439.7 461.5 388 409.9 388 346.2S439.7 230.8 503.4 230.8 618.8 282.4 618.8 346.2 567.1 461.5 503.4 461.5Z",
+        "width": 1000
+      },
+      "search": [
+        "003-placeholder-3"
+      ]
+    },
+    {
+      "uid": "77958fcd43e0d7a4580b5e6e9970038b",
+      "css": "map-current-position",
+      "code": 59398,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M702 716.8C692.8 715.7 684.5 722.2 683.5 731.4S688.9 748.8 698 749.9C873.3 770.5 966.7 826.1 966.7 858.3 966.7 903.6 789.1 966.7 500 966.7S33.3 903.6 33.3 858.3C33.3 826.1 126.7 770.5 302 749.9 311.1 748.8 317.6 740.5 316.6 731.4 315.5 722.2 307.2 715.6 298.1 716.8 122.6 737.5 0 795.6 0 858.3 0 928.7 171.8 1000 500 1000S1000 928.7 1000 858.3C1000 795.6 877.4 737.5 702 716.8ZM497.1 912.6L752.7 543.3C848.6 415.5 834.8 205.3 723.1 93.6 662.7 33.3 582.4 0 497.1 0S331.4 33.3 271.1 93.6C159.3 205.3 145.5 415.5 241 542.8L497.1 912.6ZM500 200C564.3 200 616.7 252.4 616.7 316.7S564.3 433.3 500 433.3 383.3 381 383.3 316.7 435.7 200 500 200Z",
+        "width": 1000
+      },
+      "search": [
+        "006-placeholder"
+      ]
+    },
+    {
+      "uid": "d73eceadda1f594cec0536087539afbf",
+      "css": "heart",
+      "code": 59399,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "f3dc2d6d8fe9cf9ebff84dc260888cdf",
+      "css": "heart-empty",
+      "code": 59400,
+      "src": "fontawesome"
+    }
+  ]
+}

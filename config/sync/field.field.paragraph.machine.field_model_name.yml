@@ -1,0 +1,19 @@
+uuid: 98dc6d5d-d9f0-43b8-bacf-1fd78224c8af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_model_name
+    - paragraphs.paragraphs_type.machine
+id: paragraph.machine.field_model_name
+field_name: field_model_name
+entity_type: paragraph
+bundle: machine
+label: 'Model name'
+description: 'Machine model name.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

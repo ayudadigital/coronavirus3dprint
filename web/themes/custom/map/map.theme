@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function map_preprocess_html(&$variables) {
+  // If on a node add or edit page, add a node-layout class.
+  $path_args = explode('/', \Drupal::request()->getPathInfo());
+  if ($suggestions = theme_get_suggestions($path_args, 'page', '-')) {
+    foreach ($suggestions as $suggestion) {
+      if ($suggestion === 'page--user-login' || $suggestion === 'page--user-register' || $suggestion === 'page--user-password') {
+        $variables['attributes']['class'][] = 'maintenance-page';
+      }
+    }
+  }
+}

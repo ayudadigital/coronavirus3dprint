@@ -1,0 +1,13 @@
+admin_toolbar_mediteran:
+  version: VERSION
+  css:
+    theme:
+      css/admin_toolbar/admin.toolbar.css: {}
+      css/admin_toolbar/tools.css: {}
+      css/toolbar/toolbar.theme.css: {}
+      css/toolbar/toolbar.icons.theme.css: {}
+      css/toolbar/toolbar.module.css: {}
+      css/toolbar/toolbar.menu.css: {}
+      css/shortcut/shortcut.icons.theme.css: {}
+      css/shortcut/shortcut.theme.css: {}
+      css/user/user.icons.admin.css: {}

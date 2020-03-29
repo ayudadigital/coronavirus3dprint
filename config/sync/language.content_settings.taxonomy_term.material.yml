@@ -1,0 +1,16 @@
+uuid: 02b1c97b-1543-426e-b269-ca8b12d2fbcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.material
+target_entity_type_id: taxonomy_term
+target_bundle: material
+default_langcode: site_default
+language_alterable: false

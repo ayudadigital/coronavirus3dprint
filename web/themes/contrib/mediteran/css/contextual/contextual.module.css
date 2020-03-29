@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Generic base styles for contextual module.
+ */
+
+.contextual-region,
+.contextual .trigger:focus {
+  position: relative;
+}
+.contextual-links {
+  display: none;
+}
+.contextual.open .contextual-links {
+  display: block;
+}

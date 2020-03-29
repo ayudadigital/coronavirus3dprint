@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for Extra Field module.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function extra_field_entity_extra_field_info() {
+
+  return \Drupal::service('plugin.manager.extra_field_display')->fieldInfo();
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function extra_field_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+  \Drupal::service('plugin.manager.extra_field_display')->entityView($build, $entity, $display, $view_mode);
+}

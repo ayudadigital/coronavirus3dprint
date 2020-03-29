@@ -1,0 +1,10 @@
+entity.popup_entity_popup.collection:
+  title: 'Popups'
+  route_name: entity.popup_entity_popup.collection
+  description: 'Popups list'
+  parent: system.admin_content
+popup_entity_popup.admin.structure.settings:
+  title: 'Popup settings'
+  description: 'Configure popup entity'
+  route_name:  popup_entity.popup_settings
+  parent: system.admin_structure

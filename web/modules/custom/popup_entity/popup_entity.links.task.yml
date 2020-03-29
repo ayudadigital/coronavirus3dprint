@@ -1,0 +1,20 @@
+popup.settings_tab:
+  route_name: popup_entity.popup_settings
+  title: Settings
+  base_route: popup_entity.popup_settings
+
+popup.view:
+  route_name: entity.popup_entity_popup.canonical
+  base_route: entity.popup_entity_popup.canonical
+  title: View
+
+popup.page_edit:
+  route_name: entity.popup_entity_popup.edit_form
+  base_route: entity.popup_entity_popup.canonical
+  title: Edit
+
+popup.delete_confirm:
+  route_name:  entity.popup_entity_popup.delete_form
+  base_route:  entity.popup_entity_popup.canonical
+  title: Delete
+  weight: 10

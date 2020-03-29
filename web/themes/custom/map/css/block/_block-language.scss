@@ -1,0 +1,14 @@
+.block-language{
+  text-align: center;
+  ul.links{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li{
+      display: inline-block;
+      a{
+        color: $black;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+uuid: c53f5ff5-7ca7-4375-b342-7c0caffbd8db
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - map
+_core:
+  default_config_hash: tZCW49yuUCgSac9sp8o15_uDppRMDulOMgm3mLHNzjE
+id: map_help
+theme: map
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

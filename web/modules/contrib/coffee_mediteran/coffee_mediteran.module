@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function coffee_mediteran_page_attachments_alter(array &$page) {
+  // Attaches css assets globally.
+  if (_coffee_mediteran_is_access()) {
+    $page['#attached']['library'][] = 'coffee_mediteran/coffee';
+  }
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function coffee_mediteran_toolbar_alter(&$items) {
+  // Add class to the user tab so it can be moved to the right.
+  if (_coffee_mediteran_is_access()) {
+    $items['user']['#wrapper_attributes']['class'] = ['user-toolbar-tab'];
+  }
+}
+
+/**
+ * Helper function for checking user permission.
+ *
+ * We reallly only want to add styling and changes to coffee when the user has access
+ * Returns TRUE or FALSE.
+ */
+function _coffee_mediteran_is_access() {
+  $user = \Drupal::currentUser();
+  return $user->hasPermission('access coffee');
+}

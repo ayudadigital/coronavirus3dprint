@@ -1,0 +1,29 @@
+uuid: be1b038d-863b-470c-a3b9-5b1f8918d69c
+langcode: en
+status: true
+dependencies:
+  module:
+    - elasticsearch_connector
+id: elasticsearch_server
+name: 'ElasticSearch Server'
+description: ''
+backend: elasticsearch
+backend_config:
+  server_description: ''
+  cluster_settings:
+    cluster: elasticsearch
+  fuzziness: auto
+  log_query: 0
+  debug_query: 0
+  log_response: 0
+  debug_results: 0
+  scheme: http
+  host: localhost
+  port: '9200'
+  path: ''
+  excerpt: false
+  retrieve_data: false
+  highlight_data: false
+  http_method: AUTO
+  autocorrect_spell: true
+  autocorrect_suggest_words: true

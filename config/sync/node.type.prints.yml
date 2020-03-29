@@ -1,0 +1,17 @@
+uuid: b90b900a-67aa-4aeb-8185-e899c1cbd2d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Prints
+type: prints
+description: 'Keep in mind that we do NOT take care of going to look for the things that you print. Contact your closest group for instructions on how to notify them of how many things you have manufactured and where or how you can send them to them.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

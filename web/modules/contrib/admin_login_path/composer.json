@@ -1,0 +1,26 @@
+{
+  "name": "drupal/admin_login_path",
+  "description": "A simple module that routes the login pages to use the admin (theme) path.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/admin_login_path",
+  "authors": [
+    {
+      "name": "Brian Wald",
+      "homepage": "https://www.drupal.org/u/bcwald"
+    },
+    {
+      "name": "Devin Carlson",
+      "homepage": "https://www.drupal.org/u/devin-carlson"
+    },
+    {
+      "name": "See other contributors",
+      "homepage":"https://www.drupal.org/node/2894919/committers"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/admin_login_path",
+    "source": "http://git.drupal.org/project/admin_login_path.git"
+  },
+  "license": "GPL-2.0+",
+  "require": {}
+}

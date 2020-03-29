@@ -1,0 +1,10 @@
+type: module
+name: 'Search API for geolocation fields'
+description: 'Provides geolocation based search for the Search API module'
+package: Search
+core: 8.x
+configure: search_api.overview
+dependencies:
+  - search_api
+  - geolocation
+  - views

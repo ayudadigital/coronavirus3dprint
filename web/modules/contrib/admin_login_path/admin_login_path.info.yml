@@ -1,0 +1,10 @@
+name: Admin Login Path
+type: module
+description: A simple module that routes the login pages to use the admin (theme) path.
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2017-09-15
+version: '8.x-1.0'
+core: '8.x'
+project: 'admin_login_path'
+datestamp: 1505499248

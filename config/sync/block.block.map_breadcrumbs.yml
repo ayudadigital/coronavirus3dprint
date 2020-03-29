@@ -1,0 +1,27 @@
+uuid: e8fca4eb-2ed7-41a1-9408-3299225dfa71
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - map
+_core:
+  default_config_hash: Qn971f7lE6wWJy9YPX9LTSXZsICEpiCsk3UH5wckxhA
+id: map_breadcrumbs
+theme: map
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/prints\r\n/groups\r\n/map\r\n/user/login\r\n/user/password\r\n/user/register"
+    negate: true
+    context_mapping: {  }

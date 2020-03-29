@@ -1,0 +1,15 @@
+uuid: d0440e85-c3cb-4e6e-8a11-eb7809057816
+langcode: es
+status: true
+dependencies: {  }
+name: prints_teaser
+label: 'Prints (teaser)'
+effects:
+  23529288-157f-4be8-ae06-89cc7885d76b:
+    uuid: 23529288-157f-4be8-ae06-89cc7885d76b
+    id: image_scale_and_crop
+    weight: 3
+    data:
+      width: 250
+      height: 250
+      anchor: center-center

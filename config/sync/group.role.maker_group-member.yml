@@ -1,0 +1,17 @@
+uuid: c17d58ec-1cfb-48b7-aee1-e6dbc4c332d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.maker_group
+id: maker_group-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: maker_group
+permissions_ui: true
+permissions:
+  - 'leave group'
+  - 'view group'
+  - 'view group_membership content'

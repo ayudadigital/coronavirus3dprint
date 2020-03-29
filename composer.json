@@ -1,0 +1,196 @@
+{
+    "name": "drupal-composer/drupal-project",
+    "description": "Project template for Drupal 8 projects with composer",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "billboardjs/billboard",
+                "version": "1.6.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "billboard"
+                },
+                "dist": {
+                    "url": "https://github.com/naver/billboard.js/archive/1.6.2.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "d3v4/d3",
+                "version": "4.9.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "d3v4"
+                },
+                "dist": {
+                    "url": "https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "google/charts",
+                "version": "45",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "google_charts"
+                },
+                "dist": {
+                    "url": "https://www.gstatic.com/charts/loader.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=7.0.8",
+        "billboardjs/billboard": "1.6.2",
+        "composer/installers": "^1.8",
+        "cweagans/composer-patches": "^1.6.5",
+        "d3v4/d3": "4.9.1",
+        "drupal/admin_login_path": "^1.0",
+        "drupal/admin_toolbar": "^2.0",
+        "drupal/admin_toolbar_mediteran": "^1.2",
+        "drupal/age_field_formatter": "^2.1",
+        "drupal/auto_entitylabel": "^3.0@beta",
+        "drupal/charts": "^3.1",
+        "drupal/coffee": "^1.0@beta",
+        "drupal/coffee_mediteran": "^1.0",
+        "drupal/conditional_fields": "^1.0@alpha",
+        "drupal/config_split": "1.x-dev",
+        "drupal/console": "^1.0.2",
+        "drupal/contact_storage": "^1.0",
+        "drupal/core": "^8.8.0",
+        "drupal/core-composer-scaffold": "^8.8.0",
+        "drupal/ctools": "^3.2",
+        "drupal/devel": "^2.1",
+        "drupal/disable_html5_validation": "^1.1",
+        "drupal/editor_advanced_link": "^1.6",
+        "drupal/elasticsearch_connector": "^7.0@alpha",
+        "drupal/entity_limit": "2.x-dev",
+        "drupal/eva": "^2.0",
+        "drupal/extra_field": "^1.1",
+        "drupal/facets": "^1.4",
+        "drupal/field_group": "^3.0",
+        "drupal/geolocation": "^3.0",
+        "drupal/google_analytics": "^3.0",
+        "drupal/group": "^1.0@RC",
+        "drupal/languagefield": "^1.5",
+        "drupal/linkit": "^5.0",
+        "drupal/mail_login": "^1.0",
+        "drupal/mediteran": "^1.8",
+        "drupal/menu_link_attributes": "^1.0",
+        "drupal/metatag": "^1.11",
+        "drupal/minifyhtml": "^1.9",
+        "drupal/paragraphs": "^1.11",
+        "drupal/r4032login": "^1.1",
+        "drupal/realname": "^1.0@RC",
+        "drupal/recaptcha": "^2.5",
+        "drupal/redis": "^1.4",
+        "drupal/reg_confirm_email": "^1.1",
+        "drupal/search_api": "^1.15",
+        "drupal/sendgrid_integration": "^1.2",
+        "drupal/services": "^4.0@beta",
+        "drupal/status_messages": "^2.0",
+        "drupal/term_reference_tree": "^1.0@alpha",
+        "drupal/token": "^1.6",
+        "drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/username_policy": "^1.0",
+        "drupal/views_infinite_scroll": "^1.6",
+        "drush/drush": "^9.7.1 | ^10.0.0",
+        "google/charts": "45",
+        "topfloor/composer-cleanup-vcs-dirs": "^1.0",
+        "vlucas/phpdotenv": "^4.0",
+        "webflo/drupal-finder": "^1.0.0",
+        "zaporylie/composer-drupal-optimizations": "^1.0"
+    },
+    "require-dev": {
+        "drupal/core-dev": "^8.8.0"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": ["load.environment.php"]
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/geolocation": {
+                "Allow specify multiple subdomains in custom leaflet maps titles layers": "patches/custom_title_leaflet_layer.patch"
+            },
+            "drupal/elasticsearch_connector": {
+                "Allow geo_point and geosearch in elasticsearch": "patches/geoposition_elasticsearch_patch.patch"
+            },
+            "drupal/username_policy": {
+                "The username is already taken (https://www.drupal.org/project/username_policy/issues/3076816)": "https://www.drupal.org/files/issues/2019-12-20/username_policy_default_username_patch_0.patch"
+            },
+            "drupal/field_group": {
+                "Field Group Label are not translating (https://www.drupal.org/project/field_group/issues/3111107)": "https://www.drupal.org/files/issues/2020-03-03/field_group_fix-translations_label_description.patch"
+            }
+        }
+    }
+}

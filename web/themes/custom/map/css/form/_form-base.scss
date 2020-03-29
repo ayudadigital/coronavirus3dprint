@@ -1,0 +1,38 @@
+form{
+  .field-group-tab{
+
+    &.form-wrapper{
+      > .details-wrapper{
+        padding: 20px;
+      }
+      > summary{
+        padding: 10px;
+      }
+    }
+  }
+
+  #edit-timezone{
+    padding: 0;
+    summary{
+      display: none;
+    }
+  }
+
+  select.form-select{
+    max-width: 100%;
+    min-width: 100px;
+  }
+
+  .field--type-language-field{
+    .tabledrag-toggle-weight-wrapper{
+      display: none;
+    }
+    .draggable{
+      .field-multiple-drag{
+        display: none;
+      }
+    }
+  }
+
+}
+

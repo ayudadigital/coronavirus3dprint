@@ -1,0 +1,308 @@
+/**
+ * Tab
+ *
+ */
+.tabs__tab {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;  /* 1 */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tabs__tab:hover,
+.tabs__tab:focus {
+  background-color: #f9f9f9;
+}
+li.tabs__tab {
+  display: block;
+  padding: 0;
+}
+/* This is required to win over specifity of [dir="rtl"] .tabs__tab */
+[dir="rtl"] li.tabs__tab {
+  padding-left: 0;
+  padding-right: 0;
+}
+li.tabs__tab a {
+  display: flex;
+  padding: 10px 20px; /* LTR */
+}
+
+.tabs a:hover,
+.tabs a:focus {
+  text-decoration: none;
+}
+
+/* Primary tabs */
+.tabs.primary {
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+.tabs.primary .tabs__tab .is-active {
+  z-index: 15;
+  background-color: white;
+}
+
+.tabs__trigger {
+  display: none;
+}
+
+/* JS dependent styling */
+
+.is-collapse-enabled .tabs__tab a {
+  background: white;
+}
+
+.is-collapse-enabled .tabs__trigger {
+  box-sizing: content-box;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  right: 0; /* LTR */
+  top: 0;
+  left: auto; /* LTR */
+  width: 25%;
+  padding-right: 0;
+  padding-left: 0;
+  border-left: 0; /* LTR */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 45px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #0678be;
+}
+.is-collapse-enabled .tabs__trigger:focus {
+  outline: transparent;
+}
+[dir="rtl"] .is-collapse-enabled .tabs__trigger {
+  right: auto;
+  left: 0;
+}
+.is-collapse-enabled .tabs {
+  padding-top: 45px;
+  max-height: 0;
+}
+.tabs.is-open {
+  max-height: 999em;
+  padding-bottom: 0;
+}
+.is-collapse-enabled .tabs__tab.is-active {
+  position: absolute;
+  top: 0;
+  left: 0; /* LTR */
+  width: 75%;
+  border-bottom: 0;
+}
+[dir="rtl"] .is-collapse-enabled .tabs__tab.is-active {
+  left: auto;
+  right: 0;
+}
+.is-collapse-enabled .tabs.primary a.is-active:before {
+  content: none;
+}
+.is-open .tabs__tab.is-active {
+  border-color: #a6a6a6;
+  background-color: #fff;
+  color: #004f80;
+}
+
+/* Styles for the horizontal state always take priority */
+.is-horizontal .tabs {
+  max-height: none;
+  padding-top: 0;
+  overflow: visible;
+}
+.is-horizontal .tabs__tab {
+  float: left; /* LTR */
+  height: auto;
+  width: auto;
+  margin: 0;
+  text-align: center;
+  border-bottom-color: #a6a6a6;
+}
+[dir="rtl"] .is-horizontal .tabs__tab {
+  float: right;
+  /* This is required to win over specifity of [dir="rtl"] .tabs > li */
+  margin-left: 0;
+}
+.is-horizontal .tabs__tab + .tabs__tab {
+  margin-left: 0; /* LTR */
+}
+[dir="rtl"] .is-horizontal .tabs__tab + .tabs__tab {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Override the states above */
+.is-horizontal .tabs__tab.is-active,
+.is-horizontal .tabs.primary .tabs__tab.is-active,
+[dir="rtl"] .is-horizontal .tabs.primary .tabs__tab.is-active {
+  position: relative;
+  width: auto;
+  top: 0;
+  border-bottom: 0;
+  margin: 0;
+  background: white;
+}
+.is-horizontal .tabs.primary a {
+  background-image: none;
+}
+.is-horizontal .tabs__trigger {
+  display: none;
+}
+
+/* Secondary tabs */
+.tabs.secondary {
+  display: block;
+  margin: 16px 0 0 0;
+  padding: 0;
+}
+.tabs.secondary .tabs__tab {
+  display: block;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: border-color 0.2s, background-color 0.2s;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* This is required to win over specificity of [dir="rtl"] .tabs.secondary .tabs__tab */
+[dir="rtl"] .views-displays .tabs.secondary li,
+[dir="rtl"] .views-displays .tabs.secondary li.is-active {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tabs.secondary .tabs__tab.is-active {
+  color: #0678be;
+  border-left: 2px solid #0678be; /* LTR */
+  margin-left: -2px; /* LTR */
+}
+[dir="rtl"] .tabs.secondary .tabs__tab.is-active {
+  border-left: none;
+  border-right: 2px solid #0678be;
+  margin-right: -2px;
+  margin-left: 0;
+}
+/* This is required to win over specificity of [dir="rtl"] .tabs.secondary .tabs__tab.is-active */
+[dir="rtl"] .views-displays .tabs.secondary li.is-active {
+  border: 0 none;
+  padding-right: 0;
+}
+.tabs.secondary .tabs__tab:hover,
+.tabs.secondary .tabs__tab:focus {
+  background: none;
+}
+
+/* This is required to win over specificity of [dir="rtl"] .tabs.secondary .tabs__tab:hover */
+[dir="rtl"] .views-displays .tabs li.tabs__tab:hover {
+  border: 0 none;
+  padding-right: 0;
+}
+.tabs.secondary a {
+  background-color: transparent;
+  padding: 5px 20px;
+  text-decoration: none;
+}
+
+/* This is required to win over specificity of [dir="rtl"] .tabs.secondary a */
+[dir="rtl"] .views-displays .tabs.secondary a {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.tabs.secondary .is-active a {
+  color: #0678be;
+}
+
+/* Styles for the horizontal state */
+.is-horizontal .tabs.secondary .tabs__tab {
+  background: none;
+  float: left; /* LTR */
+  position: relative;
+  top: 0;
+  z-index: 15;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 2px solid transparent;
+  border-left: 1px solid transparent; /* LTR */
+  border-right-color: transparent; /* LTR */
+  border-top: 0;
+  padding: 0;
+}
+
+.is-horizontal .tabs.secondary .tabs__tab:first-child {
+  margin-left: 0;
+}
+/**
+ * 1. This is required to win over specifity of
+ *      [dir="rtl"] .tabs.secondary .tabs__tab:hover,
+ *      [dir="rtl"] .tabs.secondary .tabs__tab:focus
+ */
+[dir="rtl"] .is-horizontal .tabs.secondary .tabs__tab {
+  float: right;
+  border-right: 1px solid transparent;
+  border-left-color: transparent;
+  padding-right: 0; /* 1 */
+}
+.is-horizontal .tabs.secondary .tabs__tab.is-active {
+  border-bottom-color: #0678be;
+}
+.is-horizontal .tabs.secondary .tabs__tab:hover,
+.is-horizontal .tabs.secondary .tabs__tab:focus {
+  border-bottom-color: #63a4cc;
+}
+
+/* ui tabs */
+
+.ui-tabs fieldset:not(.fieldgroup) {
+  background-color: white;
+  margin: 0 0 20px 0;
+  padding: 55px 0 0 0;
+}
+
+.ui-tabs .ui-tabs-panel {
+  padding: 20px 0 0 0;
+}
+
+.ui-tabs .ui-tabs-nav {
+  border-bottom: 0;
+  padding: 0;
+  background: 0;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  padding-bottom: 0;
+  background: none;
+  border-bottom: 2px solid #0678be;
+  border-radius: 0;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active:hover,
+.ui-tabs .ui-tabs-nav li:hover {
+  border-bottom: 2px solid #63a4cc;
+  background: none;
+  border-radius: 0;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  padding: 0;
+  border-radius: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 2px solid transparent;
+}
+
+.ui-tabs .ui-tabs-nav li:first-child {
+  margin-left: 0;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+  padding: 10px 20px;
+  line-height: 1.8;
+  display: flex;
+  border-radius: 0;
+}

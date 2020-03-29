@@ -1,0 +1,9 @@
+favicon:
+  mimetype: image/x-icon
+  path: favicon.ico
+  url: ''
+  use_default: true
+features:
+  favicon: true
+_core:
+  default_config_hash: 8CRq6KpqEnxkTpKTAX7YnWF3hy29K5vKYY6ZJddvqGQ

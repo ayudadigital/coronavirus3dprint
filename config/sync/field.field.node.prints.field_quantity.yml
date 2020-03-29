@@ -1,0 +1,23 @@
+uuid: 1a85649e-ee37-4360-9cc2-4d58f3ac8c1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_quantity
+    - node.type.prints
+id: node.prints.field_quantity
+field_name: field_quantity
+entity_type: node
+bundle: prints
+label: Quantity
+description: 'How many pieces have you made?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install file for the UserName Policy module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function username_policy_uninstall() {
+ Drupal::configFactory()->getEditable('username_policy.usernamepatternconfig')->delete();
+}

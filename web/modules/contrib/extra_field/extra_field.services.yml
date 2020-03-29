@@ -1,0 +1,4 @@
+services:
+  plugin.manager.extra_field_display:
+    class: Drupal\extra_field\Plugin\ExtraFieldDisplayManager
+    arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@entity_type.manager']

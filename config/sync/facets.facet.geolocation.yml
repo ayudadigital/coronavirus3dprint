@@ -1,0 +1,38 @@
+uuid: 22e73ab9-2c89-4399-8ff6-43fc87772376
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.services
+    - views.view.map
+  module:
+    - search_api
+id: geolocation
+name: Location
+url_alias: geolocation
+weight: 0
+min_count: 1
+show_only_one_result: false
+field_identifier: geolocation
+facet_source_id: 'search_api:views_page__map__page_1'
+widget:
+  type: map_widget
+  config:
+    show_numbers: false
+query_operator: and
+use_hierarchy: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false

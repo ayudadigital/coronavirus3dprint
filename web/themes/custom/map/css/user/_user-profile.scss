@@ -1,0 +1,122 @@
+article.profile{
+
+  .field--name-user-picture {
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .field--type-language-field {
+    .field__item {
+      display: inline-block;
+
+      p {
+        display: inline-block;
+        margin: 0;
+      }
+
+      &:after {
+        content: ", ";
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+
+  &.profile--view-mode-compact {
+    text-align: center;
+    margin-bottom: 30px;
+    .group_content {
+      display: inline-block;
+      vertical-align: middle;
+
+      .group_content_header, .group_content_middle, .group_content_bottom {
+        .field, .form-item {
+          display: inline-block;
+          margin-right: 20px;
+          margin-bottom: 5px;
+        }
+        .form-item {
+          h4 {
+            font-weight: normal;
+            display: inline-block;
+          }
+        }
+      }
+
+      .group_content_header {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 2.2em;
+        .field {
+          margin-right: 6px;
+        }
+      }
+    }
+
+    .field--name-user-picture{
+      width: 25%;
+      min-width: 150px;
+      max-width: 250px;
+      margin-right: 30px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &.profile--view-mode-teaser{
+    .field--name-user-picture{
+      width: 25%;
+      max-width: 250px;
+      margin-right: 30px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .field--name-field-name{
+      display: inline-block;
+      font-size: 1.5em;
+    }
+  }
+
+  &.profile--view-mode-full{
+    margin-top: 40px;
+    > .left{
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 -4px;
+      margin-bottom: 30px;
+      width: 100%;
+      @include tablet-sm {
+        width: 66%;
+      }
+      @include desktop-lg {
+        width: 70%;
+      }
+      @include desktop-xl {
+        width: 75%;
+      }
+      .field--name-user-picture{
+        max-width: 300px;
+      }
+    }
+    > .right{
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+      @include tablet-sm {
+        width: 33%;
+      }
+      @include desktop-lg {
+        width: 30%;
+      }
+      @include desktop-xl {
+        width: 25%;
+      }
+    }
+  }
+
+}

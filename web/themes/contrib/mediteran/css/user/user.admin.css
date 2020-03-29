@@ -1,0 +1,34 @@
+/**
+ * @file
+ * Admin styling for the User module.
+ */
+
+/* Permissions page */
+
+.permissions a {
+  font-weight: 700;
+}
+
+.permissions .module {
+  font-weight: 700;
+  color: #0678be;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.permissions thead th.checkbox,
+.sticky-header thead th.checkbox {
+  text-align: center;
+  line-height: 1.2;
+  min-width: 130px;
+}
+
+.permissions tbody td.checkbox div.checkbox {
+  text-align: center;
+}
+
+/* Account settings */
+.user-admin-settings .details-description {
+  font-size: 0.85em;
+  padding-bottom: 0.5em;
+}

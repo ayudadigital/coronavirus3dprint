@@ -1,0 +1,11 @@
+name: Extra Field
+type: module
+description: 'Provides a plugin type for extra fields that look like real fields, but do not store data.'
+core: 8.x
+dependencies:
+  - drupal:field
+
+# Information added by Drupal.org packaging script on 2019-11-24
+version: '8.x-1.1'
+project: 'extra_field'
+datestamp: 1574620395

@@ -1,0 +1,21 @@
+uuid: cdb92197-4b9e-4c46-b7ec-d984951ff0c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_description
+    - group.type.maker_group
+  module:
+    - text
+id: group.maker_group.field_description
+field_name: field_description
+entity_type: group
+bundle: maker_group
+label: Description
+description: "Explain what the group is about. What will you try to do or what are you doing. \r\n<b>And above all do not forget to explain how to enter the group of telegram, whatsapp, forum or whatever you use</b>"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

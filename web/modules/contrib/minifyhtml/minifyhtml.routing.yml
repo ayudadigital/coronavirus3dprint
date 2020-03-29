@@ -1,0 +1,7 @@
+minifyhtml.config:
+  path: /admin/config/development/performance/minifyhtml
+  defaults:
+    _form: \Drupal\minifyhtml\Form\SettingsForm
+    _title: MinifyHTML Settings
+  requirements:
+    _permission: administer minifyhtml

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Contains admin_login_path.install.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function admin_login_path_install() {
+  // Allow anon users to use the admin theme.
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, ['view the administration theme']);
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, ['view the administration theme']);
+}

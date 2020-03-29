@@ -1,0 +1,12 @@
+name: 'Coffee Mediteran'
+# core: 8.x
+description: 'Improves and fixes minor UI issues in coffee module based on Mediteran admin theme'
+package: 'administration'
+type: module
+dependencies:
+  - coffee:coffee
+# Information added by Drupal.org packaging script on 2019-03-22
+version: '8.x-1.0'
+core: '8.x'
+project: 'coffee_mediteran'
+datestamp: 1553270295

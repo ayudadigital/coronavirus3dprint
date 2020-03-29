@@ -1,0 +1,7 @@
+favicon:
+  mimetype: image/x-icon
+  path: 'favicon.ico'
+  url: ''
+  use_default: true
+features:
+  favicon: true

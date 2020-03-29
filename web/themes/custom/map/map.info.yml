@@ -1,0 +1,23 @@
+core: 8.x
+type: theme
+base theme: mediteran
+
+name: 'Map'
+description: 'Subtheme from Mediteran theme'
+package: 'Mediteran'
+
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+  sidebar_second: 'Second sidebar'
+
+libraries:
+  - 'map/global-styling'
+  - 'map/toggle-search-filters'

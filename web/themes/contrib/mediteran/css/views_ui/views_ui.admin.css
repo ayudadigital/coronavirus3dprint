@@ -1,0 +1,239 @@
+/**
+ * @file
+ * The .admin.css file is intended to only contain positioning and size
+ * declarations. For example: display, position, float, clear, and overflow.
+ */
+
+.views-admin ul,
+.views-admin menu,
+.views-admin dir {
+  padding: 0;
+}
+.views-admin pre {
+  margin-bottom: 0;
+  margin-top: 0;
+  white-space: pre-wrap;
+}
+.views-left-25 {
+  float: left; /* LTR */
+  width: 25%;
+}
+[dir="rtl"] .views-left-25 {
+  float: right;
+}
+.views-left-30 {
+  float: left; /* LTR */
+  width: 30%;
+}
+[dir="rtl"] .views-left-30 {
+  float: right;
+}
+.views-left-40 {
+  float: left; /* LTR */
+  width: 40%;
+}
+[dir="rtl"] .views-left-40 {
+  float: right;
+}
+.views-left-50 {
+  float: left; /* LTR */
+  width: 50%;
+}
+[dir="rtl"] .views-left-50 {
+  float: right;
+}
+.views-left-75 {
+  float: left; /* LTR */
+  width: 75%;
+}
+[dir="rtl"] .views-left-75 {
+  float: right;
+}
+.views-right-50 {
+  float: right; /* LTR */
+  width: 50%;
+}
+[dir="rtl"] .views-right-50 {
+  float: left;
+}
+.views-right-60 {
+  float: right; /* LTR */
+  width: 60%;
+}
+[dir="rtl"] .views-right-60 {
+  float: left;
+}
+.views-right-70 {
+  float: right; /* LTR */
+  width: 70%;
+}
+[dir="rtl"] .views-right-70 {
+  float: left;
+}
+.views-group-box .form-item {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.views-group-box {
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.views-group-box:last-child {
+  padding-right: 0;
+}
+
+.views-build-group {
+  margin-top: 20px;
+}
+
+/*
+ * The attachment details section, its tabs for each section and the buttons
+ * to add a new section
+ */
+.views-displays {
+  clear: both;
+}
+
+/* The tabs that switch between sections */
+.views-displays .tabs {
+  border-bottom: 0 none;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+}
+.views-displays .tabs > li {
+  padding: 0;
+}
+
+.views-displays .tabs .open > a {
+  position: relative;
+  z-index: 51;
+}
+.views-displays .tabs .views-display-deleted-link {
+  text-decoration: line-through;
+}
+.views-display-deleted > details > summary,
+.views-display-deleted .details-wrapper > .views-ui-display-tab-bucket > *,
+.views-display-deleted .views-display-columns {
+  opacity: 0.25;
+}
+.views-display-disabled > details > summary,
+.views-display-disabled .details-wrapper > .views-ui-display-tab-bucket > *,
+.views-display-disabled .views-display-columns {
+  opacity: 0.5;
+}
+.views-display-tab .details-wrapper > .views-ui-display-tab-bucket .actions {
+  opacity: 1;
+}
+.views-displays .tabs .add {
+  position: relative;
+}
+.views-displays .tabs .action-list {
+  left: 0; /* LTR */
+  margin: 0;
+  position: absolute;
+  top: 27px;
+  z-index: 51;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .views-displays .tabs .action-list {
+    width: auto;
+  }
+}
+
+[dir="rtl"] .views-displays .tabs .action-list {
+  left: auto;
+  right: 0;
+}
+.views-displays .tabs .action-list li {
+  display: block;
+}
+
+.views-display-columns {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.views-display-columns .details-wrapper {
+  padding: 0;
+}
+.views-display-column {
+  box-sizing: border-box;
+}
+
+.views-display-column.second {
+  margin: 20px 0;
+}
+
+.views-display-column summary {
+  padding-left: 14px;
+}
+
+@media screen and (min-width: 1024px) {
+  .views-display-columns {
+    flex-direction: row;
+  }
+  .views-display-column.second {
+    margin: 0 20px;
+  }
+}
+@media screen and (min-width: 45em) { /* 720px */
+  .views-display-columns > * {
+    width: 100%;
+  }
+}
+
+.views-ui-dialog .scroll {
+  overflow: auto;
+  padding: 20px;
+}
+.views-filterable-options-controls {
+  display: none;
+}
+.views-ui-dialog .views-filterable-options-controls {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Don't let the messages overwhelm the modal */
+.views-ui-dialog .views-messages {
+  max-height: 200px;
+  overflow: auto;
+}
+.views-display-setting .label,
+.views-display-setting .views-ajax-link {
+  float: left; /* LTR */
+}
+[dir="rtl"] .views-display-setting .label,
+[dir="rtl"] .views-display-setting .views-ajax-link {
+  float: right;
+}
+.form-item-options-value-all {
+  display: none;
+}
+.js-only {
+  display: none;
+}
+html.js .js-only {
+  display: inherit;
+}
+html.js span.js-only {
+  display: inline;
+}
+
+.js .views-edit-view .dropbutton-wrapper {
+  width: 100%;
+}
+
+.js .views-edit-view .dropbutton-wrapper .dropbutton-widget {
+  position: absolute;
+  top: -30px;
+  right: 0;
+}

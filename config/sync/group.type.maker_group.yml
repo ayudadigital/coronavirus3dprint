@@ -1,0 +1,11 @@
+uuid: 29eeecd5-5f78-4360-b3e4-822a71be2545
+langcode: en
+status: true
+dependencies: {  }
+id: maker_group
+label: 'Maker Group'
+description: "Maker groups are local groups where several people come together to offer services to your closest community.\r\nPlease do not create new groups if there are already groups near you with the same theme."
+creator_membership: true
+creator_wizard: false
+creator_roles:
+  - maker_group-group_admin

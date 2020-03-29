@@ -1,0 +1,17 @@
+uuid: 0f52805c-70c1-467a-a3e5-39fbbf5d414e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+title: 'Mark old nodes as read'
+id: node_cron
+weight: 0
+module: node
+callback: node_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

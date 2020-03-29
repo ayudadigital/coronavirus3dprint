@@ -1,0 +1,72 @@
+/**
+ * @file
+ * Mediteran styles for the help component.
+ */
+
+.block-help {
+  padding: 0;
+  /* background-color: #eff9ff; */
+  background-size: 16px;
+  background-position: 16px 19px;
+  background-repeat: no-repeat;
+  /* background-image: url(../../images/icons/help_2.svg); */
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.block-help p,
+.block-help p a {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.block-help h2 {
+  margin-top: 0;
+}
+
+/* help section */
+
+.help-section ul {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .help-section .layout-column:nth-child(odd) ul {
+    padding: 0 10px 0 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .help-section ul {
+    padding: 0 10px 0 0;
+  }
+
+  .help-section .layout-column:last-child ul {
+    padding: 0;
+  }
+}
+
+.help-section ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.help-section ul li a {
+  display: flex;
+  background: #f5f5f5;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.help-section ul li {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.help-section ul li a:hover {
+  background: #eff9ff;
+}

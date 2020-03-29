@@ -1,0 +1,31 @@
+uuid: d02f3fa2-96cc-49b9-b05b-960302ef964c
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:text:f0431968-17fa-4843-aefe-de80c96f2c2c'
+  module:
+    - block_content
+    - system
+  theme:
+    - map
+id: addgroup
+theme: map
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:f0431968-17fa-4843-aefe-de80c96f2c2c'
+settings:
+  id: 'block_content:f0431968-17fa-4843-aefe-de80c96f2c2c'
+  label: 'Add Group'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /groups
+    negate: false
+    context_mapping: {  }

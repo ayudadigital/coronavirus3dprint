@@ -1,0 +1,76 @@
+uuid: 3e4ff0bc-1384-412c-b1ac-bba043f84a20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_age
+    - field.field.user.user.field_name
+    - field.field.user.user.field_sex
+    - field.field.user.user.field_spoken_languages
+    - field.field.user.user.user_picture
+  module:
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_right:
+      children:
+        - field_telegram_nickname
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: right
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Right
+    group_left:
+      children:
+        - extra_field_user_profile_compact
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: left
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Left
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  extra_field_user_profile_compact:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_age: true
+  field_name: true
+  field_sex: true
+  field_spoken_languages: true
+  langcode: true
+  linked_username: true
+  member_for: true
+  my_services_entity_view_1: true
+  private_message_link: true
+  realname: true
+  search_api_excerpt: true
+  user_picture: true

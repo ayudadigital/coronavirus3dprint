@@ -1,0 +1,29 @@
+uuid: c29e4916-64b1-4b44-b3d3-5b17d9f65799
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - map
+_core:
+  default_config_hash: y3GVIOjzxY2LBDS8YVElU7T_Ixuc_YDmRUJND6ZVrc0
+id: map_primary_local_tasks
+theme: map
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/register
+    negate: true
+    context_mapping: {  }

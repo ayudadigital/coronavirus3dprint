@@ -1,0 +1,15 @@
+name: Highcharts
+type: module
+description: 'Charts module integration with Highcharts library.'
+package: Charts
+core: 8.x
+dependencies:
+  - charts:charts
+
+configure: charts_highcharts.settings
+
+
+# Information added by Drupal.org packaging script on 2019-10-12
+version: '8.x-3.1'
+project: 'charts'
+datestamp: 1570850586

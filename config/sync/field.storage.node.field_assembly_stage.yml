@@ -1,0 +1,27 @@
+uuid: 1ba9d35d-f1c0-4014-8dfe-390e02b8d5f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_assembly_stage
+field_name: field_assembly_stage
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: finished
+      label: 'Finished (ready to use)'
+    -
+      value: has_to_be_mounted
+      label: 'Has to be mounted'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

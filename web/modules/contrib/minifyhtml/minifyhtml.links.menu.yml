@@ -1,0 +1,5 @@
+minifyhtml.config:
+  title: MinifyHTML settings
+  description: Settings for the Minify HTML module.
+  route_name: minifyhtml.config
+  parent: system.performance_settings

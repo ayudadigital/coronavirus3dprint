@@ -1,0 +1,210 @@
+/**
+ * @file
+ * Mediteran styles for Tables.
+ */
+
+table {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.responsive-enabled,
+.preview-section table,
+.views-table {
+  display: flow-root;
+  overflow-x: scroll;
+}
+
+@media screen and (min-width: 1025px) {
+  form table,
+  .responsive-enabled,
+  .preview-section table,
+  .views-table {
+    display: table;
+    overflow-x: auto;
+  }
+}
+
+caption {
+  text-align: left; /* LTR */
+}
+[dir="rtl"] caption {
+  text-align: right;
+}
+th {
+  text-align: left; /* LTR */
+  padding: 10px 15px;
+}
+[dir="rtl"] th {
+  text-align: right;
+}
+thead th {
+  background: #f5f5f5;
+  border: none;
+  color: #909090;
+  font-weight: 400;
+}
+
+thead th a {
+  font-weight: 400;
+  color: #0678be;
+}
+
+thead th a:hover {
+  text-decoration: underline;
+}
+
+thead tr {
+  border: none;
+}
+
+tr {
+  border-bottom: 1px solid #e6e4df;
+}
+
+tbody tr:first-child {
+  border-top: 1px solid #e6e4df;
+}
+
+tbody tr:hover,
+tbody tr:focus {
+  background: #f7fcff;
+}
+
+tbody tr.color-warning:hover,
+tbody tr.color-warning:focus,
+.drag tbody tr:hover,
+.drag tbody tr:focus {
+  background: #fdf8ed;
+}
+tbody tr.color-error:hover,
+tbody tr.color-error:focus {
+  background: #fcf4f2;
+}
+
+table.no-highlight tr.selected td {
+  background: transparent;
+}
+
+td,
+th {
+  vertical-align: middle;
+}
+td {
+  padding: 20px 15px;
+  line-height: 1.6;
+  text-align: left; /* LTR */
+}
+[dir="rtl"] td {
+  text-align: right;
+}
+th > a {
+  position: relative;
+  display: block;
+}
+
+th.is-active > a {
+  color: #004875;
+}
+
+thead th.is-active {
+  background: #fff;
+  border-bottom: 1px solid white;
+  border-top: 1px solid #e6e4df;
+  border-left: 1px solid #e6e4df;
+  border-right: 1px solid #e6e4df;
+}
+
+th.is-active > a {
+  color: #333;
+}
+
+th > a:hover,
+th > a:focus,
+th.is-active > a:hover,
+th.is-active > a:focus {
+  color: #0678be;
+  text-decoration: none;
+}
+
+td .item-list ul {
+  margin: 0;
+}
+/* This is required to win over specificity of [dir="rtl"] .item-list ul */
+[dir="rtl"] td .item-list ul {
+  margin: 0;
+}
+td.is-active {
+  background: none;
+}
+
+td.views-field-node-bulk-form {
+  width: 1px;
+  min-width: 1px;
+}
+
+/* Force browsers to calculate the width of a 'select all' <th> element. */
+th.select-all {
+  width: 1px;
+  min-width: 1px;
+}
+
+@media screen and (min-width: 1024px) {
+  th,
+  td {
+    width: auto;
+  }
+
+  table {
+    display: table;
+    overflow-x: auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  th,
+  td {
+    min-width: 150px;
+  }
+}
+/**
+ * Captions.
+ */
+.caption {
+  margin-bottom: 1.2em;
+}
+
+/**
+ * Responsive tables.
+ */
+@media screen and (max-width: 640px) {
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}
+
+td.menu-label {
+  font-weight: 700;
+}
+
+.tableresponsive-toggle {
+  margin: 20px 0;
+  font-size: 12px;
+}
+
+/* webform element plugin */
+.webform-element-plugin th,
+.webform-element-plugin td {
+  min-width: 150px;
+  vertical-align: top;
+}

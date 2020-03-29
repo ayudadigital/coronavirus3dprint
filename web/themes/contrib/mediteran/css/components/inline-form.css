@@ -1,0 +1,82 @@
+/**
+ * @file
+ * Visual styles for inline forms.
+ */
+
+.form--inline {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.form--inline .form-item {
+  float: left; /* LTR */
+  margin-right: 0; /* LTR */
+}
+[dir="rtl"] .form--inline .form-item {
+  float: right;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* This is required to win over specificity of [dir="rtl"] .form--inline .form-item */
+[dir="rtl"] .views-filterable-options-controls .form-item {
+  margin-right: 2%;
+}
+.form--inline .form-item-separator {
+  margin-top: 2.3em;
+  margin-right: 1em; /* LTR */
+  margin-left: 0.5em; /* LTR */
+}
+[dir="rtl"] .form--inline .form-item-separator {
+  margin-right: 0.5em;
+  margin-left: 1em;
+}
+.form--inline .form-actions {
+  display: inline-flex;
+  margin-top: 0;
+  margin-bottom: 20px;
+  align-self: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form--inline .form-actions .button {
+  margin-top: 20px;
+  margin-left: 0;
+  width: 100%;
+}
+
+.form--inline .form-item-separator {
+  margin: 0 0 20px 0;
+}
+
+@media screen and (min-width: 640px) {
+  .form--inline .form-item {
+    margin-right: 20px; /* LTR */
+  }
+  .form--inline .form-item:last-child {
+    margin-right: 0;
+  }
+  [dir="rtl"] .form--inline .form-item {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  [dir="rtl"] .form--inline .form-item:last-child {
+    margin-left: 0;
+  }
+  .form--inline .form-actions {
+    margin-top: 30px;
+    margin-bottom: 0;
+    flex-direction: row;
+    width: auto;
+  }
+  .form--inline .form-actions .button {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .form--inline .form-actions .button:first-child {
+    margin-left: 0;
+  }
+}

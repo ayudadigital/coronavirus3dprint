@@ -1,0 +1,16 @@
+Index: modules/geolocation_leaflet/js/MapFeature/geolocation-custom-tile-layer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- modules/geolocation_leaflet/js/MapFeature/geolocation-custom-tile-layer.js	(date 1582671045000)
++++ modules/geolocation_leaflet/js/MapFeature/geolocation-custom-tile-layer.js	(date 1582671470000)
+@@ -39,7 +39,7 @@
+           map.tileLayer.remove();
+           map.tileLayer = L.tileLayer(featureSettings.tileLayerUrl, {
+             attribution: featureSettings.tileLayerAttribution,
+-            subdomains: featureSettings.tileLayerSubdomains,
++            subdomains: featureSettings.tileLayerSubdomains.split(","),
+             maxZoom: featureSettings.tileLayerZoom
+           }).addTo(map.leafletMap);
+ 

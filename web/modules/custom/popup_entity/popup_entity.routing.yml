@@ -1,0 +1,57 @@
+entity.popup_entity_popup.canonical:
+  path: '/popup_entity_popup/{popup_entity_popup}'
+  defaults:
+    _entity_view: 'popup_entity_popup'
+    _title: 'Popup content'
+  requirements:
+    _entity_access: 'popup_entity_popup.view'
+
+popup_entity.popup_add:
+  path: '/popup_entity_popup/add'
+  defaults:
+    _entity_form: popup_entity_popup.default
+    _title: 'Add popup'
+  requirements:
+    _entity_create_access: 'popup_entity_popup'
+  options:
+    _admin_route: TRUE
+
+entity.popup_entity_popup.edit_form:
+  path: '/popup_entity_popup/{popup_entity_popup}/edit'
+  defaults:
+    _entity_form: popup_entity_popup.default
+    _title: 'Edit popup'
+  requirements:
+    _entity_access: 'popup_entity_popup.update'
+  options:
+    _admin_route: TRUE
+
+entity.popup_entity_popup.delete_form:
+  path: '/popup/{popup_entity_popup}/delete'
+  defaults:
+    _entity_form: popup_entity_popup.delete
+    _title: 'Delete popup'
+  requirements:
+    _entity_access: 'popup_entity_popup.delete'
+  options:
+    _admin_route: TRUE
+
+popup_entity.popup_settings:
+  path: '/admin/structure/popup_entity_popup_settings'
+  defaults:
+    _form: '\Drupal\popup_entity\Form\PopupSettingsForm'
+    _title: 'Popup settings'
+  requirements:
+    _permission: 'administer popup entity'
+  options:
+    _admin_route: TRUE
+
+entity.popup_entity_popup.collection:
+  path: '/admin/content/popup_entity_popup'
+  defaults:
+    _entity_list: 'popup_entity_popup'
+    _title: 'Popups'
+  requirements:
+    _permission: 'administer popup entity'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Contains admin_login_path.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function admin_login_path_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the admin_login_path module.
+    case 'help.page.admin_login_path':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A simple module that routes the login pages to use the admin (theme) path.') . '</p>';
+      $output .= '<p>' . t('There is no UI for this module, enabling it will alter the routes for user/login, user/register, and user/password.') . '</p>';
+      $output .= '<p>' . t('This module grants access to anonymous users to view the administration theme.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

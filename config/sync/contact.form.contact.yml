@@ -1,0 +1,12 @@
+uuid: d320eb02-e4f5-4dbc-bee7-671b5451c938
+langcode: en
+status: true
+dependencies: {  }
+id: contact
+label: Contact
+recipients:
+  - robertmenetray@gmail.com
+reply: ''
+weight: 0
+message: "Thank you for contacting us.\r\nWhen we can we will reply"
+redirect: /

@@ -1,0 +1,22 @@
+{% extends 'page.html.twig' %}
+
+{% block header %}
+  <header role="banner" style="text-align: center">
+    {% if site_name %}
+      <h1 class="page-title">{{ site_name }}</h1>
+    {% endif %}
+    {% if page.header %}
+      {{ page.header }}
+    {% endif %}
+  </header>
+{% endblock %}
+
+{% block main %}
+  <main role="main">
+    {% if title %}
+      <h1>{{ title }}</h1>
+    {% endif %}
+    {{ page.highlighted }}
+    {{ page.content }}
+  </main>
+{% endblock %}

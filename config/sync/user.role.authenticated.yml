@@ -1,0 +1,36 @@
+uuid: 936983ed-3d07-4a3a-8810-9e0e628757a8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Usuario autenticado'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'create maker_group group'
+  - 'create prints content'
+  - 'create services content'
+  - 'delete own prints content'
+  - 'delete own services content'
+  - 'edit own prints content'
+  - 'edit own services content'
+  - 'flag favorites'
+  - 'opt-in or out of google analytics tracking'
+  - 'post comments'
+  - 'search content'
+  - 'skip CAPTCHA'
+  - 'skip comment approval'
+  - 'unflag favorites'
+  - 'use private messaging system'
+  - 'use text format basic_html'
+  - 'view calendar data for any availability_daily event'
+  - 'view calendar data for any availability_hourly event'
+  - 'view commerce_product'
+  - 'view own unpublished content'
+  - 'view the administration theme'

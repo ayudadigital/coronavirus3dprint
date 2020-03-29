@@ -1,0 +1,19 @@
+uuid: a678e3fa-a834-4d5c-b49a-e1ef03f02da2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pq_mEIu_B4widZN7Ap81iCJSjShFFdcL0jEiCi8VrDk
+id: anonymous
+label: 'Usuario anónimo'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'view calendar data for any availability_daily event'
+  - 'view calendar data for any availability_hourly event'
+  - 'view commerce_product'
+  - 'view the administration theme'

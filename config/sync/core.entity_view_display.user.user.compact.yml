@@ -1,0 +1,159 @@
+uuid: ea13f04a-0c67-474e-b186-8baf19461fdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_age
+    - field.field.user.user.field_name
+    - field.field.user.user.field_sex
+    - field.field.user.user.field_spoken_languages
+    - field.field.user.user.user_picture
+    - image.style.user_profile
+  module:
+    - age_field_formatter
+    - field_group
+    - image
+    - languagefield
+    - options
+    - user
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_content_header
+        - group_content_middle
+        - group_content_bottom
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: group_content
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Content
+    group_content_header:
+      children:
+        - field_name
+        - field_surname
+      parent_name: group_content
+      weight: 8
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: group_content_header
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Header'
+    group_content_middle:
+      children:
+        - field_sex
+        - field_age
+      parent_name: group_content
+      weight: 9
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: group_content_middle
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content middle'
+    group_content_bottom:
+      children:
+        - field_spoken_languages
+      parent_name: group_content
+      weight: 10
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: group_content_bottom
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Bottom'
+_core:
+  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  field_age:
+    type: age_field_formatter
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      age_format: age_only
+      year_suffix: '1'
+      date_format: 'Y-m-d\TH:i:s'
+    third_party_settings: {  }
+  field_name:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_sex:
+    type: list_default
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_spoken_languages:
+    type: languagefield_default
+    weight: 7
+    region: content
+    label: above
+    settings:
+      format:
+        name_native: name_native
+        iso: 0
+        name: 0
+      link_to_entity: 0
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: user_profile
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  extra_field_user_profile_compact: true
+  langcode: true
+  linked_username: true
+  member_for: true
+  my_services_entity_view_1: true
+  private_message_link: true
+  realname: true
+  search_api_excerpt: true

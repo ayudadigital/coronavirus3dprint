@@ -1,0 +1,21 @@
+uuid: 2f130a92-7b52-41aa-9ef9-30500d6f88d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_spoken_languages
+  module:
+    - languagefield
+    - user
+id: user.user.field_spoken_languages
+field_name: field_spoken_languages
+entity_type: user
+bundle: user
+label: 'Spoken languages'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: language_field

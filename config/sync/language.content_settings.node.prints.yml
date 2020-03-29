@@ -1,0 +1,11 @@
+uuid: 5cc45a00-09b7-4a44-bd38-ee5482d92982
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.prints
+id: node.prints
+target_entity_type_id: node
+target_bundle: prints
+default_langcode: site_default
+language_alterable: false

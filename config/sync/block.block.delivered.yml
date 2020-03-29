@@ -1,0 +1,23 @@
+uuid: 241f4179-0bc2-451d-b59c-710ebedb6384
+langcode: es
+status: true
+dependencies:
+  config:
+    - facets.facet.delivered
+  module:
+    - facets
+  theme:
+    - map
+id: delivered
+theme: map
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:delivered'
+settings:
+  id: 'facet_block:delivered'
+  label: 'Delivered?'
+  provider: facets
+  label_display: '0'
+  block_id: delivered
+visibility: {  }

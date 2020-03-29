@@ -1,0 +1,5 @@
+coffee:
+  version: VERSION
+  css:
+    theme:
+      css/coffee.css: {}

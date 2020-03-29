@@ -1,0 +1,59 @@
+/**
+ * @file
+ * Visual styles for progress bar.
+ *
+ * @see progress.js
+ */
+
+.progress__track {
+  background-color: #f5f5f5;
+}
+.progress__bar {
+  background: #057ec9;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), -webkit-linear-gradient(left top, #008ce3 0%, #008ce3 25%, #0678be 25%, #0678be 50%, #008ce3 50%, #008ce3 75%, #008ce3 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), linear-gradient(to right bottom, #008ce3 0%, #008ce3 25%, #0678be 25%, #0678be 50%, #008ce3 50%, #008ce3 75%, #008ce3 100%);
+  background-size: 40px 40px;
+  margin: 0;
+  padding: 0;
+  height: 16px;
+  animation: animate-stripes 3s linear infinite;
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+}
+[dir="rtl"] .progress__bar {
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+}
+
+/**
+ * Progress bar animations.
+ */
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, -80px 0;
+  }
+}
+
+@-ms-keyframes animate-stripes {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, -80px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, -80px 0;
+  }
+}

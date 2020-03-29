@@ -1,0 +1,101 @@
+/**
+ * @file
+ * Override of misc/vertical-tabs.css.
+ */
+
+.vertical-tabs {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+  background: #e7e7e7;
+}
+.vertical-tabs__menu {
+  float: left; /* LTR */
+  width: 280px;
+  margin: 0 -100% -1px 0; /* LTR */
+  padding: 0;
+  line-height: 1;
+}
+[dir="rtl"] .vertical-tabs__menu {
+  float: right;
+  margin: 0 0 -1px -100%;
+}
+.vertical-tabs__menu-item {
+  position: relative;
+}
+.vertical-tabs__menu-item.is-selected {
+  z-index: 1;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.vertical-tabs__menu-item:focus,
+.vertical-tabs__menu-item:active {
+  z-index: 2;
+}
+.vertical-tabs__menu-item a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+}
+.vertical-tabs__menu-item:last-child a {
+  border-bottom: 0;
+}
+.vertical-tabs__menu-item.is-selected a,
+.vertical-tabs__menu-item.is-selected a:hover,
+.vertical-tabs__menu-item a:focus {
+  background: #f5f5f5;
+}
+
+.vertical-tabs__menu-item a:hover {
+  background: #eeeeee;
+  text-decoration: none;
+}
+.vertical-tabs__menu-item a:focus {
+  outline: transparent;
+}
+.vertical-tabs__menu-item a:focus .vertical-tabs__menu-item-title {
+  text-decoration: underline;
+}
+.vertical-tabs__menu-item a:active .vertical-tabs__menu-item-title,
+.vertical-tabs__menu-item.is-selected a:focus .vertical-tabs__menu-item-title {
+  text-decoration: none;
+}
+.vertical-tabs__menu-item.is-selected a {
+  color: #0678be;
+  text-decoration: none;
+}
+
+.vertical-tabs__menu-item.is-selected a:hover,
+.vertical-tabs__menu-item.is-selected a:focus {
+  color: #0678be;
+}
+[data-vertical-tabs-panes] {
+  background-color: #f5f5f5;
+}
+.vertical-tabs__panes {
+  margin: 0 0 0 280px; /* LTR */
+  padding: 5px 15px;
+}
+[dir="rtl"] .vertical-tabs__panes {
+  margin: 0 280px 0 0;
+}
+.vertical-tabs__panes:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.vertical-tabs__pane {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.vertical-tabs__menu-item-summary {
+  display: block;
+  padding-top: 0.4em;
+  color: #333;
+  line-height: 1.5;
+}
+.vertical-tabs__pane > summary {
+  display: none;
+}

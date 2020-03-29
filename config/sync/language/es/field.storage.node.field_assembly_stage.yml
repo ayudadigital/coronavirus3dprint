@@ -1,0 +1,6 @@
+settings:
+  allowed_values:
+    -
+      label: 'Acabado (listo para usar)'
+    -
+      label: 'Se ha de montar'

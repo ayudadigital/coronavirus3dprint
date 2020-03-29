@@ -1,0 +1,49 @@
+.page-manager-wizard-actions ul.inline {
+  padding: 0;
+}
+
+.page-manager-wizard-tree>ul {
+  padding-bottom: 0;
+}
+
+.page-manager-wizard-tree li:last-child {
+  padding-bottom: .5em;
+}
+
+.page-manager-wizard-tree li {
+  padding-right: .5em;
+}
+
+.page-manager-wizard-tree li.current_variant a {
+  font-weight: 700;
+}
+
+.page-manager-wizard-tree label {
+  display: block;
+}
+
+.page-manager-wizard-tree li a {
+  display: block;
+}
+
+.page-manager-wizard-tree li:hover,
+.page-manager-wizard-tree li:focus {
+  background-color: #f7fcff;
+  text-decoration: none;
+}
+
+.page-manager-wizard-tree label {
+  margin: 0;
+}
+
+.page-manager-wizard-form-actions {
+  padding: 20px;
+  margin: 0;
+  position: fixed;
+  left: 0;
+  bottom:0;
+  background: white;
+  border-top: 1px solid #f5f5f5;
+  width: 100%;
+  z-index: 100;
+}

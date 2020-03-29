@@ -1,0 +1,164 @@
+<?php
+
+/**
+ * @file
+ * Contains username_policy.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+
+/**
+ * Implements hook_help().
+ */
+function username_policy_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the username_policy module.
+    case 'help.page.username_policy':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module will provides a way to specify a rules to create username based on token of profile fields.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function username_policy_theme() {
+  return [
+    'username_policy' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function username_policy_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'user' && !empty($fields['name'])) {
+    $fields['name']->setConstraints([]);
+    $fields['name']->addConstraint('UserNamePattern', []);
+    $fields['name']->addConstraint('UserNameUnique', []);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function username_policy_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'user_register_form') {
+    $form['account']['name']['#access'] = FALSE;
+    $mail = $form_state->getValue('mail');
+    if (strlen($mail)) {
+      $form['account']['name']['#default_value'] = $mail;
+    } else {
+      $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $placeholder_name = 'user-'.substr(str_shuffle($permitted_chars), 0, 16);
+      $form['account']['name']['#default_value'] = $placeholder_name;
+    }
+    $form['actions']['submit']['#submit'] = array_merge(['username_policy_form_submit'], $form['actions']['submit']['#submit']);
+  }
+}
+
+/**
+ * Implements hook_form_submit().
+ */
+function username_policy_form_submit(&$form, FormStateInterface $form_state) {
+  $pattern = \Drupal::config('username_policy.usernamepatternconfig')->get('username_pattern');
+  if (strlen($pattern)) {
+    $offset = 0;
+    $num_of_patterns = substr_count($pattern, '[');
+    $username_pattern = [];
+    for ($itr = 0; $itr <= $num_of_patterns - 1; $itr++) {
+      $str1 = strpos($pattern, '[', $offset);
+      $str2 = strpos($pattern, ']', $str1);
+      $length = ($str2 - $str1) - 1;
+      $offset = $str2;
+      $field = substr($pattern, ($str1 + 1), $length);
+      $field_value = $form_state->getValue($field);
+      // Process if pattern contains mandatory fields from user main profile.
+      if (isset($field_value)) {
+        $username_pattern[] = $field_value;
+      }
+      else {
+        $moduleHandler = \Drupal::service('module_handler');
+        if ($moduleHandler->moduleExists('profile')) {
+          $entity_type = 'profile_type';
+          $entities = \Drupal::entityTypeManager()->getStorage($entity_type)->loadMultiple();
+          foreach ($entities as $entity) {
+            $profile_id = 'entity_' . $entity->get('id');
+            $profile_field_values = $form_state->getValue($profile_id);
+            if (isset($profile_field_values)) {
+              $profile_field_ids = array_keys($profile_field_values);
+              if (in_array($field, $profile_field_ids)) {
+                if (!isset($profile_field_values[$field]['value'])) {
+                  foreach ($profile_field_values[$field] as $field_value) {
+                    $username_pattern[] = $field_value['value'];
+                  }
+                }
+                else {
+                  $username_pattern[] = $profile_field_values[$field]['value'];
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // Generate username pattern.
+    $username = implode('_', $username_pattern);
+    $username = strtolower($username);
+    // Check if any other user has the same name.
+    $count = check_if_existing($username);
+    if ($count >= 1) {
+      $username = modify_if_existing($username, $count);
+    }
+    $form_state->setValue('name', $username);
+  }
+  else {
+    // If pattern not setted by admin, save username with email address.
+    $mail = $form_state->getValue('mail');
+    $form_state->setValue('name', $mail);
+  }
+}
+
+/**
+ * Returns the count of users with the name.
+ *
+ * @param string $username
+ *   Username.
+ *
+ * @return int
+ *   Count of users with username.
+ */
+function check_if_existing($username) {
+  $users = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['name' => $username]);
+  return count($users);
+}
+
+/**
+ * Returns the modified username if already existing.
+ *
+ * @param string $username
+ *   Username.
+ * @param int $count
+ *   Count of users with the name.
+ *
+ * @return string
+ *   Returns the modified username.
+ */
+function modify_if_existing($username, $count) {
+  $name = $username . '_' . $count;
+  $new_count = check_if_existing($name);
+  if ($new_count >= 1) {
+    return modify_if_existing($name);
+  }
+  else {
+    return $name;
+  }
+}

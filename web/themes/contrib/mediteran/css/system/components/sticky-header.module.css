@@ -1,0 +1,10 @@
+/**
+ * @file
+ * Table header behavior.
+ *
+ * @see tableheader.js
+ */
+
+table.sticky-header {
+  display: none;
+}

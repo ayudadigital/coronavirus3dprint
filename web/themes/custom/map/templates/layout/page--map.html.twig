@@ -1,0 +1,13 @@
+{% extends 'page.html.twig' %}
+{% set body_class = 'layout-no-container' %}
+
+{% block sidebar_first %}
+  {% if page.sidebar_first %}
+    <div id="sidebar-first" class="sidebar left">
+      <div class="sidebar-btn search"><div></div></div>
+      <div class="sidebar-content">
+        {{ page.sidebar_first }}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

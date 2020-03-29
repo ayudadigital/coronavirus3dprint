@@ -1,0 +1,22 @@
+uuid: 7f62b646-6af3-4d6f-a69f-dc41701433dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - mediteran
+_core:
+  default_config_hash: Qn971f7lE6wWJy9YPX9LTSXZsICEpiCsk3UH5wckxhA
+id: mediteran_breadcrumbs
+theme: mediteran
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

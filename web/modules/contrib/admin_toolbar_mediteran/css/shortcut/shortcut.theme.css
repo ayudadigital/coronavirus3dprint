@@ -1,0 +1,63 @@
+/**
+ * @file
+ * Styling for the shortcut module.
+ */
+
+/**
+ * Toolbar.
+ */
+.toolbar .toolbar-tray-vertical .edit-shortcuts {
+  text-align: left !important; /* LTR */
+  padding: 20px 25px !important;
+  border-bottom: 1px solid #0e4f8a !important;
+}
+[dir="rtl"] .toolbar .toolbar-tray-vertical .edit-shortcuts {
+  text-align: right !important;
+}
+.toolbar .toolbar-tray-horizontal .edit-shortcuts {
+  float: right !important; /* LTR */
+}
+[dir="rtl"] .toolbar .toolbar-tray-horizontal .edit-shortcuts {
+  float: left !important;
+}
+
+/**
+ * Add/remove links.
+ */
+.shortcut-action {
+  display: inline-block !important;
+  margin-left: 0.3em !important; /* LTR */
+}
+[dir="rtl"] .shortcut-action {
+  margin-left: 0 !important;
+  margin-right: 0.3em !important;
+}
+.shortcut-action__message {
+  background: #000 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 5px !important;
+  padding: 0 5px !important;
+  color: #fff !important;
+  display: inline-block !important;
+  margin-left: 0.3em !important; /* LTR */
+  opacity: 0 !important;
+  -ms-transform: translateY(-12px) !important;
+  -webkit-transform: translateY(-12px) !important;
+  transform: translateY(-12px) !important;
+  -webkit-transition: all 200ms ease-out !important;
+  transition: all 200ms ease-out !important;
+  -ms-backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+}
+[dir="rtl"] .shortcut-action__message {
+  margin-left: 0 !important;
+  margin-right: 0.3em !important;
+}
+.shortcut-action:hover .shortcut-action__message,
+.shortcut-action:focus .shortcut-action__message {
+  opacity: 1 !important;
+  -ms-transform: translateY(-2px) !important;
+  -webkit-transform: translateY(-2px) !important;
+  transform: translateY(-2px) !important;
+}

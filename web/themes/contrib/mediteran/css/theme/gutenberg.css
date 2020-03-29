@@ -1,0 +1,101 @@
+.field--gutenberg #edit-body-0-format {
+  display: none;
+}
+
+.gutenberg-header-settings .form-actions {
+  margin: 0;
+  padding: 0;
+}
+
+.components-panel__header.edit-post-sidebar-header .components-icon-button {
+  display: none;
+}
+
+.gutenberg__editor .edit-post-layout .edit-post-sidebar .edit-post-sidebar__panel-tabs ul {
+  width: 100%;
+}
+
+.components-panel__header.edit-post-sidebar__panel-tabs li {
+  flex: 1;
+}
+
+.edit-post-sidebar button.edit-post-sidebar__panel-tab {
+  width: 100%;
+}
+
+.gutenberg__editor #edit-status-wrapper {
+  margin: 1rem 0;
+}
+
+.gutenberg__editor #edit-status-wrapper .form-item {
+  padding: 0;
+}
+
+
+.gutenberg__editor #edit-status-wrapper .form-item label.option {
+  position: relative;
+  top: 2px;
+  margin-left: 2px;
+  font-weight: bolder;
+}
+
+.edit-post-sidebar .entity-meta .entity-meta__header {
+  padding: 10px 10px;
+}
+
+.edit-post-sidebar .entity-meta {
+  margin-bottom: 0;
+}
+
+.gutenberg__editor .components-icon-button:not(:disabled):not([aria-disabled=true]):not(.is-default):hover {
+  box-shadow: unset;
+}
+
+@media screen and (min-width: 782px) {
+  .edit-post-text-editor__body {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.components-icon-button.has-text svg {
+  margin-right: 0;
+}
+
+.gutenberg__editor .edit-post-text-editor__toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.gutenberg__editor .edit-post-text-editor {
+  padding-top: 22px;
+}
+
+@media screen and (min-width: 782px) {
+
+  body .gutenberg__editor .edit-post-layout .edit-post-header {
+    top: 60px !important;
+  }
+
+  body.toolbar-horizontal.toolbar-tray-open .edit-post-layout__content {
+    top: 130px !important;
+  }
+
+
+  body.toolbar-horizontal.toolbar-tray-open .edit-post-layout.is-mode-text .edit-post-layout__content {
+    top: 180px !important;
+  }
+
+  body.toolbar-horizontal.toolbar-tray-open .edit-post-header {
+    top: 120px !important;
+  }
+
+  body .gutenberg__editor .edit-post-layout .edit-post-sidebar {
+    top: 116px !important;
+  }
+
+  body.toolbar-horizontal.toolbar-tray-open .edit-post-sidebar {
+    top: 176px !important;
+  }
+}

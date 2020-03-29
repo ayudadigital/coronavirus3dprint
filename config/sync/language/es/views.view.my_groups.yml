@@ -1,0 +1,9 @@
+label: 'Mis Grupos'
+display:
+  page_1:
+    display_options:
+      menu:
+        title: 'Mis Grupos'
+  default:
+    display_options:
+      title: 'Mis Grupos'

@@ -1,0 +1,6 @@
+.toolbar-icon.toolbar-icon-admin-toolbar-tools-help:before {
+  content: '';
+  background-image: url(../../images/icons/drupal.svg);
+  background-position: center center;
+  padding: 0;
+}

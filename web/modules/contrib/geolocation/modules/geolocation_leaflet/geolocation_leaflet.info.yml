@@ -1,0 +1,12 @@
+name: Geolocation - Leaflet
+type: module
+description: 'Leaflet map provider.'
+core_version_requirement: ^8.7.7 || ^9
+package: Geolocation
+dependencies:
+  - geolocation:geolocation
+
+# Information added by Drupal.org packaging script on 2020-02-01
+version: '8.x-3.0-rc6'
+project: 'geolocation'
+datestamp: 1580564331

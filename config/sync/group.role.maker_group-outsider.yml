@@ -1,0 +1,17 @@
+uuid: 257a5e29-cb05-4ca5-ad8a-5ebdcf94e19e
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.maker_group
+id: maker_group-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: maker_group
+permissions_ui: true
+permissions:
+  - 'join group'
+  - 'view group'
+  - 'view group_membership content'

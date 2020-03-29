@@ -1,0 +1,143 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/base/elements.css: {}
+      css/base/typography.css: {}
+      css/base/print.css: {}
+    component:
+      css/components/admin-list.css: {}
+      css/components/content-header.css: {}
+      css/components/container-inline.css: {}
+      css/components/breadcrumb.css: {}
+      css/components/buttons.css: {}
+      css/components/dialog.css: {}
+      css/components/messages.css: {}
+      css/components/dropbutton.component.css: {}
+      css/components/entity-meta.css: {}
+      css/components/field-ui.css: {}
+      css/components/form.css: {}
+      css/components/inline-form.css: {}
+      css/components/image-widget.css: {}
+      css/components/help.css: {}
+      css/components/menus-and-lists.css: {}
+      css/components/modules-page.css: {}
+      css/components/node.css: {}
+      css/components/pager.css: {}
+      css/components/panel.css: {}
+      css/components/skip-link.css: {}
+      css/components/tables.css: {}
+      css/components/search-admin-settings.css: {}
+      css/components/tablesort-indicator.css: {}
+      css/components/system-status-report.css: {}
+      css/components/tabs.css: {}
+      css/components/views-ui.css: {}
+      css/components/off-canvas.css: {}
+    theme:
+      css/theme/colors.css: {}
+      css/theme/webform.css: {}
+      css/theme/gutenberg.css: {}
+      css/theme/token.css: {}
+      css/theme/page_manager.css: {}
+      css/theme/coffee.css: {}
+      css/theme/module_filter.css: {}
+    layout:
+      css/layout/layout.css: {}
+  dependencies:
+    - system/admin
+
+node-form:
+  version: VERSION
+  css:
+    layout:
+      css/layout/node-add.css: {}
+  dependencies:
+    - node/form
+
+maintenance-page:
+  version: VERSION
+  js:
+    js/mobile.install.js: {}
+  css:
+    theme:
+      css/theme/maintenance-page.css: {}
+  dependencies:
+    - system/maintenance
+    - mediteran/global-styling
+
+install-page:
+  version: VERSION
+  js:
+    js/mobile.install.js: {}
+  css:
+    theme:
+      css/theme/install-page.css: {}
+  dependencies:
+    - mediteran/maintenance-page
+
+drupal.nav-tabs:
+  version: VERSION
+  js:
+    js/nav-tabs.js: {}
+  dependencies:
+    - core/matchmedia
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - core/drupal.debounce
+    - core/collapse
+
+drupal.responsive-detail:
+  version: VERSION
+  js:
+    js/responsive-details.js: {}
+  dependencies:
+    - core/matchmedia
+    - core/matchmedia.addListener
+    - core/jquery
+    - core/jquery.once
+    - core/collapse
+
+vertical-tabs:
+  version: VERSION
+  css:
+    component:
+      css/components/vertical-tabs.css: {}
+
+progress:
+  version: VERSION
+  css:
+    component:
+      css/components/progress.css: {}
+
+mediteran.jquery.ui:
+  version: VERSION
+  css:
+    component:
+      css/components/jquery.ui/theme.css: { weight: -1 }
+
+mediteran.drupal.dialog:
+  version: VERSION
+  css:
+    theme:
+      css/components/dialog.css: {}
+
+ckeditor-dialog:
+  version: VERSION
+  css:
+    theme:
+      css/theme/ckeditor-dialog.css: {}
+
+tour-styling:
+  version: VERSION
+  css:
+    theme:
+      css/components/tour.theme.css: {}
+
+media-form:
+  version: VERSION
+  css:
+    layout:
+      css/components/media.css: {}
+  dependencies:
+    - media/form

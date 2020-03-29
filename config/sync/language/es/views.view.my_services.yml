@@ -1,0 +1,5 @@
+label: 'Mis Servicios'
+display:
+  default:
+    display_options:
+      title: 'Mis Servicios'

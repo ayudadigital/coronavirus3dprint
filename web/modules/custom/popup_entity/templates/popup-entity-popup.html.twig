@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Theme override to display a popup_entity.
+ *
+ * Available variables:
+ * - popup_entity_popup: The popup entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as popup_entity_popup.delete) will result in an exception.
+ * - label: The title of the popup.
+ * - content: All popup items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_popup_entity_popup()
+ *
+ */
+#}
+{%
+  set classes = [
+  view_mode ? view_mode|clean_class,
+  'popup-entity-popup',
+  'clearfix',
+  'popup-entity-hide',
+  'popup-entity-white',
+]
+%}
+{{ attach_library('popup_entity/popup') }}
+<div{{ attributes.addClass(classes).setAttribute('id', 'popup_entity_popup_'~popup_id) }}>
+
+  <div class="popup-close"></div>
+
+  <div{{ content_attributes.addClass('content') }}>
+
+    {{ title_prefix }}
+    {{ title_suffix }}
+
+    {{ content }}
+
+  </div>
+
+</div>

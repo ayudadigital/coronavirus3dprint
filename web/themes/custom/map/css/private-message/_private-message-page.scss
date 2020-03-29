@@ -1,0 +1,86 @@
+#private-message-page{
+  .private-message-thread-messages{
+    background-color: $grey;
+    padding: 15px;
+
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    overflow-y: scroll;
+    height: 535px;
+    &::-webkit-scrollbar {
+      width: 0;
+      background: transparent; /* make scrollbar transparent */
+    }
+
+    .load-previous-position-before{
+      text-align: center;
+      margin: 10px 0 20px 0;
+      a{
+        display: inline-block;
+      }
+    }
+
+    .private-message{
+      position: relative;
+      padding: 0 0 15px 0;
+      margin-bottom: 10px;
+      overflow: hidden;
+      .contextual-region{
+        position: initial;
+      }
+      .field--type-created{
+        position: absolute;
+        bottom: 2px;
+        font-size: 8px;
+      }
+      .field--type-text-long{
+        display: inline-block;
+        max-width: 80%;
+        padding: 5px 10px;
+        background-color: $chat_background;
+        color: $white;
+      }
+      .field--name-owner{
+        position: absolute;
+        bottom: 0;
+        overflow: hidden;
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+      }
+      &.private-message-author-other{
+        .field--name-owner{
+          left: 0;
+        }
+        .field--type-created{
+          left: 50px;
+        }
+        .field--type-text-long{
+          border-radius: 15px 15px 15px 0;
+          float: left;
+          margin-left: 50px;
+        }
+      }
+      &.private-message-author-self{
+        .field--name-owner{
+          right: 0;
+        }
+        .field--type-created{
+          right: 50px;
+        }
+        .field--type-text-long{
+          border-radius: 15px 15px 0 15px;
+          float: right;
+          margin-right: 50px;
+        }
+      }
+    }
+  }
+
+  .private-message-form{
+    label{
+      display: none;
+    }
+  }
+}

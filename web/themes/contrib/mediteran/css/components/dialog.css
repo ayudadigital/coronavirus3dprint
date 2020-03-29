@@ -1,0 +1,234 @@
+/**
+ * Presentational styles for Drupal dialogs.
+ */
+
+.ui-dialog {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  z-index: 1260;
+  padding: 0;
+  animation: fade 0.4s;
+}
+
+.ui-dialog:focus,
+.ui-dialog .ui-dialog-titlebar-close:focus {
+  outline: transparent;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media all and (max-width: 48em) { /* 768px */
+  .ui-dialog {
+    min-width: 92%;
+    max-width: 92%;
+  }
+}
+.ui-dialog .ui-dialog-titlebar {
+  background: #0678be;
+  padding: 15px 49px 15px 15px; /* LTR */
+}
+[dir="rtl"] .ui-dialog .ui-dialog-titlebar {
+  padding-left: 49px;
+  padding-right: 15px;
+}
+.ui-dialog .ui-dialog-title {
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 300;
+  margin: 0;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+  border: none;
+  border-radius: 0;
+  background: none;
+  right: 15px; /* LTR */
+  top: 15px;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+}
+
+[dir="rtl"] .ui-dialog .ui-dialog-titlebar-close {
+  right: auto;
+  left: 15px;
+}
+
+.ui-dialog .ui-icon.ui-icon-closethick {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+  margin: 0;
+  background: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.ui-dialog .ui-icon.ui-icon-closethick:hover {
+  opacity: 1;
+}
+.ui-dialog .ui-icon.ui-icon-closethick:before,
+.ui-dialog .ui-icon.ui-icon-closethick:after {
+  position: absolute;
+  left: 14px;
+  top: 4px;
+  content: ' ';
+  height: 22px;
+  width: 2px;
+  background-color: white;
+}
+.ui-dialog .ui-icon.ui-icon-closethick:before {
+  transform: rotate(45deg);
+}
+.ui-dialog .ui-icon.ui-icon-closethick:after {
+  transform: rotate(-45deg);
+}
+.ui-dialog .ui-widget-content.ui-dialog-content {
+  background: #fff;
+  overflow: auto;
+  padding: 20px;
+}
+
+.views-ui-dialog .ui-widget-content.ui-dialog-content {
+  padding: 0;
+}
+.ui-dialog .ui-widget-content.ui-dialog-buttonpane {
+  background: #f5f5f5;
+  margin: 0;
+  padding: 15px 20px;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  margin: 0;
+  padding: 0;
+  float: none;
+  padding: 0;
+  position: relative;
+  right: 0;
+  background-color: transparent;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-button-text-only .ui-button-text {
+  padding: 0;
+}
+.ui-dialog .ui-dialog-content {
+  position: static;
+}
+
+/* Form action buttons are moved in dialogs. Remove empty space. */
+.ui-dialog .ui-dialog-content .form-actions {
+  padding: 0;
+  margin: 0;
+}
+
+.ui-dialog .ajax-progress-throbber {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.ui-dialog .ajax-progress-throbber .throbber {
+  border-top: 5px solid rgba(0,128,255, 0.3);
+  border-right: 5px solid rgba(0,128,255, 0.3);
+  border-bottom: 5px solid rgba(0,128,255, 0.3);
+  border-left: 5px solid #0678be;
+  width: 30px;
+  height: 30px;
+}
+
+.ui-dialog .ajax-progress-throbber .message {
+  display: none;
+}
+
+.ui-dialog .form-item-settings-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-dialog .field-suffix {
+  margin: 0;
+}
+
+.ui-dialog .field-suffix br {
+  display: none;
+}
+
+.ui-dialog table {
+  margin: 0;
+}
+
+.ui-dialog fieldset:not(.fieldgroup) {
+  background: none;
+  padding: 55px 0 0 0;
+}
+
+.ui-dialog .ui-tabs .ui-tabs-panel {
+  padding: 20px 20px 0 20px;
+}
+
+.ui-dialog .ui-tabs .ui-tabs-nav {
+  border-bottom: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+.ui-dialog .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  margin: 0;
+  padding-bottom: 0;
+  background: white;
+  border: 0;
+}
+
+.ui-dialog .ui-tabs .ui-tabs-nav li.ui-tabs-active a:hover {
+  background: white;
+}
+
+.ui-dialog .ui-tabs .ui-tabs-nav li {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.ui-dialog .ui-tabs .ui-tabs-nav li a {
+  padding: 10px 20px;
+  line-height: 1.8;
+  display: flex;
+  border: none;
+}
+.ui-dialog .ui-tabs .ui-tabs-nav li a:hover {
+  background: #f9f9f9;
+  border: 0;
+}
+
+.ui-dialog .ui-tabs .ui-tabs-nav li.ui-tabs-active:hover,
+.ui-dialog .ui-tabs .ui-tabs-nav li:hover {
+  border: 0;
+}
+
+.ui-dialog .form-wrapper {
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 640px) {
+  .ui-dialog .form-wrapper {
+    flex-wrap: nowrap;
+  }
+}
+
+.ui-dialog table .form-type-checkbox {
+  display: inline-flex;
+}

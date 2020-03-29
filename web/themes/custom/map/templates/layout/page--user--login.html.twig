@@ -1,0 +1,12 @@
+{% extends 'maintenance-page.html.twig' %}
+
+{% block main %}
+  {{ attach_library('map/login-page') }}
+  <main role="main" style="width: 100%">
+    {% if title %}
+      <h1>{{ title }}</h1>
+    {% endif %}
+    {{ page.highlighted }}
+    {{ page.content }}
+  </main>
+{% endblock %}

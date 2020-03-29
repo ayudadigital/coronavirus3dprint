@@ -1,0 +1,5 @@
+age-field-formatter:
+  js:
+    js/age_field_formatter.js: {}
+  dependencies:
+    - core/jquery

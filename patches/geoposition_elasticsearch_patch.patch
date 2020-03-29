@@ -1,0 +1,90 @@
+Index: web/modules/contrib/elasticsearch_connector/src/Plugin/search_api/backend/SearchApiElasticsearchBackend.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/elasticsearch_connector/src/Plugin/search_api/backend/SearchApiElasticsearchBackend.php	(date 1583144899000)
++++ web/modules/contrib/elasticsearch_connector/src/Plugin/search_api/backend/SearchApiElasticsearchBackend.php	(date 1583146202000)
+@@ -599,6 +599,9 @@
+       // Allow modules to alter the Elasticsearch query.
+       $this->preQuery($query);
+ 
++      // Allow modules to alter the Elastic Search query.
++      $this->preQueryParams($query, $params);
++
+       // Do search.
+       $response = $this->client->search($params)->getRawResponse();
+       $results = SearchFactory::parseResult($query, $response);
+@@ -1078,6 +1081,17 @@
+   protected function preQuery(QueryInterface $query) {
+   }
+ 
++  /**
++   * Allow custom changes before sending a search query to Elastic Search.
++   *
++   * @param \Drupal\search_api\Query\QueryInterface $query
++   *   The \Drupal\search_api\Query\Query object representing the executed
++   *   search query.
++   * @param array $params
++   */
++  protected function preQueryParams(QueryInterface $query, &$params) {
++  }
++
+   /**
+    * Allow custom changes before search results are returned for subclasses.
+    *
+@@ -1089,7 +1103,7 @@
+    * @param object $response
+    *   The response object returned by Elasticsearch.
+    */
+-  protected function postQuery(ResultSetInterface $results, QueryInterface $query, $response) {
++  protected function postQuery(ResultSetInterface &$results, QueryInterface $query, $response) {
+   }
+ 
+   /* TODO: Implement the settings update feature. */
+Index: web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Factory/MappingFactory.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Factory/MappingFactory.php	(date 1583144899000)
++++ web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Factory/MappingFactory.php	(date 1583145203000)
+@@ -82,6 +82,11 @@
+           'type' => 'nested'
+         ];
+         break;
++
++      case 'geo_point':
++        $mappingConfig = [
++          'type' => 'geo_point',
++        ];
+     }
+ 
+     // Allow other modules to alter mapping config before we create it.
+Index: web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Builder/SearchBuilder.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Builder/SearchBuilder.php	(date 1583144899000)
++++ web/modules/contrib/elasticsearch_connector/src/ElasticSearch/Parameters/Builder/SearchBuilder.php	(date 1583145107000)
+@@ -349,7 +349,18 @@
+         $sort['id'] = $direction;
+       }
+       elseif (isset($index_fields[$field_id])) {
+-        if (in_array($field_id, $query_full_text_fields)) {
++        $field_property_path = $this->index->getField($field_id)->getPropertyPath();
++        if($field_property_path == 'search_api_geolocation'){
++          $geolocation_options = $this->query->getOption('geolocation');
++          $sort['_geo_distance'] = array(
++            $field_id => $geolocation_options['geolocation_filter_lat'].', '.$geolocation_options['geolocation_filter_lng'],
++            "order" => $direction,
++            "unit" => $geolocation_options['geolocation_filter_units'],
++            "mode" => "min",
++            "distance_type" => "arc",
++          );
++        }
++        elseif (in_array($field_id, $query_full_text_fields)) {
+           // Set the field that has not been analyzed for sorting.
+           $sort[$field_id . '.keyword'] = $direction;
+         }

@@ -1,0 +1,58 @@
+/**
+ * @file
+ * Styles for Mediteran's Pagination.
+ */
+
+nav.pager {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e6e4df;
+}
+
+.pager__items {
+  margin: 20px 0 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.pager__item {
+  display: inline-flex;
+  font-size: 12px;
+  margin: 0 10px 10px 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+.pager__item a,
+.pager__item.is-active {
+  line-height: 14px;
+  padding: 5px 10px;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f5f5f5;
+  border: 1px solid #b8b8b8;
+  color: #333;
+  transition: all 0.2s;
+}
+.pager__item.is-active a,
+.pager__item.is-active {
+  background-color: white;
+}
+
+.pager__item.is-active a {
+  padding: 0;
+  border: 0;
+}
+
+.pager__item a:hover,
+.pager__item a:focus {
+  border-color: #0678be;
+  color: #0678be;
+  background-color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .pager__items {
+    text-align: left;
+  }
+}

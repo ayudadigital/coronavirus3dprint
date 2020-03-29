@@ -1,0 +1,123 @@
+/**
+ * Entity meta settings.
+ */
+.entity-meta {
+  background-color: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+.entity-meta .form-item {
+  margin: 0 0 10px 0;
+}
+.entity-meta__header {
+  padding: 10px 20px;
+}
+.entity-meta__title {
+  font-size: 18px;
+  color: #0678be;
+  font-weight: 700;
+}
+
+.entity-meta__last-saved.form-item {
+  margin-bottom: 0;
+}
+
+.entity-meta details {
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px solid #e6e4df;
+  margin: 0;
+}
+
+.entity-meta details:first-child {
+  border-top-color: #e6e4df;
+}
+.entity-meta details[open] {
+  background-color: transparent;
+  border-top: 1px solid #e6e4df;
+}
+
+.entity-meta details > summary {
+  padding: 10px 15px;
+}
+.entity-meta details .summary {
+  display: none; /* Hide JS summaries. @todo Rethink summaries. */
+}
+
+.entity-meta .details-wrapper {
+  padding: 5px 15px;
+}
+.entity-meta .form-textarea-wrapper {
+  display: flex;
+}
+
+.entity-meta .label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.entity-meta .container-inline {
+  flex-direction: column;
+  display: flex;
+}
+
+.entity-meta .container-inline label {
+  display: block;
+}
+
+.entity-meta .container-inline .form-item {
+  padding-bottom: 15px;
+}
+.entity-meta .container-inline .form-item {
+  margin: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 460px) {
+  .entity-meta .container-inline {
+    flex-direction: row;
+  }
+
+  .entity-meta .container-inline .form-item {
+    padding-bottom: 0;
+    padding-right: 15px;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .entity-meta .container-inline {
+    flex-direction: column;
+  }
+
+  .entity-meta .container-inline .form-item {
+    padding-bottom: 15px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .entity-meta .container-inline {
+    flex-direction: row;
+  }
+  .entity-meta .container-inline .form-item {
+    padding-bottom: 0;
+  }
+}
+
+.entity-meta .container-inline .form-item:last-child {
+  padding-right: 0;
+}
+
+.entity-meta .field--type-created {
+  margin-bottom: 10px;
+}
+
+.entity-meta legend {
+  margin: 0;
+}
+
+.entity-meta .form-textarea,
+.entity-meta .form-text,
+.entity-meta .form-date,
+.entity-meta .form-time {
+  min-width: 100%;
+}

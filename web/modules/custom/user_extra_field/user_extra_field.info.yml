@@ -1,0 +1,8 @@
+type: module
+name: 'User extra field'
+description: 'Add user extra field to all node view_modes'
+package: Fields
+core: 8.x
+dependencies:
+  - node
+  - user

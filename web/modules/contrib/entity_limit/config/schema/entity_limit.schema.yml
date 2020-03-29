@@ -1,0 +1,40 @@
+entity_limit.entity_limit.*:
+  type: config_entity
+  label: 'Entity Limit config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    weight:
+      type: integer
+      label: 'Weight'
+    plugin:
+      type: string
+      label: 'Select Plugin'
+    entity_type:
+      type: string
+      label: 'Select Entity'
+    entity_bundles:
+      type: sequence
+      label: 'Select Bundles'
+      sequence:
+        type: string
+    limits:
+      type: sequence
+      sequence:
+        type: entity_limit.limits.[%parent.plugin]
+    uuid:
+      type: string
+
+entity_limit.limits.*:
+  type: mapping
+  mapping:
+    id:
+      type: string
+      label: 'User id or Role id'
+    limit:
+      type: integer
+      label: 'Limit'

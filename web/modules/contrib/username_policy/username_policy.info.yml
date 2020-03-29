@@ -1,0 +1,11 @@
+name: 'UserName Policy'
+description: 'This module will provide a way to specify the rules to create username based on token of profile fields.'
+# core: 8.x
+type: module
+configure: username_policy.usernamepatternconfig
+
+# Information added by Drupal.org packaging script on 2018-03-06
+version: '8.x-1.0'
+core: '8.x'
+project: 'username_policy'
+datestamp: 1520334787

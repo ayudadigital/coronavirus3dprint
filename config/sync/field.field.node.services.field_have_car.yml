@@ -1,0 +1,21 @@
+uuid: 6db11af6-cabe-48ba-a8da-1e8ef253563c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_have_car
+    - node.type.services
+  module:
+    - options
+id: node.services.field_have_car
+field_name: field_have_car
+entity_type: node
+bundle: services
+label: 'I have a car'
+description: 'I have a car in case the 3D printed parts needs to be transported'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

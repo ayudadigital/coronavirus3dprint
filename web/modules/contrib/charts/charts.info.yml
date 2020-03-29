@@ -1,0 +1,11 @@
+name: Charts
+type: module
+description: 'A charting API for Drupal that provides chart elements and integration with Views.'
+package: Charts
+core: 8.x
+configure: charts.settings
+
+# Information added by Drupal.org packaging script on 2019-10-12
+version: '8.x-3.1'
+project: 'charts'
+datestamp: 1570850586

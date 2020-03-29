@@ -1,0 +1,155 @@
+.webform-addons-projects details {
+    background: none;
+}
+
+.webform-multiple-add {
+    margin-top: 20px;
+}
+
+.webform-multiple-add .field-suffix {
+    margin-left: 10px;
+}
+
+.webform-contribute-community-info {
+    display: inline-block;
+    border-radius: 0;
+}
+
+.webform-ajax-link img {
+    max-width: 400px;
+}
+
+.webform-details-toggle-state-wrapper {
+    margin-top: 0;
+}
+
+.ui-dialog-content .webform-details-toggle-state {
+    height: 45px;
+    padding: 0 15px;
+    outline: none;
+}
+
+.ui-dialog-content .webform-details-toggle-state:hover {
+    background-color: #f9f9f9;
+    text-decoration: none;
+}
+
+.form--inline.webform-ui-element-form-inline--input .form-item select,
+.form--inline.webform-ui-element-form-inline--input .form-item input[type="text"],
+.form--inline.webform-ui-element-form-inline--input .form-item input[type="number"] {
+    width: 100%;
+}
+
+.button-webform-play {
+    margin-left: 10px;
+}
+
+.webform-message {
+    margin-top: 20px;
+}
+
+html.js .webform-message--close .webform-message__link {
+    right: 24px;
+    top: 16px;
+}
+
+.webform-message .messages.messages--promotion_drupal_association {
+    box-shadow: none;
+    background-color: #f5f5f5;
+    background-position: 20px center;
+    padding-left: 140px;
+}
+
+.webform-message .messages.messages--promotion_drupal_association .button {
+    margin-left: 20px;
+}
+
+html.js .webform-message--close .messages.messages--promotion_drupal_association .webform-message__link {
+    top: 22px;
+    right: 24px;    
+}
+
+.webform-multiple-table td.webform-multiple-table--operations {
+    padding: 0 20px;
+}
+
+.messages.messages--info {
+    box-shadow: none;
+    background-position: 16px 18px;
+}
+
+blockquote.webform-contribute-quote {
+    font-size: 26px;
+    font-weight: 300;
+    margin: 30px 0;
+    line-height: 36px;
+}
+
+blockquote.webform-contribute-quote:before {
+    display: none;
+}
+
+.webform-contribute-community-info__item {
+    background: transparent;
+}
+
+.webform-contribute-community-info__header {
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: none;
+}
+
+.webform-contribute-community-info__item-title {
+    color: #0678be;
+}
+
+.webform-contribute-community-info__item {
+    padding: 20px 20px 40px 20px;
+}
+
+.webform-contribute-content {
+    max-width: 480px;
+}
+
+.webform-contribute-content hr {
+    margin: 30px 0 20px 0;
+}
+
+th.webform-results-table__icon,
+td.webform-results-table__icon {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.webform-states-table--operator {
+    display: inline-flex;
+}
+
+.webform-states-table--operator * {
+    margin-right: 10px;
+}
+
+.webform-states-table--operator *:last-child {
+    margin-right: 0;
+}
+
+.webform-ui-elements-table tr.webform-ui-element-type-webform_actions td {
+    background-color: #f5f5f5;
+    border-color: #e6e4df;
+}
+
+.button.button-webform-play:before {
+    content: '► '; 
+}
+
+.ui-dialog-content .webform-ajax-link {
+    margin-left: 10px;
+}
+
+.ui-dialog .webform-states-table {
+    margin-bottom: 20px;
+}
+
+.webform-ajax-messages {
+    bottom: 81px;
+}

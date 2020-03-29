@@ -1,0 +1,6 @@
+popup_entity.popup_add:
+  route_name: popup_entity.popup_add
+  title: 'Add popup'
+  appears_on:
+    - entity.popup_entity_popup.collection
+    - entity.popup_entity_popup.canonical

@@ -1,0 +1,23 @@
+uuid: dbd675ee-5bd3-46d9-bd56-5fbf3246804c
+langcode: es
+status: true
+dependencies:
+  config:
+    - facets.facet.assembly_stage
+  module:
+    - facets
+  theme:
+    - map
+id: assemblystage
+theme: map
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:assembly_stage'
+settings:
+  id: 'facet_block:assembly_stage'
+  label: 'Assembly stage'
+  provider: facets
+  label_display: '0'
+  block_id: assemblystage
+visibility: {  }

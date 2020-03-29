@@ -1,0 +1,21 @@
+uuid: ef57f217-d179-49f8-88d5-c3ab8b25c41b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_extruder_type
+    - paragraphs.paragraphs_type.machine
+  module:
+    - options
+id: paragraph.machine.field_extruder_type
+field_name: field_extruder_type
+entity_type: paragraph
+bundle: machine
+label: 'Extruder type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

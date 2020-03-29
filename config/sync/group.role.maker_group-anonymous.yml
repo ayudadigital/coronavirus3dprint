@@ -1,0 +1,16 @@
+uuid: 9bb209f8-4e99-4f6a-8539-163f866124f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.maker_group
+id: maker_group-anonymous
+label: Anonymous
+weight: -102
+internal: true
+audience: anonymous
+group_type: maker_group
+permissions_ui: true
+permissions:
+  - 'view group'
+  - 'view group_membership content'

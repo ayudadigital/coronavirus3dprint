@@ -1,0 +1,5 @@
+name: Entity Content Visibility
+type: module
+description: Allow assigning visibility to entities.
+package: Visibility
+core: 8.x

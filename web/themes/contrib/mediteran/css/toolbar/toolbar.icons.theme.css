@@ -1,0 +1,283 @@
+/**
+ * @file
+ * Styling for toolbar module icons.
+ */
+
+[dir="rtl"] .toolbar .toolbar-icon {
+  padding-left: 1.3333em;
+  padding-right: 2.75em;
+}
+.toolbar .toolbar-icon::before {
+  background-attachment: scroll;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 15px; /* LTR */
+  position: absolute;
+  top: 0;
+  width: 18px;
+  filter: brightness(0) invert(1);
+}
+[dir="rtl"] .toolbar .toolbar-icon::before {
+  left: auto;
+  right: 15px;
+}
+
+.toolbar-horizontal .toolbar .toolbar-tray-horizontal .toolbar-icon::before {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .toolbar .toolbar-icon {
+    padding-left: 40px; /* LTR */
+    position: relative;
+  }
+  .toolbar .toolbar-icon:before {
+    left: 15px;
+  }
+
+  .toolbar-horizontal .toolbar .toolbar-tray-horizontal .toolbar-icon:before {
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .toolbar .toolbar-icon {
+    padding-left: 50px; /* LTR */
+    position: relative;
+  }
+
+  .toolbar .toolbar-icon:before {
+    left: 20px;
+  }
+}
+.toolbar button.toolbar-icon {
+  background-color: transparent;
+  border: 0;
+  font-size: 1em;
+}
+.toolbar .toolbar-menu ul .toolbar-icon {
+  padding-left: 1.3333em; /* LTR */
+}
+[dir="rtl"] .toolbar .toolbar-menu ul .toolbar-icon {
+  padding-left: 0;
+  padding-right: 1.3333em;
+}
+.toolbar .toolbar-menu ul a.toolbar-icon:before {
+  display: none;
+}
+.toolbar .toolbar-tray-vertical .toolbar-menu a.toolbar-icon {
+  padding-left: 50px;
+}
+.toolbar .toolbar-tray-vertical .toolbar-menu ul .level-2 a {
+  padding-left: 50px; /* LTR */
+}
+[dir="rtl"] .toolbar .toolbar-tray-vertical .toolbar-menu ul a {
+  padding-left: 0;
+  padding-right: 50px;
+}
+.toolbar .toolbar-tray-vertical .toolbar-menu ul ul .level-3 a {
+  padding-left: 65px; /* LTR */
+}
+
+.toolbar .toolbar-tray-vertical .toolbar-menu ul ul ul .level-4 a {
+  padding-left: 75px; /* LTR */
+}
+[dir="rtl"] .toolbar .toolbar-tray-vertical .toolbar-menu ul ul a {
+  padding-left: 0;
+  padding-right: 65px;
+}
+
+[dir="rtl"] .toolbar .toolbar-tray-vertical .toolbar-menu a {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/**
+ * Top level icons.
+ */
+.toolbar-bar .toolbar-icon-menu:before,
+.toolbar-bar .toolbar-icon-menu:active:before,
+.toolbar-bar .toolbar-icon-menu.is-active:before {
+  background-image: url(../../images/icons/menu.svg);
+}
+.toolbar .toolbar-icon-escape-admin:before {
+  background-image: url(../../images/icons/arrow_back.svg);
+}
+
+/**
+ * Main menu icons.
+ */
+.toolbar-icon-system-admin-content:before {
+  background-image: url(../../images/icons/content.svg);
+}
+.toolbar-icon-system-admin-structure:before {
+  background-image: url(../../images/icons/structure.svg);
+}
+.toolbar-icon-system-themes-page:before {
+  background-image: url(../../images/icons/devices.svg);
+}
+.toolbar-icon-entity-user-collection:before {
+  background-image: url(../../images/icons/users.svg);
+}
+.toolbar-icon-system-modules-list:before {
+  background-image: url(../../images/icons/extend.svg);
+}
+.toolbar-icon-system-admin-config:before {
+  background-image: url(../../images/icons/settings.svg);
+}
+.toolbar-icon-system-admin-reports:before {
+  background-image: url(../../images/icons/reports.svg);
+}
+.toolbar-icon-help-main:before,
+.toolbar-bar .toolbar-icon-help:active:before,
+.toolbar-bar .toolbar-icon-help:before {
+  background-image: url(../../images/icons/help.svg);
+}
+.toolbar-bar .toolbar-icon-edit.is-active:before {
+  background-image: url(../../images/icons/edit.svg);
+}
+.toolbar .toolbar-bar .toolbar-tab > .toolbar-icon:focus {
+  outline: transparent;
+}
+.toolbar .toolbar-bar .toolbar-tab > .toolbar-icon {
+  font-size: 0;
+  line-height: 16px;
+}
+@media only screen and (min-width: 16.5em) {
+  .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 60px;
+  }
+  .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon:before {
+    background-size: 40% auto;
+    left: 0; /* LTR */
+    width: 100%;
+    margin-left: 0;
+    filter: brightness(0) invert(1);
+  }
+  .no-svg .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon:before {
+    background-size: auto auto;
+  }
+  [dir="rtl"] .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon:before {
+    left: auto;
+    right: 0;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon {
+    background-position: left center; /* LTR */
+    padding-left: 52px; /* LTR */
+    padding-right: 1.3333em; /* LTR */
+    text-indent: 0;
+    width: auto;
+    font-size: 16px;
+  }
+  [dir="rtl"] .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon {
+    background-position: right center;
+    padding-left: 1.3333em;
+    padding-right: 2.75em;
+  }
+  .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon:before {
+    background-size: 100% auto;
+    left: 20px; /* LTR */
+    width: 24px;
+    margin-left: 0;
+    filter: brightness(0) invert(1);
+  }
+  .no-svg .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon:before {
+    background-size: auto auto;
+  }
+  [dir="rtl"] .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon:before {
+    left: 0;
+    right: 0.6667em;
+  }
+}
+
+.toolbar-tab a:focus,
+.toolbar-lining button:focus,
+.toolbar-tray-horizontal a:focus,
+.toolbar-box a:focus,
+.toolbar .toolbar-icon.toolbar-handle:focus {
+  outline: transparent;
+}
+
+/**
+ * Handle.
+ */
+.toolbar .toolbar-icon.toolbar-handle {
+  width: 60px;
+  font-size: 0;
+}
+.toolbar .toolbar-icon.toolbar-handle:before {
+  left: 20px; /* LTR */
+  background-image: url(../../images/icons/arrow_bottom_small.svg);
+  background-size: 24px 24px;
+}
+
+.toolbar .toolbar-icon.toolbar-handle.open:before {
+  background-image: url(../../images/icons/arrow_top_small.svg);
+  background-size: 24px 24px;
+}
+[dir="rtl"] .toolbar .toolbar-icon.toolbar-handle:before {
+  left: auto;
+  right: 20px;
+}
+
+.toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle:before,
+.toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle.open:before {
+  left: 20px;
+  background-size: 18px 18px;
+}
+
+/**
+ * Orientation toggle.
+ */
+
+.toolbar-fixed .toolbar .toolbar-toggle-orientation button {
+  height: 60px;
+  padding: 0;
+  font-size: 0;
+}
+
+.toolbar-horizontal .toolbar .toolbar-toggle-orientation button {
+  width: 42px;
+}
+
+.toolbar-vertical .toolbar .toolbar-toggle-orientation button {
+  width: 55px;
+}
+
+.toolbar .toolbar-toggle-orientation button:before {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+[dir="rtl"] .toolbar .toolbar-toggle-orientation .toolbar-icon {
+  padding: 0;
+}
+/**
+ * In order to support a hover effect on the SVG images, while also supporting
+ * RTL text direction and no SVG support, this little icon requires some very
+ * specific targeting, setting and unsetting.
+ */
+.toolbar .toolbar-toggle-orientation [value="vertical"]:before,
+.toolbar .toolbar-toggle-orientation [value="vertical"]:hover:before,
+.toolbar .toolbar-toggle-orientation [value="vertical"]:focus:before {
+  background-image: url(../../images/icons/orientaion-vertical.svg); /* LTR */
+}
+
+.toolbar .toolbar-toggle-orientation [value="horizontal"]:before,
+.toolbar .toolbar-toggle-orientation [value="horizontal"]:hover:before,
+.toolbar .toolbar-toggle-orientation [value="horizontal"]:focus:before {
+  background-image: url(../../images/icons/orientaion-horizontal.svg);
+}

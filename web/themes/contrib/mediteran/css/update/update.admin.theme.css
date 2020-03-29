@@ -1,0 +1,130 @@
+/**
+ * @file
+ * Styles used by the Update Manager module.
+ */
+
+.update-wrapper {
+  margin-top: 20px;
+}
+
+h1.update {
+  padding: 0;
+}
+
+.update td {
+  padding: 20px;
+}
+
+.update a {
+  font-weight: 700;
+}
+
+.update .color-success a,
+.update .color-success .project-update__title,
+.update .color-success .project-update__title a,
+.project-update__status--current {
+  color: #73b355;
+}
+
+.update .color-warning a,
+.update .color-warning .project-update__title,
+.update .color-warning .project-update__title a,
+.project-update__status--not-supported,
+.project-update__status--not-current {
+  color: #e29700;
+}
+
+.update .color-error a,
+.update .color-error .project-update__title,
+.update .color-error .project-update__title a,
+.project-update__status--security-error {
+  color: #e32700;
+}
+
+.project-update__title {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.project-update__status {
+  float: right; /* LTR */
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+[dir="rtl"] .project-update__status {
+  float: left;
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.project-update__status-icon {
+  padding: 0 0 0 10px;
+  display: inline-flex;
+}
+[dir="rtl"] .project-update__status-icon {
+  padding-left: 0;
+  padding-right: 10px;
+}
+.project-updates__details {
+  padding: 0;
+  font-size: 12px;
+}
+
+.project-update__version {
+  padding: 0;
+}
+.project-update__version-date {
+  white-space: nowrap;
+}
+.project-update__version-details {
+  padding-right: 0.5em; /* LTR */
+}
+[dir="rtl"] .project-update__version-details {
+  padding-left: 0.5em;
+  direction: ltr; /* Version numbers should always be LTR. */
+}
+.project-update__version-links {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.project-update__version-links li {
+  margin-left: 10px;
+}
+
+.project-update__version-links li a {
+  margin-right: 0;
+}
+
+.update .color-warning .project-update__version-links li a:hover {
+  border-color: #e29700;
+}
+
+.update .color-error .project-update__version-links li a:hover {
+  border-color: #e32700;
+}
+.project-update__version--recommended-strong .project-update__version-title {
+  font-weight: bold;
+}
+
+.project-update__version--recommended > div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.project-update__version--recommended .project-update__version-title {
+  width: 100%;
+}
+
+.project-update__version--recommended .project-update__version-details {
+  width: 50%;
+}

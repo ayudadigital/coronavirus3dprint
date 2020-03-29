@@ -1,0 +1,51 @@
+uuid: 1bca0843-448d-48f8-aa04-5267b53ca05b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.teaser
+    - field.field.user.user.field_age
+    - field.field.user.user.field_name
+    - field.field.user.user.field_sex
+    - field.field.user.user.field_spoken_languages
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.teaser
+targetEntityType: user
+bundle: user
+mode: teaser
+content:
+  field_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  extra_field_user_profile_compact: true
+  field_age: true
+  field_sex: true
+  field_spoken_languages: true
+  langcode: true
+  linked_username: true
+  member_for: true
+  my_services_entity_view_1: true
+  private_message_link: true
+  realname: true
+  search_api_excerpt: true

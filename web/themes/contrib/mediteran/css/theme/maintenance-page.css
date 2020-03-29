@@ -1,0 +1,271 @@
+/**
+ * @file
+ * Maintenance theming.
+ */
+
+.maintenance-page {
+  background-color: #e0e0d8;
+  background-image: -webkit-radial-gradient(hsl(203, 2%, 90%), hsl(203, 2%, 95%));
+  background-image: radial-gradient(hsl(203, 2%, 90%), hsl(203, 2%, 95%));
+  background-repeat: repeat;
+  background-position: left top, 50% 50%; /* LTR */
+  min-height: 100%;
+}
+
+.maintenance-page .button {
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+.maintenance-page h1 {
+  padding-top: 0;
+}
+[dir="rtl"] .maintenance-page {
+  background-position: right top, 50% 50%;
+}
+
+.maintenance-page header {
+  border-bottom: 1px solid #eee;
+}
+
+.page-title {
+  color: #0074bd;
+  word-wrap: break-word;
+}
+
+.item-list li {
+  padding-left: 10px;
+}
+
+/**
+ * Task list & step indicator
+ */
+@media all and (max-width: 767px) {
+  header[role="banner"] {
+    position: relative;
+  }
+  .step-indicator {
+    display: block;
+    font-size: 1.385em;
+    position: absolute;
+    top: 0;
+    right: 0.5em; /* LTR */
+  }
+  [dir="rtl"] .step-indicator {
+    left: 0.5em;
+    right: auto;
+  }
+  .task-list {
+    display: none;
+  }
+}
+
+@media all and (min-width: 767px) {
+  .step-indicator {
+    display: none;
+  }
+  .task-list {
+    margin-left: 0; /* LTR */
+    list-style-type: none;
+    padding-left: 0; /* LTR */
+    padding-bottom: 1em;
+  }
+  [dir="rtl"] .task-list {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .task-list li {
+    padding: 8px 1em 8px 3.85em; /* LTR */
+    color: #1a1a1a;
+    line-height: 24px;
+  }
+  [dir="rtl"] .task-list li {
+    padding: 8px 3.85em 8px 1em;
+  }
+  .task-list .is-active {
+    background: #0074bd;
+    color: white;
+    position: relative;
+    font-weight: normal;
+  }
+
+  .task-list .done {
+    color: #adadad;
+  }
+}
+
+/**
+ * Layout
+ */
+.layout-container {
+  background: #fff;
+  width: auto;
+  margin-left: 1.25em;
+  margin-right: 1.25em;
+}
+.layout-container:after { /* no reason for a clearfix in the markup */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media all and (max-width: 767px) {
+  .layout-container {
+    margin: 1.25em;
+    padding: 30px 20px;
+  }
+
+  main {
+    padding-top: 35px;
+  }
+}
+
+@media all and (min-width: 767px) {
+  html {
+    display: table;
+  }
+  .install-page,
+  .maintenance-page {
+    display: table-cell;
+    padding: 1em 0;
+    vertical-align: middle;
+  }
+  html,
+  .install-page,
+  .maintenance-page {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .layout-container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 770px;
+    padding: 30px 0;
+  }
+
+  /* Positioning sidebar & content */
+  main {
+    box-sizing: border-box;
+    clear: none;
+    float: left; /* LTR */
+    padding: 45px 3.85em 25px 3.85em;
+    width: 65%;
+  }
+  [dir="rtl"] main {
+    float: right;
+  }
+  ul {
+    padding: 15px;
+    margin: 0.25em 0;
+  }
+  [dir="rtl"] ul {
+    margin-right: 0; /* Overrides default [dir="rtl"] ul margin */
+  }
+  .layout-sidebar-first {
+    float: left; /* LTR */
+    width: 35%;
+    margin-top: 35px;
+    box-sizing: border-box;
+  }
+  [dir="rtl"] .layout-sidebar-first {
+    float: right;
+  }
+
+  /* Margins for sitename */
+  .page-title {
+    margin: 0 1.9em;
+  }
+}
+
+/**
+ * Status report customization for install and update page.
+ */
+.system-status-report__status-title {
+  float: none;
+  width: 100%;
+}
+.system-status-report__entry__value {
+  float: none;
+  width: 100%;
+  padding-left: 3em; /* LTR */
+  padding-top: 0;
+}
+[dir="rtl"] .system-status-report__entry__value {
+  padding-left: 1em;
+  padding-right: 3em;
+}
+
+.maintenance-page .links {
+  display: flex;
+  margin: 10px 0 0 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  width: 100%;
+  flex-direction: column;
+}
+
+.maintenance-page .links li {
+  display: flex;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+.maintenance-page .links li a {
+  padding: 13px 24px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #b8b8b8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+@media all and (min-width: 480px) {
+  .maintenance-page .links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .maintenance-page .links li {
+    width: auto;
+  }
+
+  .maintenance-page .links li a {
+    width: auto;
+  }
+}
+
+.maintenance-page .links li:last-child {
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.maintenance-page .links li a:hover,
+.maintenance-page .links li a:focus {
+  background-color: white;
+  border-color: #0678be;
+  color: #0678be;
+  text-decoration: none;
+  outline: transparent;
+}
+
+.maintenance-page .links li:first-child a {
+  background-color: #7cbc48;
+  border-color: #7cbc48;
+  color: #fff;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+}
+.maintenance-page .links li:first-child a:hover,
+.maintenance-page .links li:first-child a:focus {
+  background-color: #6aab35;
+  border-color: #6aab35;
+  color: #fff;
+}

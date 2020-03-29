@@ -1,0 +1,94 @@
+/**
+ * Image style configuration pages.
+ */
+.image-style-new,
+.image-style-new div {
+  display: inline-flex;
+}
+.image-style-preview .preview-image-wrapper {
+  float: left;
+  padding-bottom: 2em;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+.image-style-preview .preview-image {
+  margin: 10px auto auto auto;
+  position: relative;
+}
+.image-style-preview .preview-image .width {
+  border: 1px solid #666;
+  border-top: none;
+  bottom: -6px;
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  box-sizing: content-box;
+}
+.image-style-preview .preview-image .width span {
+  position: relative;
+  top: 4px;
+}
+.image-style-preview .preview-image .height {
+  border: 1px solid #666;
+  border-left: none;
+  position: absolute;
+  right: -6px;
+  top: -1px;
+  width: 2px;
+  box-sizing: content-box;
+}
+.image-style-preview .preview-image .height span {
+  height: 2em;
+  left: 10px;
+  margin-top: -1em;
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  text-align: left;
+}
+
+.image-style-new .button {
+  margin-left: 20px;
+}
+
+.image-style-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-style-preview .preview-image-wrapper {
+  margin-bottom: 40px;
+}
+
+.image-style-preview .preview-image-wrapper:last-child {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 640px) {
+  .image-style-preview {
+    flex-direction: row;
+  }
+  .image-style-preview .preview-image-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+.image-effect-form .form-number {
+  max-width: 280px;
+}
+
+/**
+ * Image anchor element.
+ */
+.image-anchor {
+  width: auto;
+}
+.image-anchor tr {
+  background: none;
+}
+.image-anchor td {
+  border: 1px solid #ccc;
+}
