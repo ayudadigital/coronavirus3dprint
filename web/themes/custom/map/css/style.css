@@ -42,6 +42,14 @@ form .captcha {
   margin-top: 20px;
 }
 
+.popup-entity-popup {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+.popup-entity-popup ul {
+  padding-left: 15px;
+}
+
 .node--type-services.node--view-mode-full {
   margin-top: 40px;
 }
