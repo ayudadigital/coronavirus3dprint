@@ -11,7 +11,7 @@ id: popup_entity_popup.popup_entity_popup.field_description
 field_name: field_description
 entity_type: popup_entity_popup
 bundle: popup_entity_popup
-label: description
+label: Description
 description: ''
 required: true
 translatable: true
