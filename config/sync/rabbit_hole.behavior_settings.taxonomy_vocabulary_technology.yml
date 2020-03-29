@@ -1,0 +1,11 @@
+uuid: 85c52d59-0759-4325-8348-d770cda8e63c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.technology
+id: taxonomy_vocabulary_technology
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

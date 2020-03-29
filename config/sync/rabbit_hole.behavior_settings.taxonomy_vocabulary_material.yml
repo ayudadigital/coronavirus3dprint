@@ -1,0 +1,11 @@
+uuid: 1f268b9d-c3d7-4b3f-8f88-88490e3df2e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.material
+id: taxonomy_vocabulary_material
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
