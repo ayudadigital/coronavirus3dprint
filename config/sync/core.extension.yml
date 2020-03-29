@@ -73,6 +73,8 @@ module:
   r4032login: 0
   rdf: 0
   realname: 0
+  redirect: 0
+  redirect_404: 0
   redis: 0
   reg_confirm_email: 0
   responsive_image: 0
@@ -96,6 +98,7 @@ module:
   views_infinite_scroll: 0
   views_ui: 0
   menu_link_content: 1
+  pathauto: 1
   content_translation: 10
   views: 10
   paragraphs: 11
