@@ -33,6 +33,7 @@ module:
   editor: 0
   editor_advanced_link: 0
   elasticsearch_connector: 0
+  elasticsearch_connector_views: 0
   entity: 0
   entity_content_visibility: 0
   entity_reference_revisions: 0

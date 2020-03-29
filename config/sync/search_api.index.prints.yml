@@ -17,6 +17,14 @@ name: Prints
 description: ''
 read_only: false
 field_settings:
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
   field_assembly_stage:
     label: 'Assembly stage'
     datasource_id: 'entity:node'
