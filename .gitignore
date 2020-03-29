@@ -22,8 +22,8 @@
 
 # Ignore .env files as they are personal
 /.env
-.editorconfig
-.gitattributes
+#.editorconfig
+#.gitattributes
 
 #Docker Compose
 /docker-compose.yml
