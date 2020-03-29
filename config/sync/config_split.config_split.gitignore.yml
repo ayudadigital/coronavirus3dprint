@@ -16,4 +16,4 @@ graylist:
   - sendgrid_integration.settings
 graylist_dependents: true
 graylist_skip_equal: false
-weight: 0
+weight: 4
