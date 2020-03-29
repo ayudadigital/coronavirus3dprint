@@ -137,7 +137,6 @@ content:
           weight: 0
           enable: false
           map_center_id: location_plugins
-      auto_client_location_marker: '1'
       hide_textfield_form: true
       leaflet_settings:
         height: 400px
@@ -152,12 +151,24 @@ content:
               settings:
                 label: Address
                 description: 'Enter an address to be localized.'
+                autocomplete_min_length: 1
+                component_restrictions:
+                  route: ''
+                  locality: ''
+                  administrative_area: ''
+                  postal_code: ''
+                  country: ''
+                boundary_restriction:
+                  south: ''
+                  west: ''
+                  north: ''
+                  east: ''
             enabled: false
           leaflet_control_layer:
             weight: 0
             settings:
               position: topright
-              default_label: true
+              default_label: false
               tile_layer_providers:
                 OpenStreetMap:
                   'OpenStreetMap Mapnik':
@@ -582,6 +593,7 @@ content:
               transparent: false
               identify: false
             enabled: false
+      auto_client_location_marker: '0'
       allow_override_map_settings: 0
       auto_client_location: ''
     third_party_settings: {  }

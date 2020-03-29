@@ -144,7 +144,6 @@ content:
           weight: 0
           enable: false
           map_center_id: location_plugins
-      auto_client_location_marker: '1'
       hide_textfield_form: true
       leaflet_settings:
         height: 400px
@@ -601,6 +600,7 @@ content:
               transparent: false
               identify: false
             enabled: false
+      auto_client_location_marker: '0'
       allow_override_map_settings: 0
       auto_client_location: ''
     third_party_settings: {  }
