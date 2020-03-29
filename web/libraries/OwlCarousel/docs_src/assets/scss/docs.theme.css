@@ -1,0 +1,18 @@
+/* Error: Can't find stylesheet to import.
+ *    ,
+ * 13 | @import "foundation/functions";
+ *    |         ^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   _settings.scss 13:9  @import
+ *   docs.theme.scss 1:9  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 13 \2502  @import \"foundation/functions\";\a    \2502          ^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   _settings.scss 13:9  @import\a   docs.theme.scss 1:9  root stylesheet";
+}
