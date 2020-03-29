@@ -6,7 +6,9 @@ id: gitignore
 label: gitignore
 description: 'files that are not to be in the git. Contain passwords or other sensitive data'
 folder: ../config/gitignore
-module: {  }
+module:
+  captcha: 0
+  recaptcha: 0
 theme: {  }
 blacklist: {  }
 graylist:

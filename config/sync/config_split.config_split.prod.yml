@@ -6,12 +6,10 @@ id: prod
 label: Production
 description: ''
 folder: ../config/prod
-module:
-  captcha: 0
-  recaptcha: 0
+module: {  }
 theme: {  }
 blacklist: {  }
 graylist: {  }
 graylist_dependents: true
-graylist_skip_equal: true
+graylist_skip_equal: false
 weight: 1
