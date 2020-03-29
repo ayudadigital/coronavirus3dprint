@@ -71,6 +71,10 @@ content:
     weight: 2
     settings:
       centre:
+        client_location:
+          enable: true
+          weight: 0
+          map_center_id: client_location
         fit_bounds:
           enable: true
           settings:
@@ -78,10 +82,6 @@ content:
             reset_zoom: true
           weight: 0
           map_center_id: fit_bounds
-        client_location:
-          enable: true
-          weight: 0
-          map_center_id: client_location
         fixed_boundaries:
           settings:
             north: ''
@@ -97,6 +97,13 @@ content:
           map_center_id: location_plugins
           settings:
             location_option_id: freeogeoip
+        ipstack:
+          settings:
+            access_key: ''
+            location_option_id: ipstack
+          weight: 0
+          enable: false
+          map_center_id: location_plugins
         fixed_value:
           settings:
             latitude: null
@@ -105,14 +112,6 @@ content:
           weight: 0
           enable: false
           map_center_id: location_plugins
-        ipstack:
-          settings:
-            access_key: ''
-            location_option_id: ipstack
-          weight: 0
-          enable: false
-          map_center_id: location_plugins
-      auto_client_location_marker: '1'
       hide_textfield_form: true
       leaflet_settings:
         height: 400px
@@ -129,17 +128,9 @@ content:
                 label: Address
                 description: 'Enter an address to be localized.'
                 autocomplete_min_length: 3
-                component_restrictions:
-                  route: ''
-                  locality: ''
-                  administrative_area: ''
-                  postal_code: ''
-                  country: ''
-                boundary_restriction:
-                  south: ''
-                  west: ''
-                  north: ''
-                  east: ''
+                location_priority:
+                  lat: null
+                  lng: null
           leaflet_control_layer:
             weight: 0
             settings:
@@ -569,6 +560,7 @@ content:
               transparent: false
               identify: false
             enabled: false
+      auto_client_location_marker: '0'
       allow_override_map_settings: 0
       auto_client_location: ''
     third_party_settings: {  }
