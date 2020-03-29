@@ -44,9 +44,11 @@ class EntityContentVisibilityChecker {
 
   public function isVisible() {
     $visibility = unserialize($this->entity_content->get('visibility')->value);
-    foreach($visibility as $condition_id => $condition_configuration) {
-      if (!$this->evaluateCondition($condition_id, $condition_configuration)) {
-        return FALSE;
+    if(!empty($visibility)) {
+      foreach ($visibility as $condition_id => $condition_configuration) {
+        if (!$this->evaluateCondition($condition_id, $condition_configuration)) {
+          return FALSE;
+        }
       }
     }
     return TRUE;

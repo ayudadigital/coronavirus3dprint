@@ -76,18 +76,20 @@ class EntityContentVisibilityCache {
   private function buildConditions() {
     $conditions = array();
     $visibility = unserialize($this->entity_content->get('visibility')->value);
-    foreach($visibility as $condition_id => $condition_configuration) {
-      /** @var ConditionInterface $condition */
-      $condition = $this->condition_manager->createInstance($condition_id, $condition_configuration);
-      if ($condition instanceof ContextAwarePluginInterface) {
-        $contexts = $this->context_repository->getRuntimeContexts(array_values($condition->getContextMapping()));
-        try {
-          $this->context_handler->applyContextMapping($condition, $contexts);
-        } catch (ContextException $e) {
+    if($visibility) {
+      foreach ($visibility as $condition_id => $condition_configuration) {
+        /** @var ConditionInterface $condition */
+        $condition = $this->condition_manager->createInstance($condition_id, $condition_configuration);
+        if ($condition instanceof ContextAwarePluginInterface) {
+          $contexts = $this->context_repository->getRuntimeContexts(array_values($condition->getContextMapping()));
+          try {
+            $this->context_handler->applyContextMapping($condition, $contexts);
+          } catch (ContextException $e) {
 
+          }
         }
+        $conditions[$condition_id] = $condition;
       }
-      $conditions[$condition_id] = $condition;
     }
     return $conditions;
   }
