@@ -1479,6 +1479,7 @@ article.profile.profile--view-mode-full > .right {
     border-radius: 0;
     position: relative;
     padding-left: 2.5em;
+    padding-left: 50px !important;
   }
   .block-menu.menu--map-menu ul.menu li a:hover, .block-menu.menu--map-menu ul.menu li a:focus, .block-menu.menu--map-menu ul.menu li a.is-active {
     background-color: white;
@@ -1523,6 +1524,9 @@ article.profile.profile--view-mode-full > .right {
     transform: translateY(-50%);
     display: inline-block;
   }
+  .block-menu.menu--map-menu ul.menu li a:before {
+    font-size: 2em !important;
+  }
   .block-menu.menu--map-menu ul.menu li:first-child a {
     box-sizing: border-box;
     display: inline-block;
@@ -1551,7 +1555,6 @@ article.profile.profile--view-mode-full > .right {
     border-radius: 0;
     position: relative;
     padding-left: 2.5em;
-    padding-left: 50px;
   }
   .block-menu.menu--map-menu ul.menu li:first-child a:hover, .block-menu.menu--map-menu ul.menu li:first-child a:focus, .block-menu.menu--map-menu ul.menu li:first-child a.is-active {
     background-color: white;

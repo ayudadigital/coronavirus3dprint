@@ -31,11 +31,14 @@
         a{
           @include button;
           @include icon-left('person', false, false);
+          padding-left: 50px !important;
+          &:before{
+            font-size: 2em !important;
+          }
         }
         &:first-child a{
           @include button;
           @include icon-left('group', false, false);
-          padding-left: 50px;
         }
         &:last-child a{
           @include button;
