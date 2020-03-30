@@ -4,8 +4,15 @@
 
           $('.view-content.owl-carousel').once('toggle-search-filters-sidebar').each(function(){
 
-            var referrer = new URL(document.referrer).pathname.toString();
             var pathname = window.location.pathname.toString();
+            var referrer = '';
+
+            if(!document.referrer){
+              referrer = pathname;
+            }
+            else{
+              referrer = new URL(document.referrer).pathname.toString();
+            }
 
             if(referrer !== pathname){
               //shown on first load
