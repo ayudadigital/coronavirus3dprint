@@ -464,6 +464,7 @@ form .captcha {
   padding: 20px 10%;
   background-color: #fff;
   position: relative;
+  overflow: hidden;
 }
 .node--type-prints.node--view-mode-teaser a {
   color: #222;
