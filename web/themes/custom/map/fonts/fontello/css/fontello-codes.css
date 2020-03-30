@@ -8,6 +8,9 @@
 .icon-map-current-position:before { content: '\e806'; } /* '' */
 .icon-heart:before { content: '\e807'; } /* '' */
 .icon-heart-empty:before { content: '\e808'; } /* '' */
+.icon-group:before { content: '\e809'; } /* '' */
+.icon-3d-printer:before { content: '\e80a'; } /* '' */
+.icon-person:before { content: '\e80b'; } /* '' */
 .icon-attention:before { content: '\e80e'; } /* '' */
 .icon-calendar:before { content: '\e810'; } /* '' */
 .icon-clock:before { content: '\e811'; } /* '' */
