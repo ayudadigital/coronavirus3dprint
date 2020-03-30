@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - system
+    - user
   theme:
     - map
 _core:
@@ -25,3 +26,10 @@ visibility:
     pages: "/prints\r\n/groups\r\n/map\r\n/user/login\r\n/user/password\r\n/user/register"
     negate: true
     context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
