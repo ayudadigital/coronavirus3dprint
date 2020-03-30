@@ -56,7 +56,7 @@ class MapWidget extends WidgetPluginBase {
       $lng = 0;
     }
     if(!isset($zoom_map) || !is_numeric($zoom_map)){
-      $zoom_map = 1;
+      $zoom_map = 0;
     }
 
     //set empty new url
