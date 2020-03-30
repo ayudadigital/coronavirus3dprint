@@ -5,7 +5,7 @@ slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/17
+  front: '/groups?f%5B2%5D=geolocation%3A%28geom%3A40.24599/-1.93359/6/44.98034238084973/-23.02734375/35.'
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
