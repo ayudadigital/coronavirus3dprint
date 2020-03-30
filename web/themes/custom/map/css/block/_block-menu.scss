@@ -8,16 +8,17 @@
       padding: 10px 0;
       display: block;
       a{
-        color: $black;
-        &.button--primary{
-          color: $white;
-        }
+        @include button;
       }
     }
   }
 
   &.menu--footer{
     opacity: 0.8;
-    font-size: 0.85em;
+    li{
+      a{
+        font-size: 0.75em !important;
+      }
+    }
   }
 }
