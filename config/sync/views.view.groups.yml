@@ -277,14 +277,14 @@ display:
           plugin_id: custom
       filters: {  }
       sorts:
-        search_api_relevance:
-          id: search_api_relevance
+        created:
+          id: created
           table: search_api_index_groups
-          field: search_api_relevance
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
-          order: ASC
+          order: DESC
           exposed: false
           expose:
             label: ''

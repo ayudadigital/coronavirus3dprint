@@ -135,14 +135,14 @@ display:
           plugin_id: search_api_rendered_item
       filters: {  }
       sorts:
-        search_api_relevance:
-          id: search_api_relevance
+        created:
+          id: created
           table: search_api_index_prints
-          field: search_api_relevance
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
-          order: ASC
+          order: DESC
           exposed: false
           expose:
             label: ''

@@ -18,6 +18,14 @@ name: Services
 description: ''
 read_only: false
 field_settings:
+  created:
+    label: Created
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
   field_have_car:
     label: 'I have a car'
     datasource_id: 'entity:node'

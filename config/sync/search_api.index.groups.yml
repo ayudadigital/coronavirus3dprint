@@ -2,18 +2,26 @@ uuid: 1b7244a9-81b9-4af4-946e-d78780b562f2
 langcode: en
 status: true
 dependencies:
+  module:
+    - group
+    - search_api
+    - search_api_geolocation
   config:
     - field.storage.group.field_geolocation
     - search_api.server.elasticsearch_server
-  module:
-    - search_api
-    - search_api_geolocation
-    - group
 id: groups
 name: Groups
 description: ''
 read_only: false
 field_settings:
+  created:
+    label: Created
+    datasource_id: 'entity:group'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - group
   geolocation:
     label: Location
     datasource_id: 'entity:group'

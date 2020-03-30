@@ -18,6 +18,14 @@ description: ''
 read_only: false
 field_settings:
   created:
+    label: Created
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  created_1:
     label: 'Authored on'
     datasource_id: 'entity:node'
     property_path: created

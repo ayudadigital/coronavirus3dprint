@@ -125,7 +125,19 @@ display:
               services: teaser
           plugin_id: search_api_rendered_item
       filters: {  }
-      sorts: {  }
+      sorts:
+        created:
+          id: created
+          table: search_api_index_services
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
       title: 'Map of the #Makers #Factories - the largest factory in #COVID19'
       header: {  }
       footer: {  }
