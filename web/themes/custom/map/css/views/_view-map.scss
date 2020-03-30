@@ -82,3 +82,12 @@
     display: none;
   }
 }
+
+body.path-prints,
+body.path-map,
+body.path-frontpage,
+body.path-groups{
+  .page-content{
+    margin: 0;
+  }
+}

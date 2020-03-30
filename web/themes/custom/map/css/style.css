@@ -862,6 +862,13 @@ article.profile.profile--view-mode-full > .right {
   display: none;
 }
 
+body.path-prints .page-content,
+body.path-map .page-content,
+body.path-frontpage .page-content,
+body.path-groups .page-content {
+  margin: 0;
+}
+
 .view-id-messages .view-content .views-row {
   margin-bottom: 20px;
 }
