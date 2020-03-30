@@ -10,8 +10,8 @@ dependencies:
     - map
 id: location
 theme: map
-region: content
-weight: -8
+region: map
+weight: -9
 provider: null
 plugin: 'facet_block:geolocation'
 settings:

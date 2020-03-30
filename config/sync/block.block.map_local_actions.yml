@@ -11,7 +11,7 @@ _core:
 id: map_local_actions
 theme: map
 region: content
-weight: -10
+weight: -9
 provider: null
 plugin: local_actions_block
 settings:

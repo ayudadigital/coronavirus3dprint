@@ -10,8 +10,8 @@ dependencies:
     - map
 id: locationgroups
 theme: map
-region: content
-weight: -7
+region: map
+weight: -8
 provider: null
 plugin: 'facet_block:location'
 settings:

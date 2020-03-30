@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - search_api.index.groups
+    - system.menu.map-menu
   module:
     - search_api
+    - user
     - views_infinite_scroll
 id: groups
 label: Groups
@@ -22,8 +24,9 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
@@ -314,6 +317,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - user.permissions
       tags: {  }
   page_1:
     display_plugin: page
@@ -328,10 +332,20 @@ display:
         type: none
       defaults:
         cache: false
+      menu:
+        type: normal
+        title: Community
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: map-menu
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - user.permissions
       tags: {  }

@@ -10,8 +10,8 @@ dependencies:
     - map
 id: locationprints
 theme: map
-region: content
-weight: -6
+region: map
+weight: -7
 provider: null
 plugin: 'facet_block:location_prints'
 settings:

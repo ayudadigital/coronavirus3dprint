@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - search_api.index.services
+    - system.menu.map-menu
   module:
     - search_api
+    - user
     - views_infinite_scroll
 id: map
 label: Map
@@ -22,8 +24,9 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: none
         options: {  }
@@ -149,6 +152,7 @@ display:
       contexts:
         - 'languages:language_interface'
         - url.query_args
+        - user.permissions
       tags: {  }
   page_1:
     display_plugin: page
@@ -156,15 +160,26 @@ display:
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       path: map
       cache:
         type: none
       defaults:
         cache: false
+      menu:
+        type: normal
+        title: Makers
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: map-menu
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
         - url.query_args
+        - user.permissions
       tags: {  }
