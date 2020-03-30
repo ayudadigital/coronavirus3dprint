@@ -1,0 +1,10 @@
+label: Mapa
+display:
+  default:
+    display_options:
+      title: 'Mapa de las #Fabricas #Makers - la mayor fábrica en el  #COVID19 '
+      empty:
+        area:
+          content:
+            value: "<p>No results for current filters Try a less restrictive search or move around the map to see other areas</p>\r\n"
+            format: basic_html

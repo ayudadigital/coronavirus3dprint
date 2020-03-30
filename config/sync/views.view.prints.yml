@@ -147,7 +147,7 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-      title: Prints
+      title: 'Map of the #3DPrints #Makers - health material for the #COVID19 crisis'
       header: {  }
       footer: {  }
       empty:
@@ -191,11 +191,11 @@ display:
         cache: false
       menu:
         type: normal
-        title: Prints
+        title: '3D Prints'
         description: ''
         expanded: false
         parent: ''
-        weight: 0
+        weight: 2
         context: '0'
         menu_name: map-menu
     cache_metadata:

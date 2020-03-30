@@ -289,7 +289,7 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-      title: 'Mapa de los #Coronavirus #Makers - material sanitario para la crisis del  #COVID19 '
+      title: 'Map of the #Maker #Community - health material for the #COVID19 crisis'
       header: {  }
       footer: {  }
       empty:

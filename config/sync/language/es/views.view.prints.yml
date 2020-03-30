@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      title: 'Mapa de las #Impresiones 3D #Makers - material sanitario para la crisis del  #COVID19 '
+      empty:
+        area:
+          content:
+            value: "<p>No results for current filters Try a less restrictive search or move around the map to see other areas</p>\r\n"
+            format: basic_html
+  page_1:
+    display_options:
+      menu:
+        title: 'Impresiones 3D'

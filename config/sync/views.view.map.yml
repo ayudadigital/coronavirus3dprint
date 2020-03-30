@@ -126,7 +126,7 @@ display:
           plugin_id: search_api_rendered_item
       filters: {  }
       sorts: {  }
-      title: Map
+      title: 'Map of the #Makers #Factories - the largest factory in #COVID19'
       header: {  }
       footer: {  }
       empty:
@@ -145,7 +145,8 @@ display:
           plugin_id: text
       relationships: {  }
       arguments: {  }
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       use_ajax: true
     cache_metadata:
       max-age: -1
@@ -173,7 +174,7 @@ display:
         description: ''
         expanded: false
         parent: ''
-        weight: 0
+        weight: 1
         context: '0'
         menu_name: map-menu
     cache_metadata:
