@@ -11,8 +11,8 @@
       attach: function (context, settings) {
         if (settings.facets !== 'undefined' && settings.facets.map !== 'undefined') {
           $('#' + settings.facets.map.facet_id).once('exposed-filter-map').each(function () {
-            var markers = Drupal.facets.makeMap(context, settings);
-            Drupal.facets.UpdateValuesMap(markers, context, settings);
+            var makedmap = Drupal.facets.makeMap(context, settings);
+            Drupal.facets.UpdateValuesMap(makedmap[0], makedmap[1], context, settings);
           });
         }
       }
@@ -36,19 +36,6 @@
         });
         // Add baselayer to map.
         map.addLayer(baseLayer);
-
-        //set initial point
-        var original_LatLong = Drupal.facets.get_original_LatLong(context, settings);
-        var original_zoom = Drupal.facets.get_original_zoom(context, settings);
-        if(original_LatLong[0] == 0 && original_LatLong[1] == 0){
-          // var bounds = new L.LatLngBounds(markerList);
-          // map.fitBounds(bounds);
-          //lat 39, lng -4 = center map in Spain
-          map.setView([39,-4], original_zoom);
-        }
-        else{
-          map.setView(original_LatLong, original_zoom);
-        }
 
         //cluster
         var markers = L.markerClusterGroup({
@@ -79,13 +66,19 @@
         // });
 
         //Dragend event of map for update marker position
+        var zoomend_counter = 0;
         map.on('zoomend dragend', function(e) {
-          setTimeout(function(){
-            Drupal.facets.send_facets_filters(map, context, settings);
-          }, 1000);
+          //first zoom from map.setView is a bug from leaflet library
+          zoomend_counter = zoomend_counter+1;
+          if(zoomend_counter > 1){
+            setTimeout(function(){
+              Drupal.facets.send_facets_filters(map, context, settings);
+            }, 1000);
+          }
+
         });
 
-        return markers;
+        return [map, markers];
 
     };
 
@@ -141,7 +134,7 @@
         $('#'+facet_id).find('a.facet-map-link')[0].click();
     };
 
-    Drupal.facets.UpdateValuesMap = function (markers, context, settings) {
+    Drupal.facets.UpdateValuesMap = function (map, markers, context, settings) {
 
         //get lat/long
         get_geohash();
@@ -159,6 +152,7 @@
         /* This will add all the clusters as returned by the elastic server.*/
         function makePoints(aggs){
             var markerList = [];
+            var lat_long_list = [];
             aggs.forEach(function(agg, index){
                 var center = geohash.decode (agg.key);//elastic return a geohas so need to change it into lat/lon
                 var digits = (agg.doc_count+'').length;
@@ -168,11 +162,25 @@
                     iconSize: null
                 });
                 var marker = L.marker(new L.LatLng(center.latitude, center.longitude),{icon:myIcon});
+                lat_long_list.push([center.latitude, center.longitude]);
                 marker.count = agg.doc_count;
                 // marker.bindPopup(''+agg.doc_count);
                 markerList.push(marker);
             });
             markers.addLayers(markerList);
+
+            //set initial point
+            var original_LatLong = Drupal.facets.get_original_LatLong(context, settings);
+            var original_zoom = Drupal.facets.get_original_zoom(context, settings);
+            if(original_LatLong[0] == 0 && original_LatLong[1] == 0){
+              var bounds = new L.LatLngBounds(lat_long_list);
+              map.fitBounds(bounds);
+              //lat 39, lng -4 = center map in Spain
+              // map.setView([37,-7], 5);
+            }
+            else{
+              map.setView(original_LatLong, original_zoom);
+            }
         }
     };
 
