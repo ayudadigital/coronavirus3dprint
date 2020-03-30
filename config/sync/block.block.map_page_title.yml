@@ -2,8 +2,6 @@ uuid: 393573aa-15cf-4500-9218-f87ff0a15f05
 langcode: en
 status: true
 dependencies:
-  module:
-    - system
   theme:
     - map
 _core:
@@ -19,9 +17,4 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility:
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: true
-    context_mapping: {  }
+visibility: {  }
