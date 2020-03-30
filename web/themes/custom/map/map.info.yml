@@ -9,10 +9,11 @@ package: 'Mediteran'
 regions:
   header: 'Header'
   pre_content: 'Pre-content'
-  breadcrumb: Breadcrumb
-  highlighted: Highlighted
-  help: Help
-  content: Content
+  breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  map: 'Map region'
+  content: 'Content'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
   sidebar_first: 'First sidebar'
