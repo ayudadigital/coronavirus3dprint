@@ -75,7 +75,6 @@
   width: 100%;
   height: auto;
   border-radius: 0;
-
   &:hover,
   &:focus,
   &.is-active{
@@ -85,5 +84,21 @@
     text-decoration: none;
     outline: transparent;
   }
+}
 
+@mixin button--primary {
+  @include button;
+  padding: 13px 24px;
+  background-color: $green;
+  border-color: $green;
+  color: $white;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  &:hover,
+  &:focus,
+  &.is-active{
+    background-color: $green_dark;
+    border-color: $green_dark;
+    color: $white;
+  }
 }
