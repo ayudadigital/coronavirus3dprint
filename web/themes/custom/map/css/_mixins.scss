@@ -47,3 +47,43 @@
     @content;
   }
 }
+
+
+@mixin button {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 13px 24px;
+  background-color: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #b8b8b8;
+  margin-left: 0;
+  min-width: 100px;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+
+  &:hover,
+  &:focus,
+  &.is-active{
+    background-color: white;
+    border-color: #0678be;
+    color: #0678be;
+    text-decoration: none;
+    outline: transparent;
+  }
+
+}

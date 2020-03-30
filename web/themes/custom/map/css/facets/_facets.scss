@@ -2,14 +2,18 @@
   position: relative;
   width: 100%;
   min-height: 150px;
-  height: 60vh;
+  height: 50vh;
+  @include tablet-sm {
+    height: 60vh;
+  }
 }
 
-.view-id-map{
+.view-id-map, .view-id-groups, .view-id-prints{
   .view-content.owl-carousel{
     .owl-item{
-      article.node{
-        height: 35vh;
+      article.node,
+      .views-row{
+        height: 25vh;
       }
     }
   }
@@ -45,15 +49,6 @@
           font-size: 0.8em;
         }
       }
-    }
-  }
-}
-
-.bat-facets-availability-form{
-  .container-inline{
-    display: inline-block;
-    div{
-      display: inline-block;
     }
   }
 }

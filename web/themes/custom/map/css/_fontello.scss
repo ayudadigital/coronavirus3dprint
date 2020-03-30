@@ -43,6 +43,9 @@ $icons: (
         map-current-position: '\e806',
         heart: '\e807',
         heart-empty: '\e808',
+        group: '\e809',
+        '3d-printer': '\e80a',
+        person: '\e80b',
 );
 
 @mixin icon($icon_name:false, $color:false, $replace:false){
@@ -85,12 +88,13 @@ $icons: (
 
     /* Uncomment for 3D effect */
     text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+
+    // Include any extra rules supplied for the pseudo-element
+    @content;
   }
   @if $replace {
     font-size: 0;
   }
-  // Include any extra rules supplied for the pseudo-element
-  @content;
 }
 
 @mixin icon-left($icon_name:false, $color:false, $replace:false){
@@ -103,6 +107,8 @@ $icons: (
     top: 50%;
     transform: translateY(-50%);
     display: inline-block;
+    // Include any extra rules supplied for the pseudo-element
+    @content;
   }
 }
 
@@ -116,5 +122,7 @@ $icons: (
     top: 50%;
     transform: translateY(-50%);
     display: inline-block;
+    // Include any extra rules supplied for the pseudo-element
+    @content;
   }
 }
