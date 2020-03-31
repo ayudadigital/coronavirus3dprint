@@ -32,7 +32,8 @@
         var map = new L.Map(facet_id, {
             // scrollWheelZoom: false,
             // minZoom: 3,
-            // maxZoom: 15
+            // maxZoom: 15,
+            gestureHandling: true
         });
         // Add baselayer to map.
         map.addLayer(baseLayer);

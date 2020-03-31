@@ -17,11 +17,21 @@ markercluster:
   dependencies:
     - sag_facets_map/leaflet
 
+leaflet_gesture_handling:
+  css:
+    theme:
+      /libraries/leaflet_gesture_handling/dist/leaflet-gesture-handling.css: {}
+  js:
+    /libraries/leaflet_gesture_handling/dist/leaflet-gesture-handling.js: {}
+  dependencies:
+    - sag_facets_map/leaflet
+
 facets-map:
   js:
     js/map.js: {}
   dependencies:
     - sag_facets_map/markercluster
+    - sag_facets_map/leaflet_gesture_handling
     - core/jquery
     - core/jquery.once
     - core/drupal
