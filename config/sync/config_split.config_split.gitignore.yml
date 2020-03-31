@@ -8,6 +8,15 @@ description: 'files that are not to be in the git. Contain passwords or other se
 folder: ../config/gitignore
 module:
   captcha: 0
+  cloudflare: 0
+  cloudflarepurger: 0
+  purge: 0
+  purge_drush: 0
+  purge_processor_cron: 0
+  purge_processor_lateruntime: 0
+  purge_queuer_coretags: 0
+  purge_tokens: 0
+  purge_ui: 0
   recaptcha: 0
 theme: {  }
 blacklist: {  }
