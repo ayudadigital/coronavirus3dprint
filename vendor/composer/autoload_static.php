@@ -212,6 +212,7 @@ class ComposerStaticInit49a4a4407a70ddfffdbe4a85c26f2e64
             'Composer\\Installers\\' => 20,
             'Composer\\CaBundle\\' => 18,
             'Composer\\' => 9,
+            'CloudFlarePhpSdk\\' => 17,
         ),
         'B' => 
         array (
@@ -691,6 +692,10 @@ class ComposerStaticInit49a4a4407a70ddfffdbe4a85c26f2e64
         'Composer\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/composer/src/Composer',
+        ),
+        'CloudFlarePhpSdk\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/d8-contrib-modules/cloudflarephpsdk/src',
         ),
         'Behat\\Mink\\Driver\\' => 
         array (

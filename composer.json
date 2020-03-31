@@ -78,6 +78,7 @@
         "drupal/age_field_formatter": "^2.1",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/charts": "^3.1",
+        "drupal/cloudflare": "^1.0@alpha",
         "drupal/coffee": "^1.0@beta",
         "drupal/coffee_mediteran": "^1.0",
         "drupal/conditional_fields": "^1.0@alpha",
