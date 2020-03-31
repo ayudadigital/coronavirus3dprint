@@ -4180,6 +4180,10 @@
                     "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
                     "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                 }
+            },
+            "patches_applied": {
+                "Return translated title for \"Content: ID\" views contextual filter (https://www.drupal.org/project/drupal/issues/2952252)": "https://www.drupal.org/files/issues/2019-12-22/2952252-18.patch",
+                "View titles in breadcrumb don't get properly translated (https://www.drupal.org/project/drupal/issues/2716019)": "https://www.drupal.org/files/issues/2019-07-17/drupal-n2716019-67.patch"
             }
         },
         "installation-source": "dist",

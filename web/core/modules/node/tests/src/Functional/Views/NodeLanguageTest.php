@@ -297,4 +297,35 @@ class NodeLanguageTest extends NodeTestBase {
     }
   }
 
+  /**
+   * Tests the translation of the title replacement for Views contextual filter
+   * using the "Content: ID".
+   */
+  public function testContextualFilterOverrideTitle() {
+    $view = Views::getView('test_language');
+    $view->setDisplay('page_1');
+
+    // Use the argument to override the view titles.
+    $options = [
+      'title_enable' => TRUE,
+      'title' => 'Views title - {{ arguments.nid }}',
+    ];
+
+    $view->initHandlers();
+    $view->removeHandler('page_1', 'argument', 'langcode');
+    $view->addHandler('page_1', 'argument', 'node_field_data', 'nid', $options);
+    $view->storage->setStatus(TRUE);
+    $view->build();
+    $view->save();
+
+    // Make sure view behaves as expected.
+    $this->drupalGet('fr/test-language/1');
+    $this->assertText('Views title - ' . $this->nodeTitles['fr'][0]);
+    $this->assertNoText('Views title - ' . $this->nodeTitles['es'][0]);
+
+    $this->drupalGet('es/test-language/1');
+    $this->assertText('Views title - ' . $this->nodeTitles['es'][0]);
+    $this->assertNoText('Views title - ' . $this->nodeTitles['fr'][0]);
+  }
+
 }
