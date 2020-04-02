@@ -10,8 +10,11 @@ dependencies:
   config:
     - field.storage.user.field_sex
     - field.storage.user.field_spoken_languages
+    - field.storage.node.field_filament_material
+    - field.storage.node.field_filament_size
     - field.storage.node.field_have_car
     - field.storage.node.field_geolocation
+    - field.storage.node.field_machine_types
     - search_api.server.elasticsearch_server
 id: services
 name: Services
@@ -26,6 +29,22 @@ field_settings:
     dependencies:
       module:
         - node
+  field_filament_material:
+    label: 'Filament material'
+    datasource_id: 'entity:node'
+    property_path: field_filament_material
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_filament_material
+  field_filament_size:
+    label: 'Filament size'
+    datasource_id: 'entity:node'
+    property_path: field_filament_size
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_filament_size
   field_have_car:
     label: 'I have a car'
     datasource_id: 'entity:node'
@@ -34,6 +53,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_have_car
+  field_machine_types:
+    label: 'Machine types'
+    datasource_id: 'entity:node'
+    property_path: field_machine_types
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_machine_types
   field_sex:
     label: 'Authored by » User » Sex'
     datasource_id: 'entity:node'
