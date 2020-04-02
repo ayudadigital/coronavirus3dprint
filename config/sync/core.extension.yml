@@ -98,6 +98,7 @@ module:
   username_policy: 0
   views_infinite_scroll: 0
   views_ui: 0
+  x_frame_options_configuration: 0
   menu_link_content: 1
   pathauto: 1
   content_translation: 10
