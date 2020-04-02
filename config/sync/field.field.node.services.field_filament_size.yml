@@ -1,18 +1,18 @@
-uuid: 6db11af6-cabe-48ba-a8da-1e8ef253563c
+uuid: 32d3e427-dde4-48f3-bce4-d829273b7152
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_have_car
+    - field.storage.node.field_filament_size
     - node.type.services
   module:
     - options
-id: node.services.field_have_car
-field_name: field_have_car
+id: node.services.field_filament_size
+field_name: field_filament_size
 entity_type: node
 bundle: services
-label: 'I have a car'
-description: 'I have a car in case the 3D printed parts needs to be transported'
+label: 'Filament size'
+description: 'What size of filament do your machines use?'
 required: false
 translatable: false
 default_value: {  }

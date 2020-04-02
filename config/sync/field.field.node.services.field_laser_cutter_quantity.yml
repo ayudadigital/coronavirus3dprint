@@ -1,0 +1,25 @@
+uuid: 354bda93-eba7-4eae-812b-3ca660d7a78c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_laser_cutter_quantity
+    - node.type.services
+id: node.services.field_laser_cutter_quantity
+field_name: field_laser_cutter_quantity
+entity_type: node
+bundle: services
+label: 'Number of machines (Laser cutter)'
+description: 'How many machines of this type do you have?'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

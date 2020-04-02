@@ -1,0 +1,25 @@
+uuid: dbce124e-0bac-4005-b4e4-6d9e402a6c20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cnc_quantity
+    - node.type.services
+id: node.services.field_cnc_quantity
+field_name: field_cnc_quantity
+entity_type: node
+bundle: services
+label: 'Number of machines (CNC)'
+description: 'How many machines of this type do you have?'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

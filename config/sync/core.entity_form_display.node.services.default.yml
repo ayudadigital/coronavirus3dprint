@@ -3,12 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.services.field_cnc_quantity
     - field.field.node.services.field_description
+    - field.field.node.services.field_fdm_quantity
+    - field.field.node.services.field_filament_material
+    - field.field.node.services.field_filament_size
     - field.field.node.services.field_geolocation
     - field.field.node.services.field_have_car
+    - field.field.node.services.field_laser_cutter_quantity
+    - field.field.node.services.field_machine_types
     - field.field.node.services.field_machines
+    - field.field.node.services.field_sla_quantity
+    - field.field.node.services.field_sls_quantity
     - node.type.services
   module:
+    - conditional_fields
     - field_group
     - geolocation_leaflet
     - paragraphs
@@ -74,6 +83,14 @@ third_party_settings:
       label: 'Other data'
     group_machines:
       children:
+        - field_machine_types
+        - field_fdm_quantity
+        - field_filament_material
+        - field_filament_size
+        - field_sla_quantity
+        - field_sls_quantity
+        - field_cnc_quantity
+        - field_laser_cutter_quantity
         - field_machines
       parent_name: group_tabs
       weight: 13
@@ -91,6 +108,31 @@ targetEntityType: node
 bundle: services
 mode: default
 content:
+  field_cnc_quantity:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        2bc84406-9e93-416a-aeea-c6f102b778ff:
+          dependee: field_machine_types
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: cnc
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: services
+    type: number
+    region: content
   field_description:
     weight: 26
     settings:
@@ -98,6 +140,79 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_fdm_quantity:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        83dc851a-089b-4f00-8537-8e4b61b3955e:
+          dependee: field_machine_types
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: fdm
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: services
+    type: number
+    region: content
+  field_filament_material:
+    weight: 4
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        939e6549-e078-4d6b-a1ef-3576cdd77e2b:
+          dependee: field_machine_types
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: fdm
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: services
+    type: options_buttons
+    region: content
+  field_filament_size:
+    weight: 5
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        2a206498-2ff0-4ea4-9001-fb3301d22b00:
+          dependee: field_machine_types
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: fdm
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: services
+    type: options_buttons
     region: content
   field_geolocation:
     weight: 2
@@ -612,9 +727,40 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_laser_cutter_quantity:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        ad8898ac-ec8d-4026-8311-84d26e94e88e:
+          dependee: field_machine_types
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: laser_cutter
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: services
+    type: number
+    region: content
+  field_machine_types:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_machines:
     type: entity_reference_paragraphs
-    weight: 3
+    weight: 10
     settings:
       title: Item
       title_plural: Items
@@ -623,6 +769,56 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
     third_party_settings: {  }
+    region: content
+  field_sla_quantity:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        a17ec47c-9843-4b28-aae4-cb2885871841:
+          dependee: field_machine_types
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: sla
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: services
+    type: number
+    region: content
+  field_sls_quantity:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        d9de4c1a-d79d-4ce7-a947-3aba21bd3477:
+          dependee: field_machine_types
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: sls
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: services
+    type: number
     region: content
   title:
     type: string_textfield
@@ -633,10 +829,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   created: true
   langcode: true

@@ -1,0 +1,12 @@
+settings:
+  allowed_values:
+    -
+      label: 'Impresora FDM (filamento de plástico)'
+    -
+      label: 'Impresora SLA (resina)'
+    -
+      label: 'Impresora SLS (polvo)'
+    -
+      label: 'Maquina CNC'
+    -
+      label: 'Máquina de corte por láser'

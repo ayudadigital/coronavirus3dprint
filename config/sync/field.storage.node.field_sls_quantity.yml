@@ -1,0 +1,20 @@
+uuid: d4788d2a-4195-47ae-bb66-997463dc433a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_sls_quantity
+field_name: field_sls_quantity
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

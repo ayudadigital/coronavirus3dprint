@@ -1,0 +1,21 @@
+uuid: 5e6ee0f6-3d80-4e7d-8e77-949158036438
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_machine_types
+    - node.type.services
+  module:
+    - options
+id: node.services.field_machine_types
+field_name: field_machine_types
+entity_type: node
+bundle: services
+label: 'Machine types'
+description: 'What type of machines do you have?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

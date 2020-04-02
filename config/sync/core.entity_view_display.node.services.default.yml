@@ -3,10 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.services.field_cnc_quantity
     - field.field.node.services.field_description
+    - field.field.node.services.field_fdm_quantity
+    - field.field.node.services.field_filament_material
+    - field.field.node.services.field_filament_size
     - field.field.node.services.field_geolocation
     - field.field.node.services.field_have_car
+    - field.field.node.services.field_laser_cutter_quantity
+    - field.field.node.services.field_machine_types
     - field.field.node.services.field_machines
+    - field.field.node.services.field_sla_quantity
+    - field.field.node.services.field_sls_quantity
     - filter.format.plain_text
     - node.type.services
   module:
@@ -40,6 +48,14 @@ third_party_settings:
       children:
         - extra_field_user_profile_compact
         - field_description
+        - field_machine_types
+        - field_fdm_quantity
+        - field_filament_material
+        - field_filament_size
+        - field_sla_quantity
+        - field_sls_quantity
+        - field_cnc_quantity
+        - field_laser_cutter_quantity
         - links
       parent_name: ''
       weight: 1
@@ -76,12 +92,44 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_cnc_quantity:
+    weight: 11
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   field_description:
-    weight: 5
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_fdm_quantity:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_filament_material:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_filament_size:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_geolocation:
     weight: 6
@@ -603,8 +651,42 @@ content:
     third_party_settings: {  }
     type: list_default
     region: content
+  field_laser_cutter_quantity:
+    weight: 12
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_machine_types:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_sla_quantity:
+    weight: 9
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_sls_quantity:
+    weight: 10
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   links:
-    weight: 8
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
