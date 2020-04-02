@@ -126,6 +126,7 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/username_policy": "^1.0",
         "drupal/views_infinite_scroll": "^1.6",
+        "drupal/x_frame_options": "^1.1",
         "drush/drush": "^9.7.1 | ^10.0.0",
         "google/charts": "45",
         "topfloor/composer-cleanup-vcs-dirs": "^1.0",
