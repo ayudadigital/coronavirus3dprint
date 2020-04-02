@@ -1,0 +1,23 @@
+uuid: 44ba509d-035a-460f-a12f-1edea26662a8
+langcode: es
+status: true
+dependencies:
+  config:
+    - facets.facet.filament_size
+  module:
+    - facets
+  theme:
+    - map
+id: filamentsize
+theme: map
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'facet_block:filament_size'
+settings:
+  id: 'facet_block:filament_size'
+  label: 'Filament size'
+  provider: facets
+  label_display: '0'
+  block_id: filamentsize
+visibility: {  }

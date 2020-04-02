@@ -12,7 +12,7 @@ dependencies:
 id: addprints
 theme: map
 region: sidebar_first
-weight: 0
+weight: -9
 provider: null
 plugin: 'block_content:01a4392d-be57-4856-9a2e-081842907513'
 settings:

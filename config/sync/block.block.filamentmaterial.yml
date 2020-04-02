@@ -1,0 +1,23 @@
+uuid: 8fa1761c-74ba-4808-be04-71ad8c07f3a6
+langcode: es
+status: true
+dependencies:
+  config:
+    - facets.facet.filament_material
+  module:
+    - facets
+  theme:
+    - map
+id: filamentmaterial
+theme: map
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'facet_block:filament_material'
+settings:
+  id: 'facet_block:filament_material'
+  label: 'Filament material'
+  provider: facets
+  label_display: '0'
+  block_id: filamentmaterial
+visibility: {  }
