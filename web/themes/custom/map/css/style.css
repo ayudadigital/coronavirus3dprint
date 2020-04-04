@@ -592,7 +592,7 @@ form .captcha {
   margin: 0 auto;
   width: 90%;
   max-width: 960px;
-  padding: 30px 0;
+  padding: 0;
 }
 /* line 7, node/_node--type-news.scss */
 .node--type-news.node--view-mode-full a {
