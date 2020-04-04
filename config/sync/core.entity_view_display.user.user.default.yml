@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_age
     - field.field.user.user.field_name
+    - field.field.user.user.field_privacy_policy
     - field.field.user.user.field_sex
     - field.field.user.user.field_spoken_languages
     - field.field.user.user.user_picture
@@ -14,8 +15,7 @@ dependencies:
 third_party_settings:
   field_group:
     group_right:
-      children:
-        - field_telegram_nickname
+      children: {  }
       parent_name: ''
       weight: 1
       format_type: html_element
@@ -64,6 +64,7 @@ content:
 hidden:
   field_age: true
   field_name: true
+  field_privacy_policy: true
   field_sex: true
   field_spoken_languages: true
   langcode: true

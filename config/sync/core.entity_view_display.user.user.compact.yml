@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_age
     - field.field.user.user.field_name
+    - field.field.user.user.field_privacy_policy
     - field.field.user.user.field_sex
     - field.field.user.user.field_spoken_languages
     - field.field.user.user.user_picture
@@ -150,6 +151,7 @@ content:
     label: hidden
 hidden:
   extra_field_user_profile_compact: true
+  field_privacy_policy: true
   langcode: true
   linked_username: true
   member_for: true

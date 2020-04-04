@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_age
     - field.field.user.user.field_name
+    - field.field.user.user.field_privacy_policy
     - field.field.user.user.field_sex
     - field.field.user.user.field_spoken_languages
     - field.field.user.user.user_picture
@@ -117,6 +118,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_privacy_policy:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_sex:
     weight: 32
     settings: {  }
@@ -154,3 +162,4 @@ hidden:
   google_analytics: true
   langcode: true
   language: true
+  path: true

@@ -1,0 +1,24 @@
+uuid: 267994cd-9347-4e8f-a31f-7ded64ccd45f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_privacy_policy
+  module:
+    - user
+id: user.user.field_privacy_policy
+field_name: field_privacy_policy
+entity_type: user
+bundle: user
+label: 'I accept the <a href="/node/9" target="_blank">Privacy Policy</a>'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
