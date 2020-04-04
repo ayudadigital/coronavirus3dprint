@@ -9,6 +9,7 @@ is_admin: null
 permissions:
   - 'access content overview'
   - 'access contextual links'
+  - 'access toolbar'
   - 'create content translations'
   - 'create page content'
   - 'create url aliases'
