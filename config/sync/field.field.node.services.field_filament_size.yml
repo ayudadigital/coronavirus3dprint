@@ -1,0 +1,21 @@
+uuid: 32d3e427-dde4-48f3-bce4-d829273b7152
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_filament_size
+    - node.type.services
+  module:
+    - options
+id: node.services.field_filament_size
+field_name: field_filament_size
+entity_type: node
+bundle: services
+label: 'Filament size'
+description: 'What size of filament do your machines use?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

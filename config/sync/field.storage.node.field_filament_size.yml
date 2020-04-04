@@ -1,0 +1,27 @@
+uuid: d18576a8-3354-4248-a2f2-529cd5e0fcd8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_filament_size
+field_name: field_filament_size
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '3'
+      label: 3mm
+    -
+      value: '1.75'
+      label: 1.75mm
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

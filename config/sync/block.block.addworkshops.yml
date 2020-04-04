@@ -12,7 +12,7 @@ dependencies:
 id: addworkshops
 theme: map
 region: sidebar_first
-weight: 0
+weight: -10
 provider: null
 plugin: 'block_content:304a7b70-89b0-477c-ac9b-73bb376eeefc'
 settings:

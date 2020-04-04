@@ -1,0 +1,5 @@
+x_frame_options_configuration.link:
+  title: 'X-frame-options header'
+  description: 'Configure x-frame-options response header'
+  parent: system.admin_config_system
+  route_name: 'x_frame_options_configuration.settings'

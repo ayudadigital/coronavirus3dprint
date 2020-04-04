@@ -12,7 +12,7 @@ dependencies:
 id: addgroup
 theme: map
 region: sidebar_first
-weight: 0
+weight: -11
 provider: null
 plugin: 'block_content:f0431968-17fa-4843-aefe-de80c96f2c2c'
 settings:

@@ -32,7 +32,6 @@ module:
   editor: 0
   editor_advanced_link: 0
   elasticsearch_connector: 0
-  elasticsearch_connector_views: 0
   entity: 0
   entity_content_visibility: 0
   entity_reference_revisions: 0
@@ -98,6 +97,7 @@ module:
   username_policy: 0
   views_infinite_scroll: 0
   views_ui: 0
+  x_frame_options_configuration: 0
   menu_link_content: 1
   pathauto: 1
   content_translation: 10

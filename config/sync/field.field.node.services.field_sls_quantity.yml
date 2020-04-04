@@ -1,0 +1,23 @@
+uuid: 1807c8e3-360c-4a15-9dd6-554def2e1bd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sls_quantity
+    - node.type.services
+id: node.services.field_sls_quantity
+field_name: field_sls_quantity
+entity_type: node
+bundle: services
+label: 'Number of machines (SLS)'
+description: 'How many machines of this type do you have?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,21 @@
+uuid: d8d92fea-28d4-4de3-9027-031d950fbccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_filament_material
+    - node.type.services
+  module:
+    - options
+id: node.services.field_filament_material
+field_name: field_filament_material
+entity_type: node
+bundle: services
+label: 'Filament material'
+description: 'What material do you work with?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

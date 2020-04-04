@@ -1,0 +1,23 @@
+uuid: 98a7c756-169c-4e61-ad43-9d093212b486
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fdm_quantity
+    - node.type.services
+id: node.services.field_fdm_quantity
+field_name: field_fdm_quantity
+entity_type: node
+bundle: services
+label: 'Number of machines (FDM)'
+description: 'How many machines of this type do you have?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

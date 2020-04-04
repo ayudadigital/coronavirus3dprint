@@ -501,6 +501,25 @@ form .captcha {
   max-width: 100% !important;
 }
 
+.node--type-news.node--view-mode-full {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 960px;
+  padding: 0;
+}
+.node--type-news.node--view-mode-full a {
+  word-break: break-word;
+}
+.node--type-news.node--view-mode-full .field--name-field-image img {
+  width: 100%;
+  height: auto;
+}
+.node--type-news.node--view-mode-full .field--name-field-date {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
 article.profile .field--name-user-picture img {
   border-radius: 50%;
   width: 100%;
@@ -870,6 +889,67 @@ body.path-groups .page-content {
   margin: 0;
 }
 
+.view-id-news {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 960px;
+  padding: 30px 0;
+}
+.view-id-news .view-content .views-row {
+  width: 100%;
+  border: 1px solid #f5f5f5;
+  padding: 20px;
+  background-color: #EEE;
+  position: relative;
+}
+.view-id-news .view-content .views-row .views-field-label {
+  padding-bottom: 30px;
+}
+.view-id-news .view-content .views-row .wrapper-news {
+  overflow: hidden;
+}
+.view-id-news .view-content .views-row .wrapper-news div {
+  float: left;
+  width: 23%;
+  margin-right: 2%;
+}
+.view-id-news .view-content .views-row .wrapper-news div img {
+  width: 100%;
+  height: auto;
+}
+.view-id-news .view-content .views-row .wrapper-news div + div {
+  margin-right: 0;
+  width: 75%;
+}
+.view-id-news .view-content .views-row .wrapper-news div + div time {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+.view-id-news .view-content .views-row .wrapper-news div + div .title-news {
+  clear: both;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.view-id-news .view-content .views-row .wrapper-news div + div .body-news {
+  clear: both;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+@media all and (max-width: 768px) {
+  .view-id-news .view-content .views-row .wrapper-news div {
+    float: left;
+    width: 100%;
+    margin-right: 0%;
+  }
+  .view-id-news .view-content .views-row .wrapper-news div + div {
+    margin-right: 0;
+    width: 100%;
+  }
+}
 .view-id-messages .view-content .views-row {
   margin-bottom: 20px;
 }

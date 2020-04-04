@@ -1,0 +1,7 @@
+x_frame_options_configuration.settings:
+  path: '/admin/config/system/x_frame_options_configuration/settings'
+  defaults:
+    _form: '\Drupal\x_frame_options_configuration\Form\XFrameOptionsConfigurationSettingsForm'
+    _title: 'Configure x-frame-options response header'
+  requirements:
+    _permission: 'administer site configuration'

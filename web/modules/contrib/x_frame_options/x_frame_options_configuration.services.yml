@@ -1,0 +1,6 @@
+services:
+  x_frame_options_configuration.subscriber:
+    class: Drupal\x_frame_options_configuration\EventSubscriber\XframeSubscriber
+    arguments: ['@config.factory']
+    tags:
+      - { name: event_subscriber }

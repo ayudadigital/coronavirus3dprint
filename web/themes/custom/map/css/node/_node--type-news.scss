@@ -1,0 +1,23 @@
+.node--type-news{
+  &.node--view-mode-full{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 960px;
+    padding: 0;
+    a {
+      word-break: break-word;	
+    }
+    
+    .field--name-field-image {
+    	img {
+	    	width:100%;
+	    	height: auto;    		
+    	}
+    }
+    .field--name-field-date {
+    	font-size: 12px;
+    	color: #666;
+    	font-style: italic;
+    }
+  }
+}

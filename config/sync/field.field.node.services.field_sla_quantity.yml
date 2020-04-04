@@ -1,0 +1,23 @@
+uuid: 0b359fa4-7c0c-4128-8c95-b63a75eeb4d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sla_quantity
+    - node.type.services
+id: node.services.field_sla_quantity
+field_name: field_sla_quantity
+entity_type: node
+bundle: services
+label: 'Number of machines (SLA)'
+description: 'How many machines of this type do you have?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

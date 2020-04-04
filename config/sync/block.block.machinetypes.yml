@@ -1,0 +1,23 @@
+uuid: b2f37426-22c1-4cc5-84a2-b0db12c9583f
+langcode: es
+status: true
+dependencies:
+  config:
+    - facets.facet.machine_types
+  module:
+    - facets
+  theme:
+    - map
+id: machinetypes
+theme: map
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'facet_block:machine_types'
+settings:
+  id: 'facet_block:machine_types'
+  label: 'Machine types'
+  provider: facets
+  label_display: '0'
+  block_id: machinetypes
+visibility: {  }

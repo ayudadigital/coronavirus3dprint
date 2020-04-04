@@ -4,10 +4,18 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.services.field_cnc_quantity
     - field.field.node.services.field_description
+    - field.field.node.services.field_fdm_quantity
+    - field.field.node.services.field_filament_material
+    - field.field.node.services.field_filament_size
     - field.field.node.services.field_geolocation
     - field.field.node.services.field_have_car
+    - field.field.node.services.field_laser_cutter_quantity
+    - field.field.node.services.field_machine_types
     - field.field.node.services.field_machines
+    - field.field.node.services.field_sla_quantity
+    - field.field.node.services.field_sls_quantity
     - node.type.services
   module:
     - user
@@ -25,10 +33,18 @@ hidden:
   author_profile_teaser_entity_view_1: true
   extra_field_reservation_button: true
   extra_field_user_profile_compact: true
+  field_cnc_quantity: true
   field_description: true
+  field_fdm_quantity: true
+  field_filament_material: true
+  field_filament_size: true
   field_geolocation: true
   field_have_car: true
+  field_laser_cutter_quantity: true
+  field_machine_types: true
   field_machines: true
+  field_sla_quantity: true
+  field_sls_quantity: true
   flag_favorites: true
   langcode: true
   links: true

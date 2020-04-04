@@ -8,11 +8,13 @@
 @import "node/node--type-services";
 @import "node/node--type-page";
 @import "node/node--type-prints";
+@import "node/node--type-news";
 @import "user/user-profile";
 @import "map";
 @import "views/view-id-my_services";
 @import "views/view-id-my_favorites";
 @import "views/view-map";
+@import "views/view-news";
 @import "views/view-id-messages";
 @import "views/view-id-groups";
 @import "facets/facets";
