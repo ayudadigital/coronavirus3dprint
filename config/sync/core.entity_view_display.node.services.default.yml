@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.services.field_have_car
     - field.field.node.services.field_laser_cutter_quantity
     - field.field.node.services.field_machine_types
-    - field.field.node.services.field_machines
     - field.field.node.services.field_sla_quantity
     - field.field.node.services.field_sls_quantity
     - filter.format.plain_text
@@ -702,7 +701,6 @@ content:
     third_party_settings: {  }
 hidden:
   extra_field_user_profile_teaser: true
-  field_machines: true
   flag_favorites: true
   langcode: true
   search_api_excerpt: true

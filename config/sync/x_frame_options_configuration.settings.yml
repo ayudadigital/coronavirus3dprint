@@ -1,3 +1,0 @@
-x_frame_options_configuration:
-  directive: SAMEORIGIN
-  allow-from-uri: ''

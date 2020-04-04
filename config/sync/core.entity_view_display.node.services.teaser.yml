@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.services.field_have_car
     - field.field.node.services.field_laser_cutter_quantity
     - field.field.node.services.field_machine_types
-    - field.field.node.services.field_machines
     - field.field.node.services.field_sla_quantity
     - field.field.node.services.field_sls_quantity
     - node.type.services
@@ -42,7 +41,6 @@ hidden:
   field_have_car: true
   field_laser_cutter_quantity: true
   field_machine_types: true
-  field_machines: true
   field_sla_quantity: true
   field_sls_quantity: true
   flag_favorites: true
