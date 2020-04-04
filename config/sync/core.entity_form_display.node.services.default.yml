@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.services.field_have_car
     - field.field.node.services.field_laser_cutter_quantity
     - field.field.node.services.field_machine_types
-    - field.field.node.services.field_machines
     - field.field.node.services.field_sla_quantity
     - field.field.node.services.field_sls_quantity
     - node.type.services
@@ -20,7 +19,6 @@ dependencies:
     - conditional_fields
     - field_group
     - geolocation_leaflet
-    - paragraphs
     - text
 third_party_settings:
   field_group:
@@ -757,18 +755,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-    region: content
-  field_machines:
-    type: entity_reference_paragraphs
-    weight: 10
-    settings:
-      title: Item
-      title_plural: Items
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-    third_party_settings: {  }
     region: content
   field_sla_quantity:
     weight: 6
