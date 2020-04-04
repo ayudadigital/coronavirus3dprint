@@ -9,14 +9,14 @@ label: 'Basic page'
 type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
-  f8a203ff-2a84-4680-a9c4-d76f8b59c2b5:
+  083a295d-13ed-40d8-aede-045094f75b24:
     id: node_type
     bundles:
       page: page
     negate: false
     context_mapping:
       node: node
-    uuid: f8a203ff-2a84-4680-a9c4-d76f8b59c2b5
+    uuid: 083a295d-13ed-40d8-aede-045094f75b24
 selection_logic: and
 weight: -5
 relationships: {  }

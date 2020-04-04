@@ -120,6 +120,7 @@
         "drupal/search_api": "^1.15",
         "drupal/sendgrid_integration": "^1.2",
         "drupal/services": "^4.0@beta",
+        "drupal/stage_file_proxy": "^1.0",
         "drupal/status_messages": "^2.0",
         "drupal/term_reference_tree": "^1.0@alpha",
         "drupal/token": "^1.6",

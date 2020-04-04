@@ -1,3 +1,4 @@
+/* line 1, login-page.scss */
 ul.tabs.primary {
   text-align: center;
   width: auto;
@@ -5,17 +6,17 @@ ul.tabs.primary {
   display: inline-block;
 }
 
+/* line 8, login-page.scss */
 .form-actions {
   position: relative;
   left: initial;
   bottom: initial;
   z-index: initial;
 }
+/* line 13, login-page.scss */
 .form-actions input.button {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
   width: auto;
 }
-
-/*# sourceMappingURL=login-page.css.map */
