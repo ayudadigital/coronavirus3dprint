@@ -4,6 +4,10 @@
     width: 90%;
     max-width: 960px;
     padding: 30px 0;
+    a {
+      word-break: break-word;	
+    }
+    
     .field--name-field-image {
     	img {
 	    	width:100%;
@@ -12,7 +16,7 @@
     }
     .field--name-field-date {
     	font-size: 12px;
-    	color: #aaa;
+    	color: #666;
     	font-style: italic;
     }
   }
