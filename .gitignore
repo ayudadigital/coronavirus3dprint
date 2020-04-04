@@ -30,6 +30,7 @@
 
 #Backups
 /backups
+/*.sql
 
 # Configs with credentials
 /config/gitignore
