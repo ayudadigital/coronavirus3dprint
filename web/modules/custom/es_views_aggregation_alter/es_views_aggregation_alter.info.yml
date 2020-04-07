@@ -1,7 +1,0 @@
-type: module
-name: 'ElasticSearch Views alter: Aggregator '
-description: 'Alter stadistics views based in ElasticSearch'
-package: Fields
-core: 8.x
-dependencies:
-  - elasticsearch_connector_views
