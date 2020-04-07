@@ -3,12 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.group.maker_group.field_communication_channel
     - field.field.group.maker_group.field_description
     - field.field.group.maker_group.field_geolocation
+    - field.field.group.maker_group.field_group_link
     - filter.format.plain_text
     - group.type.maker_group
   module:
     - geolocation
+    - link
     - text
 id: group.maker_group.default
 targetEntityType: group
@@ -16,7 +19,7 @@ bundle: maker_group
 mode: default
 content:
   field_description:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -35,14 +38,10 @@ content:
         fit_bounds:
           enable: true
           settings:
-            min_zoom: 10
+            min_zoom: 8
             reset_zoom: true
           weight: -101
           map_center_id: fit_bounds
-        client_location:
-          weight: 0
-          enable: false
-          map_center_id: client_location
         fixed_boundaries:
           settings:
             north: ''
@@ -52,12 +51,6 @@ content:
           weight: 0
           enable: false
           map_center_id: fixed_boundaries
-        freeogeoip:
-          weight: 0
-          enable: false
-          map_center_id: location_plugins
-          settings:
-            location_option_id: freeogeoip
         fixed_value:
           settings:
             latitude: null
@@ -73,11 +66,21 @@ content:
           weight: 0
           enable: false
           map_center_id: location_plugins
+        freeogeoip:
+          weight: 0
+          enable: false
+          map_center_id: location_plugins
+          settings:
+            location_option_id: freeogeoip
+        client_location:
+          weight: 0
+          enable: false
+          map_center_id: client_location
       map_provider_id: leaflet
       map_provider_settings:
         height: 400px
         width: 100%
-        zoom: '10'
+        zoom: '8'
         map_features:
           leaflet_control_layer:
             weight: 0
@@ -535,6 +538,18 @@ content:
     third_party_settings: {  }
     type: geolocation_map
     region: content
+  field_group_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      rel: nofollow
+      target: _blank
+      url_only: false
+      url_plain: false
+    third_party_settings: {  }
+    type: link
+    region: content
   label:
     label: hidden
     type: string
@@ -546,6 +561,7 @@ content:
 hidden:
   changed: true
   created: true
+  field_communication_channel: true
   langcode: true
   search_api_excerpt: true
   uid: true

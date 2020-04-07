@@ -1,0 +1,30 @@
+uuid: d9cd1bbb-03c9-406c-9576-f9543339bb1c
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - options
+id: group.field_communication_channel
+field_name: field_communication_channel
+entity_type: group
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: telegram
+      label: Telegram
+    -
+      value: facebook
+      label: Facebook
+    -
+      value: others
+      label: Others
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

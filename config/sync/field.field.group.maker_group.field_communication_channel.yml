@@ -1,0 +1,21 @@
+uuid: e273838c-5ba4-4e91-bc50-c3e7713466b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_communication_channel
+    - group.type.maker_group
+  module:
+    - options
+id: group.maker_group.field_communication_channel
+field_name: field_communication_channel
+entity_type: group
+bundle: maker_group
+label: 'Communication channel'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
