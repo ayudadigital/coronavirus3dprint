@@ -520,6 +520,114 @@ form .captcha {
   font-style: italic;
 }
 
+.group--maker-group.group--full {
+  margin-top: 40px;
+}
+.group--maker-group.group--full .group-left {
+  float: left;
+  padding: 0 20px;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .group--maker-group.group--full .group-left {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .group--maker-group.group--full .group-left {
+    width: 35%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .group--maker-group.group--full .group-left {
+    width: 25%;
+  }
+}
+.group--maker-group.group--full .group-center {
+  float: left;
+  padding: 0 20px;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .group--maker-group.group--full .group-center {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .group--maker-group.group--full .group-center {
+    width: 65%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .group--maker-group.group--full .group-center {
+    width: 75%;
+  }
+}
+.group--maker-group.group--full .field__label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.group--maker-group.group--full .field {
+  margin-bottom: 15px;
+}
+.group--maker-group.group--full .field--type-entity-reference .field__items .field__item {
+  display: inline-block;
+}
+.group--maker-group.group--full .field--type-entity-reference .field__items .field__item:after {
+  content: ", ";
+}
+.group--maker-group.group--full .field--type-entity-reference .field__items .field__item:last-child:after {
+  display: none;
+}
+.group--maker-group.group--full .field--name-field-group-link {
+  margin-bottom: 45px;
+}
+.group--maker-group.group--full .field--name-field-group-link a {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 13px 24px;
+  background-color: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #b8b8b8;
+  margin-left: 0;
+  min-width: 100px;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  padding: 13px 24px;
+  background-color: #7cbc48;
+  border-color: #7cbc48;
+  color: #fff;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+}
+.group--maker-group.group--full .field--name-field-group-link a:hover, .group--maker-group.group--full .field--name-field-group-link a:focus, .group--maker-group.group--full .field--name-field-group-link a.is-active {
+  background-color: white;
+  border-color: #0678be;
+  color: #0678be;
+  text-decoration: none;
+  outline: transparent;
+}
+.group--maker-group.group--full .field--name-field-group-link a:hover, .group--maker-group.group--full .field--name-field-group-link a:focus, .group--maker-group.group--full .field--name-field-group-link a.is-active {
+  background-color: #6aab35;
+  border-color: #6aab35;
+  color: #fff;
+}
+
 article.profile .field--name-user-picture img {
   border-radius: 50%;
   width: 100%;
