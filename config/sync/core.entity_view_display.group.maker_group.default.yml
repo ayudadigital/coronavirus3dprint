@@ -10,23 +10,64 @@ dependencies:
     - filter.format.plain_text
     - group.type.maker_group
   module:
+    - field_group
     - geolocation
     - link
     - text
+third_party_settings:
+  field_group:
+    group_left:
+      children:
+        - field_group_link
+        - field_geolocation
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: group-left
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Left
+    group_center:
+      children:
+        - label
+        - field_description
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: group-center
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Center
 id: group.maker_group.default
 targetEntityType: group
 bundle: maker_group
 mode: default
 content:
   field_description:
-    weight: 3
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_geolocation:
-    weight: 1
+    weight: 4
     label: hidden
     settings:
       set_marker: '1'
@@ -539,8 +580,8 @@ content:
     type: geolocation_map
     region: content
   field_group_link:
-    weight: 2
-    label: above
+    weight: 3
+    label: hidden
     settings:
       trim_length: 80
       rel: nofollow
@@ -553,7 +594,7 @@ content:
   label:
     label: hidden
     type: string
-    weight: 0
+    weight: 1
     region: content
     settings:
       link_to_entity: false
