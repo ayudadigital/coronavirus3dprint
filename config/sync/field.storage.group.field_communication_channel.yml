@@ -18,6 +18,9 @@ settings:
       value: facebook
       label: Facebook
     -
+      value: whatsapp
+      label: Whatsapp
+    -
       value: others
       label: Others
   allowed_values_function: ''

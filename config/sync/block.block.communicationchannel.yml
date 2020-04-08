@@ -1,0 +1,23 @@
+uuid: 3de183cc-ba7f-44d3-a173-264fedcef73a
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.communication_channel
+  module:
+    - facets
+  theme:
+    - map
+id: communicationchannel
+theme: map
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:communication_channel'
+settings:
+  id: 'facet_block:communication_channel'
+  label: 'Communication channel'
+  provider: facets
+  label_display: '0'
+  block_id: communicationchannel
+visibility: {  }

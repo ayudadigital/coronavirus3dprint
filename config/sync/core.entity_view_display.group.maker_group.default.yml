@@ -38,7 +38,7 @@ content:
         fit_bounds:
           enable: true
           settings:
-            min_zoom: 8
+            min_zoom: 6
             reset_zoom: true
           weight: -101
           map_center_id: fit_bounds
@@ -80,7 +80,7 @@ content:
       map_provider_settings:
         height: 400px
         width: 100%
-        zoom: '8'
+        zoom: '6'
         map_features:
           leaflet_control_layer:
             weight: 0

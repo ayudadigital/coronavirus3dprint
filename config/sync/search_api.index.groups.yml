@@ -2,13 +2,14 @@ uuid: 1b7244a9-81b9-4af4-946e-d78780b562f2
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.group.field_communication_channel
+    - field.storage.group.field_geolocation
+    - search_api.server.elasticsearch_server
   module:
     - group
     - search_api
     - search_api_geolocation
-  config:
-    - field.storage.group.field_geolocation
-    - search_api.server.elasticsearch_server
 id: groups
 name: Groups
 description: ''
@@ -22,6 +23,14 @@ field_settings:
     dependencies:
       module:
         - group
+  field_communication_channel:
+    label: 'Communication channel'
+    datasource_id: 'entity:group'
+    property_path: field_communication_channel
+    type: string
+    dependencies:
+      config:
+        - field.storage.group.field_communication_channel
   geolocation:
     label: Location
     datasource_id: 'entity:group'
