@@ -25,7 +25,7 @@
         // Add basemap.
         var baseLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
             maxZoom: 15,
-            minZoom: 2,
+            minZoom: 1,
             subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
         });
         // Create map and set center and zoom.
