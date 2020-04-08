@@ -1,0 +1,12 @@
+name: Fixed Text Link Formatter
+type: module
+description: Formats a link field with a configurable fixed link text.
+# core: 8.x
+dependencies:
+  - drupal:link
+
+# Information added by Drupal.org packaging script on 2019-06-05
+version: '8.x-1.5'
+core: '8.x'
+project: 'fixed_text_link_formatter'
+datestamp: 1559730192

@@ -11,8 +11,8 @@ dependencies:
     - group.type.maker_group
   module:
     - field_group
+    - fixed_text_link_formatter
     - geolocation
-    - link
     - text
 third_party_settings:
   field_group:
@@ -583,13 +583,16 @@ content:
     weight: 3
     label: hidden
     settings:
-      trim_length: 80
+      link_text: 'Contact the group'
+      link_class: ''
       rel: nofollow
       target: _blank
+      allow_override: false
+      trim_length: null
       url_only: false
       url_plain: false
     third_party_settings: {  }
-    type: link
+    type: fixed_text_link
     region: content
   label:
     label: hidden

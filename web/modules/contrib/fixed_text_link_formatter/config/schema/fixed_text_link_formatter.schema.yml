@@ -1,0 +1,32 @@
+# Schema for the configuration files of the Fixed Text Link Formatter module.
+
+# This schema tells the config system how to read the config YML files.
+
+field.formatter.settings.fixed_text_link:
+  type: mapping
+  label: 'Link format settings'
+  mapping:
+    trim_length:
+      type: integer
+      label: 'Trim link text length'
+    url_only:
+      type: boolean
+      label: 'URL only'
+    url_plain:
+      type: boolean
+      label: 'Show URL as plain text'
+    rel:
+      type: string
+      label: 'Add rel="nofollow" to links'
+    target:
+      type: string
+      label: 'Open link in new window'
+    link_text:
+      type: string
+      label: 'The link text, i.e. "Visit our website"'
+    link_class:
+      type: string
+      label: 'The class to add to the class attribute'
+    allow_override:
+      type: boolean
+      label: 'Enable if the link text should be overridable'

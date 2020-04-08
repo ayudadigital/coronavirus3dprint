@@ -43,6 +43,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  fixed_text_link_formatter: 0
   geolocation: 0
   geolocation_google_maps: 0
   geolocation_leaflet: 0

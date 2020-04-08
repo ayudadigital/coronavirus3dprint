@@ -97,6 +97,7 @@
         "drupal/extra_field": "^1.1",
         "drupal/facets": "^1.4",
         "drupal/field_group": "^3.0",
+        "drupal/fixed_text_link_formatter": "^1.5",
         "drupal/geolocation": "^3.0",
         "drupal/google_analytics": "^3.0",
         "drupal/group": "^1.0@RC",

@@ -5090,6 +5090,55 @@
         }
     },
     {
+        "name": "drupal/fixed_text_link_formatter",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/fixed_text_link_formatter.git",
+            "reference": "8.x-1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/fixed_text_link_formatter-8.x-1.5.zip",
+            "reference": "8.x-1.5",
+            "shasum": "bccd54a6a1621475dab09d08361537ce240953d2"
+        },
+        "require": {
+            "drupal/core": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.5",
+                "datestamp": "1559730185",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "legolasbo",
+                "homepage": "https://www.drupal.org/user/2480548"
+            }
+        ],
+        "description": "Formats a link field with a configurable fixed link text.",
+        "homepage": "https://www.drupal.org/project/fixed_text_link_formatter",
+        "support": {
+            "source": "https://git.drupalcode.org/project/fixed_text_link_formatter"
+        }
+    },
+    {
         "name": "drupal/geolocation",
         "version": "3.0.0-rc6",
         "version_normalized": "3.0.0.0-RC6",
@@ -8163,7 +8212,8 @@
                 "name": "Jakub Onderka",
                 "email": "jakub.onderka@gmail.com"
             }
-        ]
+        ],
+        "abandoned": "php-parallel-lint/php-console-color"
     },
     {
         "name": "jakub-onderka/php-console-highlighter",
@@ -8211,7 +8261,8 @@
                 "homepage": "http://www.acci.cz/"
             }
         ],
-        "description": "Highlight PHP code in terminal"
+        "description": "Highlight PHP code in terminal",
+        "abandoned": "php-parallel-lint/php-console-highlighter"
     },
     {
         "name": "jcalderonzumba/gastonjs",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb81d462c383309e6f2013295aa79492",
+    "content-hash": "41a903250b8f53c308dbc533ee58ce7f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4339,6 +4339,53 @@
             }
         },
         {
+            "name": "drupal/fixed_text_link_formatter",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/fixed_text_link_formatter.git",
+                "reference": "8.x-1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/fixed_text_link_formatter-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "bccd54a6a1621475dab09d08361537ce240953d2"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.5",
+                    "datestamp": "1559730185",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "legolasbo",
+                    "homepage": "https://www.drupal.org/user/2480548"
+                }
+            ],
+            "description": "Formats a link field with a configurable fixed link text.",
+            "homepage": "https://www.drupal.org/project/fixed_text_link_formatter",
+            "support": {
+                "source": "https://git.drupalcode.org/project/fixed_text_link_formatter"
+            }
+        },
+        {
             "name": "drupal/geolocation",
             "version": "3.0.0-rc6",
             "source": {
@@ -7200,6 +7247,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -7246,6 +7294,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
