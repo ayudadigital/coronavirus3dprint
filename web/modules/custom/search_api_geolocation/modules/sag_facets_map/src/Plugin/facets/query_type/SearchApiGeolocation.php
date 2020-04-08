@@ -71,7 +71,7 @@ class SearchApiGeolocation extends QueryTypePluginBase {
     }
 
     if(!empty($top_left_lat_limit) && !empty($top_left_lng_limit) &&
-      !empty($bottom_right_lat_limit) && !empty($bottom_right_lng_limit)){
+      !empty($bottom_right_lat_limit) && !empty($bottom_right_lng_limit) && $precision != 3){
       $geo_bounding_box = array(
         "geolocation" => array(
           "top_left" => array(
