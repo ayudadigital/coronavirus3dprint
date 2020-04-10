@@ -174,7 +174,10 @@ display:
     position: 1
     display_options:
       display_extenders:
-        metatag_display_extender: {  }
+        metatag_display_extender:
+          metatags:
+            title: 'Makers map | [site:name]'
+            description: '[view:title]'
       path: map
       cache:
         type: none

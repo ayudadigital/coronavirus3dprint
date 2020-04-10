@@ -11,3 +11,7 @@ display:
     display_options:
       menu:
         title: 'Impresiones 3D'
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            title: 'Mapa de los Productos | [site:name]'
