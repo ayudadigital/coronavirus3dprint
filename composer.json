@@ -125,6 +125,7 @@
         "drupal/status_messages": "^2.0",
         "drupal/term_reference_tree": "^1.0@alpha",
         "drupal/token": "^1.6",
+        "drupal/translation_views": "^1.0@alpha",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/username_policy": "^1.0",
         "drupal/views_infinite_scroll": "^1.6",

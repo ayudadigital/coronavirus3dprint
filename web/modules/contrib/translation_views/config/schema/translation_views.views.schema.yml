@@ -1,0 +1,71 @@
+views.filter.translation_views_translation_count:
+  type: views.filter.numeric
+  label: 'Translation count'
+
+views.filter_value.translation_views_translation_count:
+  type: views.filter_value.numeric
+  label: 'Filter rows by amount of translations'
+
+views.filter.translation_views_source_equals_row:
+  type: views.filter.boolean
+  value: 'A boolean indicating whether the translation source of target language is same as the row language'
+
+views.filter.translation_views_status:
+  type: views.filter.boolean
+  label: 'A boolean indicating whether the node is translated into target language'
+
+views.filter.translation_views_target_language:
+  type: views_filter
+  label: 'Target language'
+  mapping:
+    value:
+      type: string
+      label: 'Value'
+    remove:
+      type: boolean
+      label: 'Remove rows where source language is equal to target language'
+    limit:
+      type: boolean
+      label: 'Enable limiting languages list using Translators module'
+    column:
+      type: mapping
+      label: 'Column'
+      mapping:
+        source:
+          type: string
+          lable: 'Source languages'
+        target:
+          type: string
+          lable: 'Target languages'
+
+views.field.translation_views_translation_count:
+  type: views.field.numeric
+  label: 'Amount of translations'
+  mapping:
+    include_original_language:
+      type: boolean
+      label: 'Include original language in count'
+
+views.field.translation_views_operations:
+  type: views_field
+  label: 'Provides links to perform translation operations'
+
+views.field.translation_views_source_equals_row:
+  type: views.field.boolean
+  label: 'A boolean indicating whether the translation source of target language is same as the row language'
+
+views.field.translation_views_status:
+  type: views.field.boolean
+  label: 'A boolean indicating whether the node is translated into target language'
+
+views.field.translation_views_target_language:
+  type: views.field.language
+  label: 'The target language'
+
+views.field.translation_moderation_state:
+  type: views_field
+  label: 'Translation moderation state'
+  mapping:
+    display_name:
+      type: string
+      label: 'Formatter'

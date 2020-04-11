@@ -1,0 +1,17 @@
+name: Translation Views
+type: module
+description: Create customized lists and queries of translations from your database.
+core_version_requirement: ^8.8 || ^9
+package: Multilingual
+dependencies:
+  - drupal:content_translation
+  - drupal:views
+
+test_dependencies:
+  - translators:translators
+  - translators:translators_content
+
+# Information added by Drupal.org packaging script on 2020-03-15
+version: '8.x-1.0-alpha10'
+project: 'translation_views'
+datestamp: 1584303688

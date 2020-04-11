@@ -1,0 +1,23 @@
+name: 'Translation views test view'
+type: module
+description: 'Provides full view for translation_views tests.'
+package: Testing
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - drupal:node
+  - drupal:views
+  - drupal:translation_views
+  - drupal:content_translation
+  - drupal:language
+  - drupal:content_moderation
+  - drupal:workflows
+
+# Information added by Drupal.org packaging script on 2019-02-07
+# version: '8.x-1.0-alpha5'
+# project: 'translation_views'
+# datestamp: 1549581183
+
+# Information added by Drupal.org packaging script on 2020-03-15
+version: '8.x-1.0-alpha10'
+project: 'translation_views'
+datestamp: 1584303688

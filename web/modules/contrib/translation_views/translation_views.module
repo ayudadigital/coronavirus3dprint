@@ -1,0 +1,138 @@
+<?php
+
+/**
+ * @file
+ * Provide hooks for translation_views module.
+ *
+ * Basicaly this file is only used as workaround for these issues:
+ * https://www.drupal.org/project/drupal/issues/2954032
+ * https://www.drupal.org/project/drupal/issues/2944278
+ */
+
+use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Entity\ContentEntityFormInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function translation_views_module_implements_alter(&$implementations, $hook) {
+  switch ($hook) {
+    // Move our hook_form_alter() implementation to the end of the list.
+    case 'form_alter':
+      $group = $implementations['translation_views'];
+      unset($implementations['translation_views']);
+      $implementations['translation_views'] = $group;
+      break;
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add our submit for "source_langcode" submit.
+ */
+function translation_views_form_alter(&$form, FormStateInterface $form_state) {
+  $form_object = $form_state->getFormObject();
+
+  if (!($form_object instanceof ContentEntityFormInterface)) {
+    return;
+  }
+
+  $entity = $form_object->getEntity();
+  $operations = $form_object->getOperation();
+
+  if ($entity instanceof ContentEntityInterface
+    && $entity->isTranslatable()
+    && count($entity->getTranslationLanguages()) > 1
+    && in_array($operations, ['edit', 'add', 'default'], TRUE)
+  ) {
+    $form['source_langcode']['submit']['#submit'][] = 'translation_views_content_form_fix_destination';
+  }
+}
+
+/**
+ * Submit callback for "source_langcode" button.
+ */
+function translation_views_content_form_fix_destination($form, FormStateInterface $form_state) {
+  /* @var \Drupal\Core\Entity\ContentEntityFormInterface $form_object */
+  /* @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+  /* @var \Symfony\Component\HttpFoundation\ParameterBag $query */
+  $form_object = $form_state->getFormObject();
+  $entity      = $form_object->getEntity();
+  $source      = $form_state->getValue(['source_langcode', 'source']);
+  $query       = \Drupal::service('request_stack')->getCurrentRequest()->query;
+  $options     = [];
+
+  // Remove destination parameter from request,
+  // to allow "Change" button works like desired.
+  if ($query->has('destination')) {
+    $options['query']['destination'] = $query->get('destination');
+    $query->remove('destination');
+  }
+
+  $entity_type_id = $entity->getEntityTypeId();
+  $form_state->setRedirect("entity.$entity_type_id.content_translation_add", [
+    $entity_type_id => $entity->id(),
+    'source' => $source,
+    'target' => $form_object->getFormLangcode($form_state),
+  ], $options);
+}
+
+/**
+ * Implements hook_query_TAG_alter().
+ *
+ * Add support to use views query substitutions in expressions
+ * from hook_views_query_substitutions().
+ * Expressions can be used in views fields (i.e addField()),
+ * and views orderBy formula (i.e addOrderBy()).
+ *
+ * @todo Remove this workaround when will be solved in drupal core.
+ */
+function translation_views_query_views_alter(AlterableInterface $query) {
+  $substitutions = $query->getMetaData('views_substitutions');
+  $expressions =& $query->getExpressions();
+
+  foreach ($expressions as $field_id => &$item) {
+    foreach ($item['arguments'] as $replacement_key => $value) {
+      if (!is_array($value)) {
+        if (isset($substitutions[$value])) {
+          $expressions[$field_id]['arguments'][$replacement_key] = $substitutions[$value];
+        }
+      }
+      else {
+        foreach ($value as $sub_key => $sub_value) {
+          if (isset($substitutions[$sub_value])) {
+            $expressions[$field_id]['arguments'][$replacement_key][$sub_key] = $substitutions[$sub_value];
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function translation_views_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.translation_views':
+      $text = file_get_contents(dirname(__FILE__) . '/README.md');
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}

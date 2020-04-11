@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41a903250b8f53c308dbc533ee58ce7f",
+    "content-hash": "857e1de766829ad5191efeb93bc57927",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6148,6 +6148,61 @@
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
+            "name": "drupal/translation_views",
+            "version": "1.0.0-alpha10",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/translation_views.git",
+                "reference": "8.x-1.0-alpha10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/translation_views-8.x-1.0-alpha10.zip",
+                "reference": "8.x-1.0-alpha10",
+                "shasum": "ca1a6d4bf16293b1b094db6439f9f065de1dbbd5"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "require-dev": {
+                "drupal/translators": "*",
+                "drupal/translators_content": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha10",
+                    "datestamp": "1584303687",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "matsbla",
+                    "homepage": "https://www.drupal.org/user/2325394"
+                },
+                {
+                    "name": "vlad.dancer",
+                    "homepage": "https://www.drupal.org/user/903844"
+                }
+            ],
+            "description": "Create customized lists and queries of translations from your database.",
+            "homepage": "https://www.drupal.org/project/translation_views",
+            "support": {
+                "source": "https://git.drupalcode.org/project/translation_views"
             }
         },
         {
@@ -13423,6 +13478,7 @@
         "drupal/realname": 5,
         "drupal/services": 10,
         "drupal/term_reference_tree": 15,
+        "drupal/translation_views": 15,
         "drupal/ultimate_cron": 15
     },
     "prefer-stable": true,
