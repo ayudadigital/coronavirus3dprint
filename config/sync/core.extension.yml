@@ -92,6 +92,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  translation_views: 0
   ultimate_cron: 0
   user: 0
   user_extra_field: 0
