@@ -237,7 +237,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'Ver grupo'
+            text: 'View Group'
             make_link: true
             path: '/group/{{id}}'
             absolute: false

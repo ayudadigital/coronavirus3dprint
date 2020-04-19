@@ -7,6 +7,10 @@ display:
             value: "<p>No results for current filters Try a less restrictive search or move around the map to see other areas</p>\r\n"
             format: basic_html
       title: 'Mapa de las #Comunidades #Makers - material sanitario para la crisis del #COVID19'
+      fields:
+        nothing:
+          alter:
+            text: 'Ver grupo'
   page_1:
     display_options:
       menu:
