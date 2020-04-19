@@ -36,3 +36,6 @@
 /config/gitignore
 
 .sass-cache/
+
+#grafana
+/grafana_data
