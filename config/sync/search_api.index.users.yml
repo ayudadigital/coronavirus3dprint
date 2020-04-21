@@ -1,0 +1,76 @@
+uuid: 959c0608-d30a-46e6-83d4-1af99a2d4186
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_age
+    - field.storage.user.field_sex
+    - field.storage.user.field_spoken_languages
+    - search_api.server.elasticsearch_server
+  module:
+    - user
+    - search_api
+    - search_api_geolocation
+id: users
+name: Users
+description: ''
+read_only: false
+field_settings:
+  created:
+    label: Created
+    datasource_id: 'entity:user'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - user
+  field_age:
+    label: Age
+    datasource_id: 'entity:user'
+    property_path: field_age
+    type: integer
+    dependencies:
+      config:
+        - field.storage.user.field_age
+  field_sex:
+    label: Gender
+    datasource_id: 'entity:user'
+    property_path: field_sex
+    type: string
+    dependencies:
+      config:
+        - field.storage.user.field_sex
+  field_spoken_languages:
+    label: 'Spoken languages'
+    datasource_id: 'entity:user'
+    property_path: field_spoken_languages
+    type: string
+    dependencies:
+      config:
+        - field.storage.user.field_spoken_languages
+  uid:
+    label: 'User ID'
+    datasource_id: 'entity:user'
+    property_path: uid
+    type: integer
+    dependencies:
+      module:
+        - user
+datasource_settings:
+  'entity:user':
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  search_api_geolocation: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: false
+  cron_limit: 50
+server: elasticsearch_server
