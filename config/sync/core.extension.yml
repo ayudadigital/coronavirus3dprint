@@ -9,9 +9,6 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
-  charts: 0
-  charts_billboard: 0
-  charts_google: 0
   ckeditor: 0
   coffee: 0
   coffee_mediteran: 0
