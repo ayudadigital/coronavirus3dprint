@@ -1,145 +1,68 @@
-# Leaflet.GestureHandling
+# leaflet-gesture-handling.js
 
-Version 1.1.8
+A Leaflet plugin that allows to prevent default map scroll/touch behaviours.
 
-Brings the basic functionality of [Google Maps Gesture Handling](https://developers.google.com/maps/documentation/javascript/examples/interaction-cooperative) into Leaflet.
 
-Prevents users from getting trapped on the map when scrolling a long page.
+_For a working example see [demo](https://raruto.github.io/leaflet-gesture-handling/examples/leaflet-gesture-handling.html)_
 
-**On Desktop**
 
-![alt text](https://elmarquis.github.io/Leaflet.GestureHandling/examples/images/desktop.png "Desktop")
+<p align="center">
+    <a href="https://raruto.github.io/leaflet-gesture-handling/examples/leaflet-gesture-handling.html"><img src="https://raruto.github.io/img/leaflet-gesture-handling.png" alt="Ctrl + scroll to zoom the map" /></a>
+</p>
 
--   The map ignores the mouse scroll wheel.
--   The user is prompted to use ctrl+scroll to zoom the map.
 
-**On Mobile / Touch devices**
+---
 
-![alt text](https://elmarquis.github.io/Leaflet.GestureHandling/examples/images/mobile.png "Mobile")
+<blockquote>
+    <p align="center">
+        <em>Initially based on the <a href="https://github.com/elmarquis/Leaflet.GestureHandling">work</a> of <strong>elmarquis</strong></em>
+    </p>
+</blockquote>
 
--   The map ignores single fingered dragging.
--   The user is prompted to use two fingers to pan the map.
+---
 
-## Demo
+## How to use
 
-[View demo](https://elmarquis.github.io/Leaflet.GestureHandling/examples/)
+1. **include CSS & JavaScript**
+    ```html
+    <head>
+    ...
+    <style> html, body, #map { height: 100%; width: 100%; padding: 0; margin: 0; } </style>
+    <!-- Leaflet (JS/CSS) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+    <!-- leaflet-gesture-handling -->
+    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.css" type="text/css">
+    <script src="https://unpkg.com/@raruto/leaflet-gesture-handling@latest/dist/leaflet-gesture-handling.min.js"></script>
+    ...
+    </head>
+    ```
+2. **choose the div container used for the slippy map**
+    ```html
+    <body>
+    ...
+    <div id="map"></div>
+    ...
+    </body>
+    ```
+3. **create your first simple “leaflet-gesture-handling” slippy map**
+    ```html
+    <script>
+      ...
+      var map = new L.Map('map', {
+        center: [41.4583, 12.7059],
+        zoom: 5,
+        gestureHandling: true,
+      });
+      ...
+    </script>
+    ```
+_Related: [Leaflet-UI presets](https://github.com/raruto/leaflet-ui)_
 
-## Install
+---
 
-The latest leaflet-gesture-handling can be downloaded from the dist folder.
+**Compatibile with:** leaflet@1.3.4
 
-## Usage
+---
 
-Include the css and js file after leaflet.js.
-
-```html
-<link rel="stylesheet" href="css/leaflet-gesture-handling.min.css" type="text/css">
-<script src="js/leaflet-gesture-handling.min.js"></script>
-```
-
-Or load this directly from [UNPKG](https://unpkg.com):
-
-```html
-<link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
-<script src="//unpkg.com/leaflet-gesture-handling"></script>
-```
-
-Set **gestureHandling: true** in your map initialization script.
-
-```js
-var map = L.map("map", {
-    center: [-25.2702, 134.2798],
-    zoom: 3,
-    gestureHandling: true
-});
-```
-
-### Use as a module
-
-If you are using a bundler such as Webpack or Parcel, you can load the library as a module. First install the module with:
-
-```sh
-npm install leaflet-gesture-handling
-```
-
-Then include the module and CSS in your source:
-
-```js
-import * as L from "leaflet";
-import { GestureHandling } from "leaflet-gesture-handling";
-
-import "leaflet/dist/leaflet.css";
-import "leaflet-gesture-handling/dist/leaflet-gesture-handling.css";
-```
-
-Then attach it as a handler to the map:
-
-```js
-L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling);
-
-const map = L.map("map", {
-    center: [50.36, -4.747],
-    zoom: 3,
-    gestureHandling: true
-});
-```
-
-## Multi Language and Custom Text
-
-The plugin will auto detect a users language from the browser setting and show the appropriate translation. 52 languages are supported without you needing to do anything. 
-
-However if you wish to override this, you can set your own text by supplying **gestureHandlingOptions** and a **text** option as shown below. You must specify text for touch, scroll and scrollMac.
-
-```js
-var map = L.map("map", {
-    center: [-25.2702, 134.2798],
-    zoom: 3,
-    gestureHandling: true,
-    gestureHandlingOptions: {
-        text: {
-            touch: "Hey bro, use two fingers to move the map",
-            scroll: "Hey bro, use ctrl + scroll to zoom the map",
-            scrollMac: "Hey bro, use \u2318 + scroll to zoom the map"
-        }
-    }
-});
-```
-
-*Note: Earlier versions used a property called gestureHandlingText for this which still works. 
-
-## Other Options
-
-To pass in options use the property: **gestureHandlingOptions**.  
-
-- **duration** : (int) time in ms before the message should disappear. default: 1000 (1 sec)
-
-```js
-var map = L.map("map", {
-    center: [-25.2702, 134.2798],
-    zoom: 3,
-    gestureHandling: true,
-    gestureHandlingOptions: {
-        duration: 5000 //5 secs
-    }
-});
-```
-
-## Useful info
-
-GestureHandling disables the following map attributes.
-
--   dragging
--   tap
--   scrollWheelZoom
-
-They are temporarily enabled for the duration the user scrolls with ctrl+mousewheel or uses two fingers to pan the map on mobile.
-
-## Compatibility with other plugins
-
-I have added compatibility with [Leaflet-MiniMap](https://github.com/Norkart/Leaflet-MiniMap). It allows the user to still pan around the minimap with a single finger.
-
-If there's any other plugins you'd like this to work with, let me know or submit a pull request.
-
-## License
-
-MIT
+**Contributors:** [Elmarquis](https://github.com/elmarquis/Leaflet.GestureHandling), [Raruto](https://github.com/Raruto/leaflet-gesture-handling)

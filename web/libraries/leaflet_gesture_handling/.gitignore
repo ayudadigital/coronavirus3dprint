@@ -1,5 +1,5 @@
+.idea
 node_modules/
 .sass-cache/
 *.css.map
 *.js.map
-examples/images/
