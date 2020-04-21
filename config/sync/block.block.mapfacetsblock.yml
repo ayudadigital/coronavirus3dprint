@@ -1,0 +1,26 @@
+uuid: 4672bf4c-9724-4d7e-a761-64d1963e429e
+langcode: en
+status: true
+dependencies:
+  module:
+    - sag_facets_map
+    - system
+  theme:
+    - map
+id: mapfacetsblock
+theme: map
+region: map
+weight: -11
+provider: null
+plugin: map_facets_block
+settings:
+  id: map_facets_block
+  label: 'Map Facets block'
+  provider: sag_facets_map
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/groups\r\n/map\r\n/prints"
+    negate: false
+    context_mapping: {  }

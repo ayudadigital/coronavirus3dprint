@@ -19,8 +19,6 @@
     };
 
     Drupal.facets.makeMap = function (context, settings) {
-        var facet_settings = settings.facets.map;
-        var facet_id = facet_settings.facet_id;
 
         // Add basemap.
         var baseLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
@@ -29,7 +27,7 @@
             subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
         });
         // Create map and set center and zoom.
-        var map = new L.Map(facet_id, {
+        var map = new L.Map('sag-facets-map-block', {
             // scrollWheelZoom: false,
             // minZoom: 3,
             // maxZoom: 15,

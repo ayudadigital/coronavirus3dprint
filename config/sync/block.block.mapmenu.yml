@@ -11,7 +11,7 @@ dependencies:
 id: mapmenu
 theme: map
 region: map
-weight: -10
+weight: -12
 provider: null
 plugin: 'system_menu_block:map-menu'
 settings:

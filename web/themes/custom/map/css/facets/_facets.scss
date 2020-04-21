@@ -1,25 +1,3 @@
-.facets-map{
-  position: relative;
-  width: 100%;
-  min-height: 150px;
-  height: 50vh;
-  @include tablet-sm {
-    height: 60vh;
-  }
-}
-
-.view-id-map, .view-id-groups, .view-id-prints{
-  .view-content.owl-carousel{
-    .owl-item{
-      article.node,
-      .views-row{
-        height: 25vh;
-      }
-    }
-  }
-}
-
-
 .facets-widget-checkbox{
   h3{
     font-size: 1em;

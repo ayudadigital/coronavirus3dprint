@@ -88,7 +88,7 @@ class MapWidget extends WidgetPluginBase {
       '#type' => 'html_tag',
       '#tag' => 'div',
       '#attributes' => [
-        'class' => ['facets-map'],
+//        'class' => ['facets-map'],
         'id' => $facet->id(),
       ],
     ];

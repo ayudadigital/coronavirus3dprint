@@ -27,6 +27,9 @@ leaflet_gesture_handling:
     - sag_facets_map/leaflet
 
 facets-map:
+  css:
+    theme:
+      css/map.css: {}
   js:
     js/map.js: {}
   dependencies:
