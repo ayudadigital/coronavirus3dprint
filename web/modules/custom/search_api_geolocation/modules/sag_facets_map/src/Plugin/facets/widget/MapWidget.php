@@ -76,6 +76,7 @@ class MapWidget extends WidgetPluginBase {
     $build = parent::build($facet);
     $build['#attributes']['id'] = $facet->id();
     $build['#attributes']['class'][] = 'js-facets-map-links';
+    $build['#attributes']['style'][] = 'display: none';
     $build['#attached']['library'][] = 'sag_facets_map/facets-map';
 
     $build['#attached']['drupalSettings']['facets']['map'] = [
