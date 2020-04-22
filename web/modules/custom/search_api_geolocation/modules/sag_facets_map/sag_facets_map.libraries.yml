@@ -35,6 +35,7 @@ facets-map:
   dependencies:
     - sag_facets_map/markercluster
     - sag_facets_map/leaflet_gesture_handling
+    - facets/widget
     - core/jquery
     - core/jquery.once
     - core/drupal

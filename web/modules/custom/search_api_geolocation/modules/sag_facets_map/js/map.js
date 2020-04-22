@@ -2,18 +2,24 @@
  * @file
  * Provides the map functionality.
  */
-(function ($) {
+(function ($, Drupal) {
 
     'use strict';
 
     Drupal.facets = Drupal.facets || {};
+
     Drupal.behaviors.facetsMapWidget = {
       attach: function (context, settings) {
         if (settings.facets !== 'undefined' && settings.facets.map !== 'undefined') {
-          $('#' + settings.facets.map.facet_id).once('exposed-filter-map').each(function () {
-            var makedmap = Drupal.facets.makeMap(context, settings);
-            Drupal.facets.UpdateValuesMap(makedmap[0], makedmap[1], context, settings);
+
+          $('#sag-facets-map-block').once('exposed-filter-map').each(function () {
+            Drupal.facets.makeMap(context, settings);
           });
+
+          $('#' + settings.facets.map.facet_id).once('exposed-filter-map').each(function () {
+            Drupal.facets.UpdateValuesMap(settings['facets']['rendered_map'][0], settings['facets']['rendered_map'][1], context, settings);
+          });
+
         }
       }
     };
@@ -70,14 +76,13 @@
           //first zoom from map.setView is a bug from leaflet library
           zoomend_counter = zoomend_counter+1;
           if(zoomend_counter > 1){
-            setTimeout(function(){
-              Drupal.facets.send_facets_filters(map, context, settings);
-            }, 1000);
+            Drupal.facets.send_facets_filters(map, context, settings);
           }
 
         });
 
-        return [map, markers];
+        //set map values
+        settings['facets']['rendered_map'] = [map, markers];
 
     };
 
@@ -104,33 +109,39 @@
     };
 
     Drupal.facets.send_facets_filters = function (map, context, settings) {
-        var facet_id = settings.facets.map.facet_id;
+      var facet_id = settings.facets.map.facet_id;
 
-        var cnt = map.getCenter();
-        var lat = Number(cnt['lat']).toFixed(5);
-        var lng = Number(cnt['lng']).toFixed(5);
+      var cnt = map.getCenter();
+      var lat = Number(cnt['lat']).toFixed(5);
+      var lng = Number(cnt['lng']).toFixed(5);
 
-        var zoom = map.getZoom();
+      var zoom = map.getZoom();
 
-        var b = map.getBounds();
+      var b = map.getBounds();
 
-        var top_left_lat_limit = b.getNorthWest().wrap().lat;
-        var top_left_lng_limit = b.getNorthWest().wrap().lng;
-        var bottom_right_lat_limit = b.getSouthEast().wrap().lat;
-        var bottom_right_lng_limit = b.getSouthEast().wrap().lng;
+      var top_left_lat_limit = b.getNorthWest().wrap().lat;
+      var top_left_lng_limit = b.getNorthWest().wrap().lng;
+      var bottom_right_lat_limit = b.getSouthEast().wrap().lat;
+      var bottom_right_lng_limit = b.getSouthEast().wrap().lng;
 
-        var params = lat + '/' + lng + '/' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit;
+      var params = lat + '/' + lng + '/' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit;
 
-        // send values to query
-        // window.location.href = drupalSettings.facets.map.url.replace('__GEOM__', params);
-        var facet_map_link = drupalSettings.facets.map.url.replace('__GEOM__', params);
+      // send values to query
+      // window.location.href = drupalSettings.facets.map.url.replace('__GEOM__', params);
+      var facet_map_link = drupalSettings.facets.map.url.replace('__GEOM__', params);
 
-        //remove old link
-        $('#'+facet_id).find('a.facet-map-link').remove();
-        //add link
-        $('#'+facet_id).append('<a class="facet-map-link" href="'+facet_map_link+'" rel="nofollow" data-drupal-facet-item-id="'+facet_id+'" data-drupal-facet-item-value="'+params+'" tabindex="-1" ></a>');
-        //send values
-        $('#'+facet_id).find('a.facet-map-link')[0].click();
+      var $ul = $('ul#'+facet_id);
+
+      // Add correct CSS selector for the widget. The Facets JS API will
+      // register handlers on that element.
+      $ul.addClass('js-facets-widget');
+
+      //send values
+      $ul.trigger('facets_filter', [ facet_map_link ]);
+
+      // We have to trigger attaching of behaviours, so that Facets JS API can
+      // register handlers on link widgets.
+      Drupal.attachBehaviors(context, Drupal.settings);
     };
 
     Drupal.facets.UpdateValuesMap = function (map, markers, context, settings) {
@@ -140,6 +151,8 @@
 
         function get_geohash(){
             var hits = settings.facets.map.geo_hash;
+
+            console.log(hits);
             //reset array
             settings.facets.map.geo_hash = [];
             //reset map (delete old points)
@@ -183,4 +196,4 @@
         }
     };
 
-})(jQuery);
+})(jQuery, Drupal);
