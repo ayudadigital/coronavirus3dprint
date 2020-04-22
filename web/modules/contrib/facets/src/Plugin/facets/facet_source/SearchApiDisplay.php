@@ -383,20 +383,20 @@ class SearchApiDisplay extends FacetSourcePluginBase implements SearchApiFacetSo
       return $build;
     }
 
-//    // Add JS for Views with Ajax Enabled.
-//    if ($view->display_handler->ajaxEnabled()) {
-//      $js_settings = [
-//        'view_id' => $view->id(),
-//        'current_display_id' => $view->current_display,
-//        'view_base_path' => ltrim($view->getPath(), '/'),
-//        'ajax_path' => Url::fromRoute('views.ajax')->toString(),
-//      ];
-//      $build['#attached']['library'][] = 'facets/drupal.facets.views-ajax';
-//      $build['#attached']['drupalSettings']['facets_views_ajax'] = [
-//        $this->facet->id() => $js_settings,
-//      ];
-//      $build['#use_ajax'] = TRUE;
-//    }
+    // Add JS for Views with Ajax Enabled.
+    if ($view->display_handler->ajaxEnabled()) {
+      $js_settings = [
+        'view_id' => $view->id(),
+        'current_display_id' => $view->current_display,
+        'view_base_path' => ltrim($view->getPath(), '/'),
+        'ajax_path' => Url::fromRoute('views.ajax')->toString(),
+      ];
+      $build['#attached']['library'][] = 'facets/drupal.facets.views-ajax';
+      $build['#attached']['drupalSettings']['facets_views_ajax'] = [
+        $this->facet->id() => $js_settings,
+      ];
+      $build['#use_ajax'] = TRUE;
+    }
     return $build;
   }
 
