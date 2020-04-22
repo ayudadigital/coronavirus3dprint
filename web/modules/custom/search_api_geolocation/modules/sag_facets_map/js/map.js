@@ -144,21 +144,36 @@
       Drupal.attachBehaviors(context, Drupal.settings);
     };
 
+    Drupal.facets.getValuesMap = function (map, markers, context, settings) {
+      var facet_id = settings.facets.map.facet_id;
+
+      var hits = [];
+
+      var $results = $('ul#'+facet_id).find('li a');
+
+      $results.each(function () {
+        var geohash = $(this).find('.facet-item__value').text().toString();
+        var geohash_count = $(this).find('.facet-item__count').text().toString();
+        //remove non numeric characters
+        geohash_count = geohash_count.replace(/\D/g,'').replace(/[_\W]+/g, '');
+
+        hits.push([geohash, geohash_count]);
+      });
+
+      return hits;
+    };
+
     Drupal.facets.UpdateValuesMap = function (map, markers, context, settings) {
 
         //get lat/long
         get_geohash();
 
         function get_geohash(){
-            var hits = settings.facets.map.geo_hash;
-
-            console.log(hits);
-            //reset array
-            settings.facets.map.geo_hash = [];
-            //reset map (delete old points)
-            markers.clearLayers();
-            //makes the points as returned by the server.
-            makePoints(hits);
+          var hits = Drupal.facets.getValuesMap(map, markers, context, settings);
+          //reset map (delete old points)
+          markers.clearLayers();
+          //makes the points as returned by the server.
+          makePoints(hits);
         }
 
         /* This will add all the clusters as returned by the elastic server.*/
@@ -166,33 +181,38 @@
             var markerList = [];
             var lat_long_list = [];
             aggs.forEach(function(agg, index){
-                var center = geohash.decode (agg.key);//elastic return a geohas so need to change it into lat/lon
-                var digits = (agg.doc_count+'').length;
+                var center = geohash.decode (agg[0]);//elastic return a geohas so need to change it into lat/lon
+                var digits = (agg[1]+'').length;
                 var myIcon = new L.DivIcon({
-                    html: agg.doc_count,
+                    html: agg[1],
                     className:'marker-cluster digits-'+digits,
                     iconSize: null
                 });
                 var marker = L.marker(new L.LatLng(center.latitude, center.longitude),{icon:myIcon});
                 lat_long_list.push([center.latitude, center.longitude]);
-                marker.count = agg.doc_count;
+                marker.count = agg[1];
                 // marker.bindPopup(''+agg.doc_count);
                 markerList.push(marker);
             });
             markers.addLayers(markerList);
 
-            //set initial point
-            var original_LatLong = Drupal.facets.get_original_LatLong(context, settings);
-            var original_zoom = Drupal.facets.get_original_zoom(context, settings);
-            if(original_LatLong[0] == 0 && original_LatLong[1] == 0){
-              var bounds = new L.LatLngBounds(lat_long_list);
-              map.fitBounds(bounds);
-              //lat 39, lng -4 = center map in Spain
-              // map.setView([37,-7], 5);
-            }
-            else{
-              map.setView(original_LatLong, original_zoom);
-            }
+
+            //only set default position in first load
+            $('#sag-facets-map-block').once('set-first-position').each(function () {
+              //set initial point
+              var original_LatLong = Drupal.facets.get_original_LatLong(context, settings);
+              var original_zoom = Drupal.facets.get_original_zoom(context, settings);
+              if(original_LatLong[0] == 0 && original_LatLong[1] == 0){
+                var bounds = new L.LatLngBounds(lat_long_list);
+                map.fitBounds(bounds);
+                //lat 39, lng -4 = center map in Spain
+                // map.setView([37,-7], 5);
+              }
+              else{
+                map.setView(original_LatLong, original_zoom);
+              }
+            });
+
         }
     };
 

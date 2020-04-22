@@ -38,17 +38,6 @@ class MapWidget extends WidgetPluginBase {
       }
     }
 
-    //set geohash for geoclusters markers
-    $geo_hash = [];
-    foreach ($results as $result) {
-      if($result->getCount() != 0){
-        $geo_hash[] = array(
-          'key' => $result->getRawValue(),
-          'doc_count' => $result->getCount(),
-        );
-      }
-    }
-
     if(!isset($lat) || !is_numeric($lat)){
       $lat = 0;
     }
@@ -95,7 +84,6 @@ class MapWidget extends WidgetPluginBase {
       'lng' => $lng,
       'zoom' => $zoom_map,
       'url' => !empty($results[0]) ? $results[0]->getUrl()->toString() : '',
-      'geo_hash' => $geo_hash,
     ];
 
     return $build;
