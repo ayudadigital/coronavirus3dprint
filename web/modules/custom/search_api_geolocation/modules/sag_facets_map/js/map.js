@@ -16,7 +16,7 @@
             Drupal.facets.makeMap(context, settings);
           });
 
-          $('#' + settings.facets.map.facet_id).once('exposed-filter-map').each(function () {
+          $('#' + settings.facets.map.facet_id, context).once('exposed-filter-map').each(function () {
             Drupal.facets.UpdateValuesMap(settings['facets']['rendered_map'][0], settings['facets']['rendered_map'][1], context, settings);
           });
 
@@ -78,7 +78,6 @@
           if(zoomend_counter > 1){
             Drupal.facets.send_facets_filters(map, context, settings);
           }
-
         });
 
         //set map values
