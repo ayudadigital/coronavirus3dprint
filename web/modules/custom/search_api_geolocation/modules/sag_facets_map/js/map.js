@@ -156,6 +156,7 @@
         var geohash_count = $(this).find('.facet-item__count').text().toString();
         //remove non numeric characters
         geohash_count = geohash_count.replace(/\D/g,'').replace(/[_\W]+/g, '');
+        geohash_count = parseInt(geohash_count);
 
         hits.push([geohash, geohash_count]);
       });
