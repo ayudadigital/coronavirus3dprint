@@ -48,30 +48,6 @@ class MapWidget extends WidgetPluginBase {
       $zoom_map = 0;
     }
 
-    //set empty new url
-    /** @var \Drupal\facets\Plugin\facets\processor\UrlProcessorHandler $url_processor_handler */
-    $url_processor_handler = $facet->getProcessors()['url_processor_handler'];
-    $url_processor = $url_processor_handler->getProcessor();
-    $filter_key = $url_processor->getFilterKey();
-
-    //get current url
-    if(!empty($results[0])){
-      $url = $results[0]->getUrl();
-      $query = $url->getOption('query');
-
-      // Remove all the query filters for the field of the facet.
-      if (isset($query[$filter_key])) {
-        foreach ($query[$filter_key] as $id => $filter) {
-          if (strpos($filter . $url_processor->getSeparator(), $facet->getUrlAlias()) === 0) {
-            unset($query[$filter_key][$id]);
-          }
-        }
-      }
-
-      $query[$filter_key][] = $facet->getUrlAlias() . $url_processor->getSeparator() . '(geom:__GEOM__)';
-      $url->setOption('query', $query);
-      $results[0]->setUrl($url);
-    }
 
     $build = parent::build($facet);
     $build['#attributes']['id'] = $facet->id();
@@ -81,10 +57,10 @@ class MapWidget extends WidgetPluginBase {
 
     $build['#attached']['drupalSettings']['facets']['map'] = [
       'facet_id' => $facet->id(),
+      'facet_url_name' => $facet->getUrlAlias(),
       'lat' => $lat,
       'lng' => $lng,
       'zoom' => $zoom_map,
-      'url' => !empty($results[0]) ? $results[0]->getUrl()->toString() : '',
     ];
 
     return $build;

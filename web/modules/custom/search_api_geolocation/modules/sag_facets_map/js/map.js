@@ -123,13 +123,32 @@
       var bottom_right_lat_limit = b.getSouthEast().wrap().lat;
       var bottom_right_lng_limit = b.getSouthEast().wrap().lng;
 
-      var params = lat + '/' + lng + '/' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit;
+      var params = '(geom:' + lat + '/' + lng + '/' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit + ')';
 
-      // send values to query
-      // window.location.href = drupalSettings.facets.map.url.replace('__GEOM__', params);
-      var facet_map_link = drupalSettings.facets.map.url.replace('__GEOM__', params);
 
       var $ul = $('ul#'+facet_id);
+
+      //get current url params
+      var pathname = window.location.pathname.toString();
+      var search = window.location.search.toString();
+      var current_url = pathname + search;
+      current_url = decodeURIComponent(current_url);
+
+      var facets_url_name = '=' + settings.facets.map.facet_url_name + ':';
+
+      //add ? to acept first param filter
+      if(!current_url.includes('?')){
+        current_url = current_url + '?'
+      }
+
+      //set default url
+      var facet_map_link = current_url + '&f[0]' + facets_url_name + params;
+
+      //check if first time to this filter
+      if(current_url.includes(facets_url_name)){
+        //refactor current url
+        facet_map_link = current_url.replace(/\(geom:(.+?)\)/, params);
+      }
 
       // Add correct CSS selector for the widget. The Facets JS API will
       // register handlers on that element.
