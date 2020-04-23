@@ -154,12 +154,13 @@
       // register handlers on that element.
       $ul.addClass('js-facets-widget');
 
-      //send values
-      $ul.trigger('facets_filter', [ facet_map_link ]);
-
       // We have to trigger attaching of behaviours, so that Facets JS API can
       // register handlers on link widgets.
       Drupal.attachBehaviors(context, Drupal.settings);
+
+      //send values
+      $ul.trigger('facets_filter', [ facet_map_link ]);
+
     };
 
     Drupal.facets.getValuesMap = function (map, markers, context, settings) {
