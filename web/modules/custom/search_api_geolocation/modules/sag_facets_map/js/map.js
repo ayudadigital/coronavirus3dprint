@@ -142,7 +142,7 @@
       }
 
       //set default url
-      var facet_map_link = current_url + '&f[0]' + facets_url_name + params;
+      var facet_map_link = current_url + '&f[999]' + facets_url_name + params;
 
       //check if first time to this filter
       if(current_url.includes(facets_url_name)){
