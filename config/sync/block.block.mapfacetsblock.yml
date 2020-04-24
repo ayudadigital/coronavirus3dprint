@@ -10,7 +10,7 @@ dependencies:
 id: mapfacetsblock
 theme: map
 region: map
-weight: -11
+weight: -12
 provider: null
 plugin: map_facets_block
 settings:
