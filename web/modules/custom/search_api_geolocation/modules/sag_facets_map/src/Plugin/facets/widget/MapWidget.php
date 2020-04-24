@@ -20,8 +20,6 @@ class MapWidget extends WidgetPluginBase {
    * {@inheritdoc}
    */
   public function build(FacetInterface $facet) {
-    /** @var \Drupal\facets\Result\Result[] $results */
-    $results = $facet->getResults();
 
     // add default center point of the map
     $active_item = $facet->getActiveItems();
