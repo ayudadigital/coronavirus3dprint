@@ -144,22 +144,24 @@
       $.each(old_params, function(key,val) {
         //is facets??
         if(key.includes('f[')){
-          facets_index_num += 1;
-          let new_facets_key = 'f[' + facets_index_num + ']';
+          if(val !== ':null') {
+            facets_index_num += 1;
+            let new_facets_key = 'f[' + facets_index_num + ']';
 
-          //check if first time to this filter
-          if(val.includes(facets_url_name + ':')){
-            exist_geo_params = true;
-            //refactor current value
-            new_params[new_facets_key] = facets_url_name + ':' + geoparams;
-          }
-          else if(val.includes(facets_url_name + '_hash:')){
-            exist_geohash_params = true;
-            //refactor current value
-            new_params[new_facets_key] = facets_url_name + '_hash:' + geohash;
-          }
-          else{
-            new_params[new_facets_key] = val;
+            //check if first time to this filter
+            if (val.includes(facets_url_name + ':')) {
+              exist_geo_params = true;
+              //refactor current value
+              new_params[new_facets_key] = facets_url_name + ':' + geoparams;
+            }
+            else if (val.includes(facets_url_name + '_hash:')) {
+              exist_geohash_params = true;
+              //refactor current value
+              new_params[new_facets_key] = facets_url_name + '_hash:' + geohash;
+            }
+            else {
+              new_params[new_facets_key] = val;
+            }
           }
 
         }
