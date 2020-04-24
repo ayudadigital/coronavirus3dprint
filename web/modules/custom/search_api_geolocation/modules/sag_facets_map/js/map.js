@@ -47,7 +47,7 @@
           spiderfyOnMaxZoom: true,
           showCoverageOnHover: false,
           zoomToBoundsOnClick: true,
-          maxClusterRadius: 50,
+          maxClusterRadius: 35,
           iconCreateFunction: function(cluster) {
             var markers = cluster.getAllChildMarkers();
             var markerCount = 0;
