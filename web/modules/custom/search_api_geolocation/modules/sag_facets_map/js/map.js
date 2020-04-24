@@ -64,6 +64,11 @@
         //add points to map
         map.addLayer(markers);
 
+        markers.on('click', function (a) {
+          //send new geohash param
+          Drupal.facets.send_facets_filters(map, context, settings, a.layer.geohash);
+        });
+
         // // //load map
         // map.on('load', function(){
         //   //get lat/long
@@ -107,48 +112,84 @@
         return zoom;
     };
 
-    Drupal.facets.send_facets_filters = function (map, context, settings) {
-      var facet_id = settings.facets.map.facet_id;
+    Drupal.facets.send_facets_filters = function (map, context, settings, geohash=null) {
+      let facet_id = settings.facets.map.facet_id;
 
-      var cnt = map.getCenter();
-      var lat = Number(cnt['lat']).toFixed(5);
-      var lng = Number(cnt['lng']).toFixed(5);
+      //prepare params
+      let cnt = map.getCenter();
+      let lat = Number(cnt['lat']).toFixed(5);
+      let lng = Number(cnt['lng']).toFixed(5);
 
-      var zoom = map.getZoom();
+      let zoom = map.getZoom();
 
-      var b = map.getBounds();
+      let b = map.getBounds();
 
-      var top_left_lat_limit = b.getNorthWest().wrap().lat;
-      var top_left_lng_limit = b.getNorthWest().wrap().lng;
-      var bottom_right_lat_limit = b.getSouthEast().wrap().lat;
-      var bottom_right_lng_limit = b.getSouthEast().wrap().lng;
+      let top_left_lat_limit = b.getNorthWest().wrap().lat;
+      let top_left_lng_limit = b.getNorthWest().wrap().lng;
+      let bottom_right_lat_limit = b.getSouthEast().wrap().lat;
+      let bottom_right_lng_limit = b.getSouthEast().wrap().lng;
 
-      var params = '(geom:' + lat + '/' + lng + '/' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit + ')';
+      //build new params
+      let geoparams = '(geom:' + lat + '/' + lng + '/' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit + ')';
 
+      //get parameter base name
+      let facets_url_name = settings.facets.map.facet_url_name;
 
-      var $ul = $('ul#'+facet_id);
+      //get and alter old params
+      let exist_geo_params = false;
+      let exist_geohash_params = false;
+      let facets_index_num = 0;
+      let new_params = {};
+      let old_params = get_query_params();
+      $.each(old_params, function(key,val) {
+        //is facets??
+        if(key.includes('f[')){
+          facets_index_num += 1;
+          let new_facets_key = 'f[' + facets_index_num + ']';
 
-      //get current url params
-      var pathname = window.location.pathname.toString();
-      var search = window.location.search.toString();
-      var current_url = pathname + search;
-      current_url = decodeURIComponent(current_url);
+          //check if first time to this filter
+          if(val.includes(facets_url_name + ':')){
+            exist_geo_params = true;
+            //refactor current value
+            new_params[new_facets_key] = facets_url_name + ':' + geoparams;
+          }
+          else if(val.includes(facets_url_name + '_hash:')){
+            exist_geohash_params = true;
+            //refactor current value
+            new_params[new_facets_key] = facets_url_name + '_hash:' + geohash;
+          }
+          else{
+            new_params[new_facets_key] = val;
+          }
 
-      var facets_url_name = '=' + settings.facets.map.facet_url_name + ':';
-
-      //add ? to acept first param filter
-      if(!current_url.includes('?')){
-        current_url = current_url + '?'
-      }
-
-      //set default url
-      var facet_map_link = current_url + '&f[999]' + facets_url_name + params;
+        }
+        else{
+          new_params[key] = val;
+        }
+      });
 
       //check if first time to this filter
-      if(current_url.includes(facets_url_name)){
-        //refactor current url
-        facet_map_link = current_url.replace(/\(geom:(.+?)\)/, params);
+      if(!exist_geo_params){
+        facets_index_num += 1;
+        new_params['f[' + facets_index_num + ']'] = facets_url_name + ':' + geoparams;
       }
+
+      //check if first time to this filter
+      if(!exist_geohash_params){
+        facets_index_num += 1;
+        new_params['f[' + facets_index_num + ']'] = facets_url_name + '_hash:' + geohash;
+      }
+
+      //build new url params
+      let new_params_array = [];
+      $.each(new_params, function(key,val) {
+        let str = key + "=" + val;
+        new_params_array.push(str);
+      });
+
+      let new_params_string = new_params_array.join("&");
+
+      var $ul = $('ul#'+facet_id);
 
       // Add correct CSS selector for the widget. The Facets JS API will
       // register handlers on that element.
@@ -158,8 +199,32 @@
       // register handlers on link widgets.
       Drupal.attachBehaviors(context, Drupal.settings);
 
+      //get current url path
+      var pathname = window.location.pathname.toString();
+
       //send values
-      $ul.trigger('facets_filter', [ facet_map_link ]);
+      $ul.trigger('facets_filter', [ pathname + '?' + new_params_string ]);
+
+
+      function get_query_params() {
+        // initialize an empty object
+        let result = {};
+        // get URL query string
+        let params = window.location.search;
+        params = decodeURIComponent(params);
+        // remove the '?' character
+        params = params.substr(1);
+        // split the query parameters
+        let queryParamArray = params.split('&');
+        // iterate over parameter array
+        queryParamArray.forEach(function (queryParam) {
+          // split the query parameter over '='
+          let item = queryParam.split('=');
+          result[item[0]] = item[1];
+        });
+
+        return result;
+      }
 
     };
 
@@ -208,8 +273,11 @@
                     className:'marker-cluster digits-'+digits,
                     iconSize: null
                 });
-                var marker = L.marker(new L.LatLng(center.latitude, center.longitude),{icon:myIcon});
+
                 lat_long_list.push([center.latitude, center.longitude]);
+
+                var marker = L.marker(new L.LatLng(center.latitude, center.longitude),{icon:myIcon});
+                marker.geohash = agg[0];
                 marker.count = agg[1];
                 // marker.bindPopup(''+agg.doc_count);
                 markerList.push(marker);
