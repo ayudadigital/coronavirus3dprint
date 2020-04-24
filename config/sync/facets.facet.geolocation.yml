@@ -18,7 +18,7 @@ facet_source_id: 'search_api:views_page__map__page_1'
 widget:
   type: map_widget
   config:
-    show_numbers: false
+    show_numbers: true
 query_operator: and
 use_hierarchy: false
 expand_hierarchy: false
