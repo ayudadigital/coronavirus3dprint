@@ -41,21 +41,13 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-{{ attach_library('map/search-owl-results') }}
+{{ attach_library('map/search-map-results-sidebar') }}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
     {{ title }}
   {% endif %}
-
-{#  {% if exposed %}#}
-{#    <div id="searchbar-map-wrapper" class="view-filters form-group search-bar">#}
-{#      <div id="search-btn"><div></div></div>#}
-{#      <div class="sidebar-content">#}
-{#        {{ exposed }}#}
-{#      </div>#}
-{#    </div>#}
-{#  {% endif %}#}
 
   {{ title_suffix }}
   {% if header %}
@@ -70,7 +62,7 @@
   {% endif %}
 
   {% if rows %}
-    <div class="view-content owl-carousel">
+    <div class="view-content views-result-map-search">
       {{ rows }}
     </div>
   {% elseif empty %}
@@ -101,3 +93,4 @@
     </div>
   {% endif %}
 </div>
+

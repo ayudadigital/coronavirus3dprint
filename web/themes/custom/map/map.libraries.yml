@@ -11,11 +11,10 @@ login-page:
   dependencies:
     - mediteran/maintenance-page
 
-search-owl-results:
+search-map-results-sidebar:
   js:
-    js/search-owl-results.js: {}
+    js/search-map-results-sidebar.js: {}
   dependencies:
-    - map/owl
     - core/jquery
     - core/jquery.once
 
@@ -25,24 +24,3 @@ toggle-search-filters:
   dependencies:
     - core/jquery
     - core/jquery.once
-
-mousewheel:
-  js:
-    /libraries/mousewheel/jquery.mousewheel.min.js: {}
-
-owl:
-  remote: https://github.com/OwlCarousel2/OwlCarousel2
-  version: 1.x
-  license:
-    name: MIT
-    url: https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE
-    gpl-compatible: true
-  js:
-    /libraries/OwlCarousel/dist/owl.carousel.min.js: {}
-  css:
-    base:
-      /libraries/OwlCarousel/dist/assets/owl.carousel.min.css: {}
-      /libraries/OwlCarousel/dist/assets/owl.theme.default.min.css: {}
-  dependencies:
-    - map/mousewheel
-    - core/jquery

@@ -765,19 +765,21 @@ article.profile.profile--view-mode-full > .right {
 }
 
 .facets-map {
-  height: 50vh;
-}
-@media only screen and (min-width: 768px) {
-  .facets-map {
-    height: 60vh;
-  }
+  height: 100vh;
 }
 
-.view-id-map .view-content.owl-carousel .owl-item article.node,
-.view-id-map .view-content.owl-carousel .owl-item .views-row, .view-id-groups .view-content.owl-carousel .owl-item article.node,
-.view-id-groups .view-content.owl-carousel .owl-item .views-row, .view-id-prints .view-content.owl-carousel .owl-item article.node,
-.view-id-prints .view-content.owl-carousel .owl-item .views-row {
-  height: 25vh;
+#sidebar-map-results .sidebar-btn {
+  display: none;
+}
+#sidebar-map-results.active .sidebar-btn {
+  display: block;
+}
+#sidebar-map-results .view-content {
+  padding: 10px;
+}
+#sidebar-map-results .view-content .views-row {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .view-id-my_services > h2 {

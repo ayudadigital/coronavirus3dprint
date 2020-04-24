@@ -24,19 +24,23 @@
 
 
 .facets-map{
-  height: 50vh;
-  @include tablet-sm {
-    height: 60vh;
-  }
+  height: 100vh;
 }
 
-.view-id-map, .view-id-groups, .view-id-prints{
-  .view-content.owl-carousel{
-    .owl-item{
-      article.node,
-      .views-row{
-        height: 25vh;
-      }
+#sidebar-map-results{
+  .sidebar-btn{
+    display: none;
+  }
+  &.active{
+    .sidebar-btn{
+      display: block;
+    }
+  }
+  .view-content{
+    padding: 10px;
+    .views-row{
+      width: 100%;
+      margin-bottom: 10px;
     }
   }
 }
