@@ -3,10 +3,18 @@
     .views-row{
       text-align: center;
       width: 100%;
-      border: 1px solid $grey;
       padding: 20px 10%;
-      background-color: $white;
       position: relative;
+
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 3px;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.06);
+      background-color: $white;
+      transition: box-shadow .25s;
+
+      &:hover{
+        box-shadow: 0 0 12px rgba(0,0,0,.12);
+      }
       .views-field-label{
         padding-bottom: 30px;
       }

@@ -72,13 +72,13 @@
 #}
 {%
   set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+]
 %}
 <article{{ attributes.addClass(classes) }}>
 
@@ -86,15 +86,11 @@
   {{ title_suffix }}
 
   <a href="{{ url }}" rel="bookmark" target="_blank">
-
+    <h2{{ title_attributes }}>
+      {{ label }}
+    </h2>
     <div{{ content_attributes.addClass('node__content') }}>
-
       {{ content }}
-
-      <div class="button button-action button--primary button--small view-more">
-        {{ 'View more'|t }}
-      </div>
-
     </div>
   </a>
 

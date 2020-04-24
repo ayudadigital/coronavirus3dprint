@@ -193,10 +193,13 @@ form .captcha {
 .node--type-services.node--view-mode-teaser {
   text-align: center;
   width: 100%;
-  border: 1px solid #f5f5f5;
   padding: 20px 10%;
-  background-color: #fff;
   position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+  transition: box-shadow 0.25s;
 }
 .node--type-services.node--view-mode-teaser a {
   color: #222;
@@ -228,7 +231,7 @@ form .captcha {
   padding: 10px !important;
 }
 .node--type-services.node--view-mode-teaser:hover {
-  background-color: #f5f5f5;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
 }
 .node--type-services.node--view-mode-teaser:hover .view-more {
   background-color: #387a99;
@@ -460,11 +463,14 @@ form .captcha {
 .node--type-prints.node--view-mode-teaser {
   text-align: center;
   width: 100%;
-  border: 1px solid #f5f5f5;
   padding: 20px 10%;
-  background-color: #fff;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+  transition: box-shadow 0.25s;
 }
 .node--type-prints.node--view-mode-teaser a {
   color: #222;
@@ -480,7 +486,7 @@ form .captcha {
   display: none;
 }
 .node--type-prints.node--view-mode-teaser:hover {
-  background-color: #f5f5f5;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
 }
 .node--type-prints.node--view-mode-teaser:hover .view-more {
   background-color: #387a99;
@@ -494,6 +500,9 @@ form .captcha {
 }
 .node--type-prints.node--view-mode-teaser .field.field--label-inline .field__item {
   display: inline-block;
+}
+.node--type-prints.node--view-mode-teaser .field--type-image {
+  margin-top: 10px;
 }
 .node--type-prints.node--view-mode-teaser .field--type-image img {
   width: auto !important;
@@ -968,10 +977,16 @@ body.path-groups .page-content {
 .view-id-groups .view-content .views-row {
   text-align: center;
   width: 100%;
-  border: 1px solid #f5f5f5;
   padding: 20px 10%;
-  background-color: #fff;
   position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+  transition: box-shadow 0.25s;
+}
+.view-id-groups .view-content .views-row:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
 }
 .view-id-groups .view-content .views-row .views-field-label {
   padding-bottom: 30px;
