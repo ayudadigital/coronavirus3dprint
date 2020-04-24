@@ -110,6 +110,9 @@
       //build new params
       let geoparams = '(geom:' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit + '/' + geohash +')';
 
+      //add to js variables to detect from other js scripts
+      settings.geohash = geohash;
+
       //get parameter base name
       let facets_url_name = settings.facets.map.facet_url_name;
 
