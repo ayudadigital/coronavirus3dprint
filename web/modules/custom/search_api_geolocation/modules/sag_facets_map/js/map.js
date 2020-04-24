@@ -103,7 +103,7 @@
       let bottom_right_lng_limit = b.getSouthEast().wrap().lng;
 
       //build new params
-      let geoparams = '(geom:' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit + '/' + geohash +')';
+      let geoparams = '(geom:' + geohash + '/' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit +')';
 
       //add to js variables to detect from other js scripts
       settings.geohash = geohash;

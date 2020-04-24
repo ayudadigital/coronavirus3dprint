@@ -35,12 +35,12 @@ class SearchApiGeolocation extends QueryTypePluginBase {
     $geo_params = str_replace(['(geom:', ')'], ['', ''], $geo_params_string);
     $geo_params = explode('/', $geo_params);
 
-    $zoom_map = !isset($geo_params['0']) ? 1 : $geo_params['0'];
-    $top_left_lat_limit = !isset($geo_params['1']) ? 0 : $geo_params['1'];
-    $top_left_lng_limit = !isset($geo_params['2']) ? 0 : $geo_params['2'];
-    $bottom_right_lat_limit = !isset($geo_params['3']) ? 0 : $geo_params['3'];
-    $bottom_right_lng_limit = !isset($geo_params['4']) ? 0 : $geo_params['4'];
-    $geohash = !isset($geo_params['5']) ? 0 : $geo_params['5'];
+    $geohash = !isset($geo_params['0']) ? 0 : $geo_params['0'];
+    $zoom_map = !isset($geo_params['1']) ? 1 : $geo_params['1'];
+    $top_left_lat_limit = !isset($geo_params['2']) ? 0 : $geo_params['2'];
+    $top_left_lng_limit = !isset($geo_params['3']) ? 0 : $geo_params['3'];
+    $bottom_right_lat_limit = !isset($geo_params['4']) ? 0 : $geo_params['4'];
+    $bottom_right_lng_limit = !isset($geo_params['5']) ? 0 : $geo_params['5'];
 
     //Get the zoom level
     $precision = 3;
