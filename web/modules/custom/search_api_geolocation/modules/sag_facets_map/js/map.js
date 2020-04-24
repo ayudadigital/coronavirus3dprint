@@ -93,11 +93,6 @@
     Drupal.facets.send_facets_filters = function (map, context, settings, geohash=0) {
       let facet_id = settings.facets.map.facet_id;
 
-      //prepare params
-      let cnt = map.getCenter();
-      let lat = Number(cnt['lat']).toFixed(5);
-      let lng = Number(cnt['lng']).toFixed(5);
-
       let zoom = map.getZoom();
 
       let b = map.getBounds();
