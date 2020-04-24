@@ -45,6 +45,11 @@
     <div class="layout-container">
       {{ page.header }}
     </div>
+    {% block menu_map %}
+      {% if page.menu_map %}
+        {{ page.menu_map }}
+      {% endif %}
+    {% endblock %}
   </header>
 {% endblock %}
 

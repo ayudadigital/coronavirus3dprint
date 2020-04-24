@@ -12,6 +12,7 @@ regions:
   breadcrumb: 'Breadcrumb'
   highlighted: 'Highlighted'
   help: 'Help'
+  menu_map: 'Menu Map region'
   map: 'Map region'
   content: 'Content'
   page_top: 'Page top'

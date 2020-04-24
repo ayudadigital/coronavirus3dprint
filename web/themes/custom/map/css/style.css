@@ -777,6 +777,15 @@ article.profile.profile--view-mode-full > .right {
   height: 100vh;
 }
 
+.path-frontpage .content-header, .path-map .content-header, .path-groups .content-header, .path-prints .content-header {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: visible;
+}
+
 #sidebar-map-results .sidebar-btn {
   display: none;
 }
@@ -1251,6 +1260,9 @@ body.path-groups .page-content {
   overflow-y: auto;
   height: 100%;
 }
+.sidebar .sidebar-content a.button {
+  display: block;
+}
 
 .block-language {
   text-align: center;
@@ -1371,8 +1383,9 @@ body.path-groups .page-content {
 .block-menu.menu--map-menu {
   position: absolute;
   z-index: 700;
-  top: 10px;
+  top: 100%;
   right: 15px;
+  margin-top: 10px;
 }
 .block-menu.menu--map-menu ul.menu {
   list-style: none;

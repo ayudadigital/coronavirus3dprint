@@ -27,6 +27,17 @@
   height: 100vh;
 }
 
+.path-frontpage, .path-map, .path-groups, .path-prints{
+  .content-header{
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
 #sidebar-map-results{
   .sidebar-btn{
     display: none;

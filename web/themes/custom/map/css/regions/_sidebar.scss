@@ -117,6 +117,9 @@
   .sidebar-content{
     overflow-y: auto;
     height: 100%;
+    a.button{
+      display: block;
+    }
   }
 
 }
