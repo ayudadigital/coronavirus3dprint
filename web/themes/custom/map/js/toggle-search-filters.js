@@ -11,7 +11,6 @@
           //show/hidde sidebar
           $('.sidebar-btn', context).once().bind('click', function() {
             $(this).closest(".sidebar").toggleClass('active');
-            return false;
           });
 
         }
