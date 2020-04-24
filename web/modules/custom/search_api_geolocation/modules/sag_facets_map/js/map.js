@@ -37,7 +37,6 @@
             // scrollWheelZoom: false,
             // minZoom: 3,
             // maxZoom: 15,
-            gestureHandling: true
         });
         // Add baselayer to map.
         map.addLayer(baseLayer);
