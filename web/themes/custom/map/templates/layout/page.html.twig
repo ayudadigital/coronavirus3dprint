@@ -63,25 +63,27 @@
   {% block sidebar_first %}
   {% endblock %}
 
-  <main class="page-content clearfix" role="main">
-    <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
-    {{ page.highlighted }}
+  {% block main %}
+    <main class="page-content clearfix" role="main">
+      <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+      {{ page.highlighted }}
 
-    {% if page.help %}
-      {{ page.help }}
-    {% endif %}
-
-    {% block map %}
-      {% if page.map %}
-        {{ page.map }}
+      {% if page.help %}
+        {{ page.help }}
       {% endif %}
-    {% endblock %}
 
-    {% block content %}
-      {{ page.content }}
-    {% endblock %}
+      {% block map %}
+        {% if page.map %}
+          {{ page.map }}
+        {% endif %}
+      {% endblock %}
 
-  </main>
+      {% block content %}
+        {{ page.content }}
+      {% endblock %}
+
+    </main>
+  {% endblock %}
 
   {% block sidebar_second %}
     {% if page.sidebar_second %}
