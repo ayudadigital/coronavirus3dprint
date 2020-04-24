@@ -90,29 +90,7 @@
 
     };
 
-    Drupal.facets.get_original_LatLong = function (context, settings) {
-        var lat = 0;
-        var lng = 0;
-
-        if(settings.facets.map.lat !== 'undefined'){
-            lat = settings.facets.map.lat;
-        }
-        if(settings.facets.map.lng !== 'undefined'){
-            lng = settings.facets.map.lng;
-        }
-
-        return [lat, lng];
-    };
-
-    Drupal.facets.get_original_zoom = function (context, settings) {
-        var zoom = 0;
-        if(settings.facets.map.zoom !== 'undefined'){
-            zoom = settings.facets.map.zoom;
-        }
-        return zoom;
-    };
-
-    Drupal.facets.send_facets_filters = function (map, context, settings, geohash=null) {
+    Drupal.facets.send_facets_filters = function (map, context, settings, geohash=0) {
       let facet_id = settings.facets.map.facet_id;
 
       //prepare params
@@ -130,14 +108,13 @@
       let bottom_right_lng_limit = b.getSouthEast().wrap().lng;
 
       //build new params
-      let geoparams = '(geom:' + lat + '/' + lng + '/' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit + ')';
+      let geoparams = '(geom:' + zoom + '/' + top_left_lat_limit + '/' + top_left_lng_limit + '/' + bottom_right_lat_limit + '/' + bottom_right_lng_limit + '/' + geohash +')';
 
       //get parameter base name
       let facets_url_name = settings.facets.map.facet_url_name;
 
       //get and alter old params
       let exist_geo_params = false;
-      let exist_geohash_params = false;
       let facets_index_num = 0;
       let new_params = {};
       let old_params = get_query_params();
@@ -154,11 +131,6 @@
               //refactor current value
               new_params[new_facets_key] = facets_url_name + ':' + geoparams;
             }
-            else if (val.includes(facets_url_name + '_hash:')) {
-              exist_geohash_params = true;
-              //refactor current value
-              new_params[new_facets_key] = facets_url_name + '_hash:' + geohash;
-            }
             else {
               new_params[new_facets_key] = val;
             }
@@ -174,12 +146,6 @@
       if(!exist_geo_params){
         facets_index_num += 1;
         new_params['f[' + facets_index_num + ']'] = facets_url_name + ':' + geoparams;
-      }
-
-      //check if first time to this filter
-      if(!exist_geohash_params){
-        facets_index_num += 1;
-        new_params['f[' + facets_index_num + ']'] = facets_url_name + '_hash:' + geohash;
       }
 
       //build new url params
@@ -286,21 +252,11 @@
             });
             markers.addLayers(markerList);
 
-
             //only set default position in first load
             $('#sag-facets-map-block').once('set-first-position').each(function () {
               //set initial point
-              var original_LatLong = Drupal.facets.get_original_LatLong(context, settings);
-              var original_zoom = Drupal.facets.get_original_zoom(context, settings);
-              if(original_LatLong[0] == 0 && original_LatLong[1] == 0){
-                var bounds = new L.LatLngBounds(lat_long_list);
-                map.fitBounds(bounds);
-                //lat 39, lng -4 = center map in Spain
-                // map.setView([37,-7], 5);
-              }
-              else{
-                map.setView(original_LatLong, original_zoom);
-              }
+              var bounds = new L.LatLngBounds(lat_long_list);
+              map.fitBounds(bounds);
             });
 
         }

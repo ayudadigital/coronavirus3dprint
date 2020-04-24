@@ -29,28 +29,18 @@ class SearchApiGeolocation extends QueryTypePluginBase {
 
     $filter_name = $field_identifier;
 
-    $geo_params = $this->facet->getActiveItems();
-    if (!empty($geo_params[0])) {
-      $geo_params = str_replace(['(geom:', ')'], ['', ''], $geo_params[0]);
-      $geo_params = explode('/', $geo_params);
+    $active_facet = $this->facet->getActiveItems();
+    $geo_params_string = !isset($active_facet['0']) ? '' : $active_facet['0'];
 
-//      $lat = $geo_params[0];
-//      $lng = $geo_params[1];
-      $zoom_map = $geo_params[2];
-      $top_left_lat_limit = $geo_params[3];
-      $top_left_lng_limit = $geo_params[4];
-      $bottom_right_lat_limit = $geo_params[5];
-      $bottom_right_lng_limit = $geo_params[6];
-    }
-    else{
-//      $lat = 0;
-//      $lng = 0;
-      $zoom_map = 1;
-      $top_left_lat_limit = 0;
-      $top_left_lng_limit = 0;
-      $bottom_right_lat_limit = 0;
-      $bottom_right_lng_limit = 0;
-    }
+    $geo_params = str_replace(['(geom:', ')'], ['', ''], $geo_params_string);
+    $geo_params = explode('/', $geo_params);
+
+    $zoom_map = !isset($geo_params['0']) ? 1 : $geo_params['0'];
+    $top_left_lat_limit = !isset($geo_params['1']) ? 0 : $geo_params['1'];
+    $top_left_lng_limit = !isset($geo_params['2']) ? 0 : $geo_params['2'];
+    $bottom_right_lat_limit = !isset($geo_params['3']) ? 0 : $geo_params['3'];
+    $bottom_right_lng_limit = !isset($geo_params['4']) ? 0 : $geo_params['4'];
+    $geohash = !isset($geo_params['5']) ? 0 : $geo_params['5'];
 
     //Get the zoom level
     $precision = 3;
@@ -70,8 +60,17 @@ class SearchApiGeolocation extends QueryTypePluginBase {
       $precision =8;
     }
 
-    if(!empty($top_left_lat_limit) && !empty($top_left_lng_limit) &&
-      !empty($bottom_right_lat_limit) && !empty($bottom_right_lng_limit) && $precision != 3){
+    if(!empty($geohash)){
+      $geo_bounding_box = array(
+        "geolocation" => array(
+          "top_left" => $geohash,
+          "bottom_right" => $geohash,
+        ),
+      );
+      $query->setOption('geo_bounding_box', $geo_bounding_box);
+    }
+    elseif(!empty($top_left_lat_limit) && !empty($top_left_lng_limit) &&
+      !empty($bottom_right_lat_limit) && !empty($bottom_right_lng_limit) && $precision > 3){
       $geo_bounding_box = array(
         "geolocation" => array(
           "top_left" => array(
